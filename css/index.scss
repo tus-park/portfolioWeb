@@ -1,0 +1,124 @@
+@import 'style.scss';
+
+.wrap {
+  width: 100%;
+  overflow: hidden;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  @include flex(column, flex-start, center);
+  gap: 0;
+  width: 40px;
+  height: 100vh;
+  background-color: blanchedalmond;
+}
+.menu > li {
+  width: 120px;
+  a {
+    width: 100%;
+    height: 40px;
+    @include flex(row, center, flex-start);
+    gap: 10px;
+    .icon {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+section,
+.headingArea,
+.content {
+  @include flex(column, center, flex-start);
+}
+.headingArea,
+.content {
+  @include flex(column);
+  overflow: hidden;
+}
+section {
+  width: 100vw;
+  height: 100vh;
+}
+.headingArea {
+  gap: 10px;
+  width: 100%;
+  height: 40vh;
+  background-color: skyblue;
+  h3 {
+    text-align: center;
+    span {
+      display: block;
+      font-weight: bold;
+    }
+  }
+}
+.subTit {
+  margin-bottom: 20px;
+}
+#intro {
+  h1 {
+    @include hiddenText();
+  }
+  justify-content: center;
+  background-color: aquamarine;
+}
+#skills {
+  background-color: darkkhaki;
+  .content {
+    width: 80%;
+  }
+  .skill_list {
+    @include flex(row, flex-start);
+    .coding,
+    .design,
+    .experience {
+      &_list {
+        svg {
+          height: fit-content;
+        }
+        @include flex(row);
+        .skill_graph {
+          dt,
+          dd {
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+}
+
+.modal {
+  %img {
+    @include aspect-ratio(4, 3);
+    width: 12%;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 10px;
+  }
+  &_footer {
+    display: flex;
+    .paging {
+      overflow: hidden;
+      display: block;
+      width: 50%;
+      height: auto;
+      &_before {
+        // float: left;
+        // text-align: left;
+        @include flex(row, center, flex-start, 2%);
+      }
+      &_after {
+        // float: right;
+        // text-align: right;
+        @include flex(row-reverse, center, flex-start, 2%);
+      }
+    }
+    .pg_thumb {
+      @extend %img;
+    }
+  }
+}
