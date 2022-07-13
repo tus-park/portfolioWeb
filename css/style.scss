@@ -23,9 +23,23 @@ $baseFont: 'spoqa-sans';
 $headFont: 'nixgon';
 // 폰트
 
-$icons: arrow_top, arrow_bottom, arrow_left, arrow_right, arrow_dot, circle, ellipse, top_fill, top_line, x, blog, email, instagram, talk, twitter, location,
-  star, user, birth, file, menu, plus;
-// 아이콘 리스트
+.point {
+  font-weight: bold;
+}
+
+@mixin hidden {
+  display: none;
+  opacity: 0;
+  position: absolute;
+  left: -999999px;
+}
+
+@mixin hiddenText {
+  font-size: 1px;
+  color: white;
+  color: transparent;
+  text-indent: -999999px;
+}
 
 $baseSize: 10px;
 @function unit($value) {
@@ -37,15 +51,15 @@ $baseSize: 10px;
 }
 // px 단위 rem 으로 변환
 
-@mixin aspect-ratio($width, $height) {
+@mixin ratio($width, $height) {
   position: relative;
   &:before {
     display: block;
-    content: "";
+    content: '';
     width: 100%;
     padding-top: ($height / $width) * 100%;
   }
-  > .content {
+  > .ratioCon {
     position: absolute;
     top: 0;
     left: 0;
@@ -54,6 +68,44 @@ $baseSize: 10px;
   }
 }
 // 비율 유지
+
+$icons: arrow_top, arrow_bottom, arrow_left, arrow_right, circle, ellipse, top_fill, top_line, x, blog, email, instagram, talk, twitter, location, star, user,
+  birth, file, menu, plus;
+// 아이콘 리스트
+@mixin icons($size: 1rem) {
+  font-size: $size;
+  @each $name in $icons {
+    &.icon_#{$name} {
+      &::before {
+        display: inline-block;
+        content: '#{$name}';
+        color: transparent;
+        width: $size;
+        height: $size;
+        vertical-align: middle;
+        margin-right: $size * 0.3;
+        background: {
+          image: url('../img/icons/#{$name}.svg');
+          size: cover;
+        }
+      }
+    }
+  }
+}
+.icon {
+  @include icons();
+}
+i.icon {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+  @include icons();
+  @include hiddenText();
+  &::before {
+    display: block !important;
+    float: left;
+  }
+}
 
 @function headings($from, $to) {
   @if $from == $to {
@@ -67,16 +119,102 @@ $baseSize: 10px;
   h#{7-$i} {
     font-size: $size;
     font-weight: normal;
+    text-align: center;
     margin: {
       top: $size * 0.8;
       bottom: $size * 0.8;
       left: 0;
       right: 0;
     }
+    .icon {
+      @include icons($size);
+    }
   }
 }
 #{headings(1,3)} {
   font-family: $headFont;
   text-transform: uppercase;
-  color: $coral;
+}
+// h1~h6 헤딩 태그 스타일
+
+.list {
+  li {
+    &::before {
+      content: 'o';
+      margin-right: 0.3rem;
+    }
+  }
+}
+//리스트 스타일
+
+a {
+  text-decoration: none;
+  color: inherit;
+  &:hover,
+  &:active,
+  &:visited,
+  &:focus {
+    color: inherit;
+  }
+}
+
+@mixin btnStyle($size: 1rem, $color: $violet) {
+  padding: {
+    top: $size * 0.3;
+    left: $size * 0.6;
+    right: $size * 0.6;
+    bottom: $size * 0.3;
+  }
+  border: {
+    radius: 4px;
+    style: solid;
+  }
+  cursor: pointer;
+  &.btn_stroke {
+    background-color: transparent;
+    background-color: inherit;
+    border: {
+      width: 1px;
+      color: $color;
+    }
+    color: $color;
+  }
+  &.btn_fill {
+    border: none;
+    background-color: $color;
+    color: $white;
+  }
+}
+
+@mixin underbar($width: 2px, $color: $violet) {
+  position: relative;
+  display: inline-block;
+  &:hover {
+    &::after {
+      display: block;
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: $width;
+      width: 100%;
+      background-color: $color;
+      animation: underbar_ani 0.6s alternate;
+    }
+  }
+}
+@keyframes underbar_ani {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+button {
+  @include btnStyle();
+}
+.link {
+  @include underbar();
 }
