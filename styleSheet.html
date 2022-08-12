@@ -1,11 +1,18 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <!-- css style -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <!-- script -->
   </head>
   <body>
     <div class="wrap">
@@ -45,10 +52,18 @@
       <div>
         <h2>heading style</h2>
         <h1>heading h1</h1>
-        <h2><span style="width: 20%" class="icon icon_star">star</span> heading h2</h2>
-        <h3>heading h3</h3>
+        <h2>
+          <span style="width: 20%" class="icon icon_star">star</span>
+          heading h2
+        </h2>
+        <h3>heading h3<span class="subHead"> 서브 헤딩 텍스트 </span></h3>
         <h4>heading h4</h4>
-        <h5><span style="width: 20%" class="icon icon_user">user</span> heading h5</h5>
+        <h5>
+          heading h5
+          <span class="subHead">
+            <span style="width: 20%" class="subHead icon icon_user">서브 헤딩 텍스트 + 아이콘</span>
+          </span>
+        </h5>
         <h6>heading h6</h6>
       </div>
       <hr />
@@ -62,13 +77,13 @@
       </div>
       <div>
         <h2>list style</h2>
-        <p class="point"> 기본 리스트 스타일</p>
+        <p class="point">기본 리스트 스타일</p>
         <ul>
           <li>list styel 리스트 스타일</li>
           <li>list styel 리스트 스타일</li>
           <li>list styel 리스트 스타일</li>
         </ul>
-        <p class="point"> 도트 리스트 스타일</p>
+        <p class="point">도트 리스트 스타일</p>
         <ul class="list">
           <li>list styel 리스트 스타일</li>
           <li>list styel 리스트 스타일</li>
@@ -90,19 +105,41 @@
         </p>
         <a class="link" href="">a link style</a><br />
         <br />
-        <p>
-          <span class="point">button 스타일</span><br />
-          class name: btn_stroke, btn_fill<br /><br />
-          <button class="btn_stroke">button style - stroke</button>
-          <button class="btn_fill">button style - fill</button>
-        </p>
       </div>
       <div>
         <h2>Form Style</h2>
+        <div class="point">input</div>
+        <input type="text" placeholder="input text box" />
+        <p>
+          <span class="point">button 스타일</span><br />
+          class name: btn_stroke, btn_fill<br /><br />
+        </p>
+        <button class="btn_stroke">button style - stroke</button>
+        <button class="btn_fill">button style - fill</button>
+        <div class="point">textarea</div>
+        <textarea name="" id="" cols="30" rows="10" placeholder="textarea box"></textarea>
       </div>
       <div>
         <h2>Modal Style</h2>
+        <!-- <button class="modalBtn" data-toggle="modal" data-target="#wha">modal button</button> -->
+        <div class="thumb">
+          <!-- <a href="#" class="modalBtn" data-toggle="modal" data-target="#demo_oa">dddddd</a> -->
+        </div>
+      </div>
+      <div class="modal fade" id="wha" tabindex="-1" role="dialog" aria-labelledby="modalDefault" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <!-- <div class="modal_image"></div>
+            <div class="modal_head">
+              <h2>modal heading<span class="subHead">모달 제목</span></h2>
+            </div>
+            <div class="modal_body">모달 내용</div>
+            <div class="modal_footer">모달 푸터</div> -->
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">close</button>
+          </div>
+        </div>
       </div>
     </div>
   </body>
+  <script src="js/portfolio_page.js"></script>
 </html>

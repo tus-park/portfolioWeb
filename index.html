@@ -7,17 +7,19 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" /> -->
     <link rel="stylesheet" href="css/index.css" />
     <!-- css -->
 
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <script src="js/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script> -->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script> -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> -->
+    <script type="text/javascript" src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
+    <!-- javascript cdn -->
+    <script src="js/portfolio_page.js"></script>
     <!-- javascript -->
   </head>
   <body>
@@ -26,35 +28,46 @@
       <nav>
         <ul class="menu">
           <li>
-            <a href=""><i class="icon icon_ellipse">소개 버튼</i>소개</a>
+            <a href="#intro" class="icon icon_ellipse"><span>소개</span></a>
           </li>
           <li>
-            <a href=""><i class="icon icon_circle">포트폴리오 버튼</i>포트폴리오</a>
+            <a href="#portfolio" class="icon icon_circle"><span>포트폴리오</span></a>
           </li>
           <li>
-            <a href=""><i class="icon icon_circle">기술/경험 버튼</i>기술/경험</a>
+            <a href="#skills" class="icon icon_circle"><span>기술/경험</span></a>
           </li>
           <li>
-            <a href=""><i class="icon icon_circle">프로필 버튼</i>프로필</a>
+            <a href="#profile" class="icon icon_circle"><span>프로필</span></a>
           </li>
         </ul>
       </nav>
     </header>
     <div class="wrap">
       <section id="intro">
-        <img src="img/Mask_group.png" alt="타이틀 이미지" />
-        <p>어서오세요. 아름다운 비눗방울의 추억처럼 기억에 남는 디자인을 코딩으로 기록하는 박시연의 포트폴리오 사이트입니다.</p>
+        <div class="content">
+          <div class="obj"></div>
+          <p>어서오세요. 비눗방울 처럼 부풀어 오르는 아이디어를 코딩으로 기록하는 박시연의 포트폴리오 사이트입니다.</p>
+        </div>
       </section>
       <section id="portfolio">
         <div class="headingArea">
-          <img src="img/Mask_group.png" alt="타이틀 이미지" style="width: 120px" />
           <h3 class="subHeading">포트폴리오<span>portfolio</span></h3>
         </div>
-        <div class="content"></div>
+        <div class="content">
+          <div class="thumb">
+            <!-- modal buttons -->
+          </div>
+          <div id="dialog" class="modal modal-dialog-scrollable">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <!-- modal contents -->
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
       <section id="skills">
         <div class="headingArea">
-          <img src="img/Mask_group.png" alt="타이틀 이미지" style="width: 120px" />
           <h3 class="subHeading">기술&경험<span>skill&experience</span></h3>
         </div>
         <div class="content">
@@ -62,58 +75,104 @@
             <div class="coding">
               <h5 class="subTit">코딩 능력<span>Coding Skills</span></h5>
               <div class="coding_list">
-                <lottie-player src="img/coding.json" speed="1" loop autoplay></lottie-player>
-                <dl class="skill_graph">
-                  <dt>HTML</dt>
-                  <dd>90%</dd>
-                  <dt>CSS</dt>
-                  <dd>90%</dd>
-                  <dt>SCSS</dt>
-                  <dd>90%</dd>
-                  <dt>JavaScript/jQuery</dt>
-                  <dd>90%</dd>
-                </dl>
+                <lottie-player id="codingSvg" src="images/coding.json"></lottie-player>
+
+                <div class="skill_graph">
+                  <dl>
+                    <dt>HTML</dt>
+                    <dd>
+                      <img class="levelBar" data-level="95" src="images/level.svg" alt="level bar" />
+                    </dd>
+                  </dl>
+                  <dl>
+                    <dt>CSS</dt>
+                    <dd>
+                      <img class="" data-level="95" src="images/level.svg" alt="level bar" />
+                      95%
+                    </dd>
+                  </dl>
+                  <dl>
+                    <dt>SCSS</dt>
+                    <dd>
+                      <img class="" data-level="80" src="images/level.svg" alt="level bar" />
+                      80%
+                    </dd>
+                  </dl>
+                  <dl>
+                    <dt>JavaScript / jQuery</dt>
+                    <dd>
+                      <img class="" data-level="70" src="images/level.svg" alt="level bar" />
+                      70%
+                    </dd>
+                  </dl>
+                </div>
               </div>
             </div>
             <div class="design">
               <h5 class="subTit">디자인 능력<span>Design Skills</span></h5>
               <div class="design_list">
-                <lottie-player src="img/design.json" speed="1" loop autoplay></lottie-player>
-                <dl class="skill_graph">
-                  <dt>Adobe Photoshop</dt>
-                  <dd>85%</dd>
-                  <dt>Adobe Illustrator</dt>
-                  <dd>80%</dd>
-                  <dt>Adobe After Effect</dt>
-                  <dd>70%</dd>
-                  <dt>Adobe XD</dt>
-                  <dd>60%</dd>
-                  <dt>Figma</dt>
-                  <dd>80%</dd>
-                </dl>
+                <lottie-player id="designSvg" src="images/design.json" speed="1" loop autoplay></lottie-player>
+                <div class="skill_graph">
+                  <dl>
+                    <dt>Adobe Photoshop</dt>
+                    <dd>
+                      <img class="" data-level="90" src="images/level.svg" alt="level bar" />
+                      95%
+                    </dd>
+                  </dl>
+                  <dl>
+                    <dt>Adobe Illustrator</dt>
+                    <dd>
+                      <img class="" data-level="90" src="images/level.svg" alt="level bar" />
+                      80%
+                    </dd>
+                  </dl>
+                  <dl>
+                    <dt>Adobe After Effect</dt>
+                    <dd>
+                      <img class="" data-level="90" src="images/level.svg" alt="level bar" />
+                      70%
+                    </dd>
+                  </dl>
+                  <dl>
+                    <dt>Adobe XD</dt>
+                    <dd>
+                      <img class="" data-level="60" src="images/level.svg" alt="level bar" />
+                      60%
+                    </dd>
+                  </dl>
+                  <dl>
+                    <dt>Figma</dt>
+                    <dd>
+                      <img class="" data-level="90" src="images/level.svg" alt="level bar" />
+                      80%
+                    </dd>
+                  </dl>
+                </div>
               </div>
             </div>
           </div>
           <div class="experience">
             <h5 class="subTit">경험<span>Experience</span></h5>
-            <div class="experi_list">
-              <img src="img/logos/bootstrap.svg" alt="bootstrap" />
-              <img src="img/logos/github.svg" alt="github" />
-              <img src="img/logos/lottiefile.svg" alt="lottiefile" />
-              <img src="img/logos/threejs.svg" alt="threejs" />
+            <div class="experience_list">
+              <img src="images/logos/bootstrap.svg" alt="bootstrap" />
+              <img src="images/logos/github.svg" alt="github" />
+              <img src="images/logos/lottiefile.svg" alt="lottiefile" />
+              <img src="images/logos/threejs.svg" alt="threejs" />
             </div>
           </div>
         </div>
       </section>
       <section id="profile">
         <div class="headingArea">
-          <img src="img/Mask_group.png" alt="타이틀 이미지" style="width: 120px" />
           <h3 class="subHeading">프로필<span>profile</span></h3>
         </div>
         <div class="content">
           <div class="innerCon">
-            <div class="profile_img"></div>
-            <div>
+            <div class="profile_img">
+              <img src="images/sy.svg" alt="프로필 이미지" />
+            </div>
+            <div class="profile_list">
               <h5>프로필 <span>Profile</span></h5>
               <p class="pointText">박시연</p>
               <p>
@@ -121,16 +180,19 @@
                 봅니다.
               </p>
               <h5>연결 <span>Connect</span></h5>
-              <i class="icon icon_instagram">instagram</i> Instagram <i class="icon icon_blog">blog</i> Blog <i class="icon icon_talk">talk</i> Talk
-              <i class="icon icon_email">email</i> E-Mail : tlduspark@gmail.com
-            </div>
-            <div>
-              <h5>경력 <span>Career</span></h5>
               <ul>
+                <li class="icon icon_instagram"><a href="https://www.instagram.com/siiy_12/" target="_blank">Instagram</a></li>
+                <li class="icon icon_talk">Talk : tus123(kakaoID)</li>
+                <li class="icon icon_email"><a href="mailto:tlduspark@gmail.com">E-Mail : tlduspark@gmail.com</a></li>
+              </ul>
+            </div>
+            <div class="profile_list">
+              <h5>경력 <span>Career</span></h5>
+              <ul class="list">
                 <li>jjjjjj - jjjjj</li>
               </ul>
               <h5>자격 <span>License</span></h5>
-              <ul>
+              <ul class="list">
                 <li>웹디자인 기능사</li>
                 <li>디지털영상편집 1급</li>
               </ul>
@@ -138,50 +200,9 @@
           </div>
         </div>
       </section>
-      <footer>copylight@2022 Si-YeonPark:DeBubble</footer>
-
-      <div class="modal">
-        <div class="modal_wrap">
-          <div class="modal_img">
-            <img src="img/unsplash.png" alt="" />
-          </div>
-          <div class="tags">
-            <span>teg text</span>
-            <span>teg text</span>
-            <span>teg text</span>
-          </div>
-          <div class="modal_head">
-            <h2>modal head<span>모달 제목</span></h2>
-          </div>
-          <div class="modal_content">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Risus risus, donec sit mauris eget pellentesque eget. Est sit mattis in varius nibh.
-              Vestibulum consequat eu neque auctor. Luctus feugiat neque, ac neque, ipsum. Elementum, id risus ut ultricies ac ac duis. Placerat ornare aliquet
-              tempor eget nisl. 둘 이름자를 라이너 그리워 나는 어머니, 말 다하지 까닭이요, 듯합니다. 하나에 이 지나가는 옥 나는 남은 별 듯합니다. 까닭이요,
-              다하지 이름자를 내일 계십니다. 애기 강아지, 못 별 가을 별 이웃 너무나 무성할 있습니다. 시와 노루, 별 멀듯이, 아무 계십니다. 잔디가 아무 별 헤일
-              듯합니다. 때 지나고 이름과, 내린 나는 쉬이 까닭입니다. 아직 하나에 오는 써 이국 별들을 봅니다. 겨울이 자랑처럼 같이 이 하나에 아침이 패, 어머님,
-              이름과, 계십니다.
-            </p>
-          </div>
-          <div class="modal_footer">
-            <a class="paging paging_before">
-              <p><i class="icon icon_arrow_left">Prev icon</i><span class="pointText">Prev</span></p>
-              <div class="pg_thumb">
-                <img src="img/unsplash.png" alt="before page img" />
-              </div>
-              <span>before content title</span>
-            </a>
-            <a class="paging paging_after">
-              <p><i class="icon icon_arrow_right">after icon</i><span class="pointText">After</span></p>
-              <div class="pg_thumb">
-                <img src="img/unsplash.png" alt="after page img" />
-              </div>
-              <span>after content title</span>
-            </a>
-          </div>
-        </div>
-        <a class="close" href=""><i class="icon icon_x">닫기 close</i></a>
-      </div>
+      <footer>copylight@2022 Si-YeonPark</footer>
     </div>
   </body>
+  <script src="js/index.js"></script>
+  <!-- javascript -->
 </html>

@@ -1,0 +1,203 @@
+[
+    {
+        "id": "demo_oa",
+        "filter": [
+            "design",
+            "coding"
+        ],
+        "title": "민주화운동기념사업회 오픈아카이브",
+        "image": "images/pictures/open_Archive_mockup.png",
+        "content": {
+            "period": "2021.07~2022.01",
+            "part": "디자인, 퍼블리싱",
+            "skills": "Adobe XD, HTML, CSS, Javascript/jQuery",
+            "explanation": "민주화운동 관련 사료를 데이터화하여 보존, 관리하는 디지털 아카이브 서비스입니다. 사료를 공개하여 관련 사료를 누구나 쉽게 열람할 수 있도록 리스트형 레이아웃으로 구성하였고, 모바일이나 데스크탑 등 웹페이지에 접속하는 기기에 따라 불편하지 않도록 반응형 퍼블리싱으로 코딩하였습니다."
+        }
+    },
+    {
+        "id": "naArc",
+        "filter": [
+            "design",
+            "coding"
+        ],
+        "title": "국가기록원 일제강제동원명부",
+        "image": "images/pictures/nationalArchive.png",
+        "content": {
+            "period": "2019.07~2020.07",
+            "part": "디자인, 퍼블리싱",
+            "skills": "Adobe Photoshop, HTML, CSS, Javascript/jQuery",
+            "explanation": "yellow"
+        }
+    },
+    {
+        "id": "svg404",
+        "filter": [
+            "design"
+        ],
+        "title": "404 Design",
+        "image": "images/pictures/404.png",
+        "content": {
+            "period": "2019.07~2020.07",
+            "part": "디자인",
+            "skills": "Adobe Illustrator, Adobe AfterEffect",
+            "explanation": "yellow"
+        }
+    },
+    {
+        "id": "work_law",
+        "filter": [
+            "design",
+            "coding"
+        ],
+        "title": "근록복지공단 산재판례",
+        "image": "images/pictures/worker_lawService_mockup.png",
+        "content": {
+            "period": "2019.07~2020.07",
+            "part": "디자인, 퍼블리싱",
+            "skills": "Adobe Photoshop, Adobe Illustrator, HTML, CSS, Javascript/jQuery",
+            "explanation": "yellow"
+        }
+    },
+    {
+        "id": "troupe",
+        "filter": [
+            "coding"
+        ],
+        "title": "국립극단 아카이브",
+        "image": "images/pictures/national_troupe.png",
+        "content": {
+            "period": "2019.07~2020.07",
+            "part": "퍼블리싱, UI지원",
+            "skills": "Adobe Photoshop, HTML, CSS, Javascript/jQuery",
+            "explanation": "yellow"
+        }
+    },
+    {
+        "id": "thumbCss",
+        "filter": [
+            "coding"
+        ],
+        "title": "CSS Grid Thumbnail",
+        "image": "images/pictures/gridThumbnail.png",
+        "content": {
+            "period": "2019.07~2020.07",
+            "part": "전체",
+            "skills": "HTML, CSS",
+            "explanation": "yellow"
+        }
+    },
+    {
+        "id": "sunhang_ci",
+        "filter": [
+            "design"
+        ],
+        "title": "선행건설 로고 디자인",
+        "image": "images/pictures/sunhang_ci.png",
+        "content": {
+            "period": "2019.07~2020.07",
+            "part": "전체",
+            "skills": "HTML, CSS",
+            "explanation": "yellow"
+        }
+    },
+    {
+        "id": "wonil",
+        "filter": [
+            "design"
+        ],
+        "title": "이미지 보정",
+        "image": "images/pictures/img_convert.png",
+        "content": {
+            "period": "2019.07~2020.07",
+            "part": "전체",
+            "skills": "Adobe Photoshop",
+            "explanation": "yellow"
+        }
+    },
+    {
+        "id": "colorAcc",
+        "filter": [
+            "coding"
+        ],
+        "title": "Random Color Accordion",
+        "image": "images/pictures/thumb_colAcc.png",
+        "content": {
+            "period": "2019.07~2020.07",
+            "part": "전체",
+            "skills": "HTML, CSS, Javascript/JQuery",
+            "explanation": "yellow"
+        }
+    },
+    {
+        "id": "cirNav",
+        "filter": [
+            "coding"
+        ],
+        "title": "Circle Animation Navigtion",
+        "image": "images/pictures/thumb_aniNavi.png",
+        "content": {
+            "period": "2019.07~2020.07",
+            "part": "전체",
+            "skills": "HTML, CSS, Javascript/JQuery",
+            "explanation": "yellow"
+        }
+    },
+    {
+        "id": "colPalette",
+        "filter": [
+            "coding"
+        ],
+        "title": "Color palette",
+        "image": "images/pictures/thumb_colPalt.png",
+        "content": {
+            "period": "2019.07~2020.07",
+            "part": "전체",
+            "skills": "HTML, CSS, Javascript/JQuery",
+            "explanation": "yellow"
+        }
+    },
+    {
+        "id": "dm_web",
+        "filter": [
+            "design",
+            "coding"
+        ],
+        "title": "동네로 관리자 웹",
+        "image": "images/pictures/dm_web_mockup.png",
+        "content": {
+            "period": "2019.07~2020.07",
+            "part": "디자인, 퍼블리싱",
+            "skills": "Adobe XD, HTML, CSS, Javascript/JQuery",
+            "explanation": "orenge"
+        }
+    },
+    {
+        "id": "dm_web",
+        "filter": [
+            "design",
+            "coding"
+        ],
+        "title": "국민개발 회사소개 사이트",
+        "image": "images/pictures/kucmin.png",
+        "content": {
+            "period": "2019.07~2020.07",
+            "part": "디자인, 퍼블리싱",
+            "skills": "Adobe Photoshop, HTML, CSS, Javascript/JQuery",
+            "explanation": "orenge"
+        }
+    },
+    {
+        "id": "dm_app",
+        "filter": [
+            "design"
+        ],
+        "title": "동네로 앱",
+        "image": "images/pictures/dm_app_mockup.png",
+        "content": {
+            "period": "2019.07~2020.07",
+            "part": "디자인",
+            "skills": "Adobe XD",
+            "explanation": ""
+        }
+    }
+]

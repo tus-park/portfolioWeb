@@ -1,7 +1,14 @@
+html,
+body,
+* {
+  line-height: normal;
+  box-sizing: border-box;
+}
+
 @mixin font-face($name, $file, $weight: normal, $style: normal) {
   @font-face {
     font-family: '#{$name}';
-    src: url('../font/#{$file}.otf') format('otf'), url('../font/#{$file}.ttf') format('truetype');
+    src: url('../fonts/#{$file}.otf') format('otf'), url('../fonts/#{$file}.ttf') format('truetype');
     font-weight: $weight;
     font-style: $style;
   }
@@ -33,12 +40,33 @@ $headFont: 'nixgon';
   position: absolute;
   left: -999999px;
 }
-
+.hidden {
+  @include hidden;
+}
 @mixin hiddenText {
   font-size: 1px;
   color: white;
   color: transparent;
   text-indent: -999999px;
+  &::before {
+    display: block !important;
+  }
+}
+.hiddenText {
+  @include hiddenText;
+}
+
+@mixin displayText {
+  font-size: inherit !important;
+  color: inherit;
+  text-indent: inherit !important;
+}
+
+@mixin flexDiplay($align: flex-start, $justify: flex-start, $item: center) {
+  display: flex;
+  align-content: $align;
+  justify-content: $justify;
+  align-items: $item;
 }
 
 $baseSize: 10px;
@@ -79,13 +107,15 @@ $icons: arrow_top, arrow_bottom, arrow_left, arrow_right, circle, ellipse, top_f
       &::before {
         display: inline-block;
         content: '#{$name}';
+        color: #fff;
         color: transparent;
         width: $size;
         height: $size;
-        vertical-align: middle;
+        vertical-align: baseline;
         margin-right: $size * 0.3;
+        text-indent: -999999px;
         background: {
-          image: url('../img/icons/#{$name}.svg');
+          image: url('../images/icons/#{$name}.svg');
           size: cover;
         }
       }
@@ -116,7 +146,9 @@ i.icon {
 }
 @for $i from 1 through 6 {
   $size: ($i + 1) * 0.5rem;
+  $subSize: $size * 0.6;
   h#{7-$i} {
+    font-family: $headFont;
     font-size: $size;
     font-weight: normal;
     text-align: center;
@@ -126,29 +158,41 @@ i.icon {
       left: 0;
       right: 0;
     }
+    .subHead {
+      font-size: $subSize;
+      .icon {
+        @include icons($subSize);
+      }
+    }
     .icon {
       @include icons($size);
     }
   }
-}
-#{headings(1,3)} {
-  font-family: $headFont;
-  text-transform: uppercase;
+  h#{4-$i} {
+    text-transform: uppercase;
+  }
+  #{headings(4,6)} {
+    .subHead {
+      font-size: inherit;
+    }
+  }
 }
 // h1~h6 헤딩 태그 스타일
 
 .list {
   li {
     &::before {
-      content: 'o';
-      margin-right: 0.3rem;
+      content: '●';
+      margin-right: 10px;
+      font-size: 0.8rem;
+      color: $mint;
     }
   }
 }
 //리스트 스타일
 
 a {
-  text-decoration: none;
+  text-decoration: none !important;
   color: inherit;
   &:hover,
   &:active,
@@ -218,3 +262,129 @@ button {
 .link {
   @include underbar();
 }
+
+@mixin modalThumbnail($width, $height) {
+  .thumb {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    width: 100%;
+    height: 100%;
+    .modalBtn {
+      display: block;
+      width: $width;
+      height: $height;
+      background: {
+        repeat: no-repeat;
+        size: cover;
+        position: center;
+      }
+      position: relative;
+      &:hover::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(10px);
+      }
+    }
+  }
+}
+// modal open button : thumbnail style End
+.ui-dialog-titlebar {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  .ui-dialog-title {
+    display: none;
+  }
+  button.ui-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(-50%, 50%);
+    border: 0;
+    padding: 0;
+    text-shadow: none;
+    @include flexDiplay(center, center, center);
+    width: 2rem;
+    height: 2rem;
+    background: none;
+    &::before {
+      margin-right: 0;
+    }
+  }
+}
+.ui-dialog {
+  position: fixed;
+  top: 0;
+  left: 0%;
+  height: 100% !important;
+  width: 100%;
+  z-index: 9999;
+  overflow: hidden;
+  background-color: #ffffff80;
+  backdrop-filter: blur(5px);
+}
+.modal {
+  height: 100% !important;
+  padding: 5% 0;
+  &-dialog {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: $gray-light 0 1px 15px;
+    border: {
+      width: 1px;
+      style: solid;
+      top-color: #ffffff99;
+      right-color: #cccccc99;
+      bottom-color: #cccccc99;
+      left-color: #ffffff99;
+    }
+  }
+  &-content {
+    width: calc(100% + 15px);
+    height: 100%;
+    overflow-y: auto !important;
+    border: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    position: relative;
+  }
+  // &-image {
+  //   overflow: hidden;
+  // }
+  // &-body {
+  //   padding: 5%;
+  // }
+  // img {
+  //   width: 100%;
+  // }
+}
+
+// .ui-dialog-titlebar {
+//   width: 80%;
+//   margin: 0 auto;
+//   text-align: right;
+//   button.ui-button {
+//     // position: absolute;
+//     // top: -10px;
+//     // right: 10px;
+//     // transform: translate(0, -100%);
+//     // background-color: none;
+//     border: 0;
+//     padding: 0;
+//     cursor: pointer;
+//     text-shadow: none;
+//     @include flexDiplay(center, center, center);
+//     width: 2rem;
+//     height: 2rem;
+//     &::before {
+//       margin: 0;
+//     }
+//   }
+// }

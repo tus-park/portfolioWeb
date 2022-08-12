@@ -1,31 +1,4553 @@
-@charset "utf-8";
+@charset "UTF-8";
+html,
+body,
+* {
+  line-height: normal;
+  box-sizing: border-box;
+}
 
 @font-face {
-    font-family: 'NIXGONL-Vb';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONL-Vb.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "spoqa-sans";
+  src: url("../fonts/SpoqaHanSansNeo-Medium.otf") format("otf"), url("../fonts/SpoqaHanSansNeo-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
-/* 한글 타이틀 폰트 */
-@import url('https://fonts.googleapis.com/css2?family=Megrim&display=swap');
-/* 영문 타이틀 폰트 */
 @font-face {
-    font-family: 'SpoqaHanSansNeo-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "nixgon";
+  src: url("../fonts/NIXGONFONTS_L_2.0.otf") format("otf"), url("../fonts/NIXGONFONTS_L_2.0.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
-/* 기본 폰트 */
-/* font-family */
+.point {
+  font-weight: bold;
+}
 
-html,body{margin: 0; padding:0;font-size: 18px; } 
-*{font-family: 'SpoqaHanSansNeo-Regular',sans-serif; font-size: 100%;}
-p,span,a,li{font-family: inherit; font-size: inherit; color:inherit;}
-a{font-style: none; text-decoration: none;}
-ul,ol,li{list-style: none;}
-/* reset */
+.hidden {
+  display: none;
+  opacity: 0;
+  position: absolute;
+  left: -999999px;
+}
 
-.titleText{font-family: 'Megrim','NIXGONL-Vb',sans-serif;}
+.hiddenText {
+  font-size: 1px;
+  color: white;
+  color: transparent;
+  text-indent: -999999px;
+}
+.hiddenText::before {
+  display: block !important;
+}
 
+.icon {
+  font-size: 1rem;
+}
+.icon.icon_arrow_top::before {
+  display: inline-block;
+  content: "arrow_top";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_top.svg");
+  background-size: cover;
+}
+.icon.icon_arrow_bottom::before {
+  display: inline-block;
+  content: "arrow_bottom";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_bottom.svg");
+  background-size: cover;
+}
+.icon.icon_arrow_left::before {
+  display: inline-block;
+  content: "arrow_left";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_left.svg");
+  background-size: cover;
+}
+.icon.icon_arrow_right::before {
+  display: inline-block;
+  content: "arrow_right";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_right.svg");
+  background-size: cover;
+}
+.icon.icon_circle::before {
+  display: inline-block;
+  content: "circle";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/circle.svg");
+  background-size: cover;
+}
+.icon.icon_ellipse::before {
+  display: inline-block;
+  content: "ellipse";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/ellipse.svg");
+  background-size: cover;
+}
+.icon.icon_top_fill::before {
+  display: inline-block;
+  content: "top_fill";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/top_fill.svg");
+  background-size: cover;
+}
+.icon.icon_top_line::before {
+  display: inline-block;
+  content: "top_line";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/top_line.svg");
+  background-size: cover;
+}
+.icon.icon_x::before {
+  display: inline-block;
+  content: "x";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/x.svg");
+  background-size: cover;
+}
+.icon.icon_blog::before {
+  display: inline-block;
+  content: "blog";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/blog.svg");
+  background-size: cover;
+}
+.icon.icon_email::before {
+  display: inline-block;
+  content: "email";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/email.svg");
+  background-size: cover;
+}
+.icon.icon_instagram::before {
+  display: inline-block;
+  content: "instagram";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/instagram.svg");
+  background-size: cover;
+}
+.icon.icon_talk::before {
+  display: inline-block;
+  content: "talk";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/talk.svg");
+  background-size: cover;
+}
+.icon.icon_twitter::before {
+  display: inline-block;
+  content: "twitter";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/twitter.svg");
+  background-size: cover;
+}
+.icon.icon_location::before {
+  display: inline-block;
+  content: "location";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/location.svg");
+  background-size: cover;
+}
+.icon.icon_star::before {
+  display: inline-block;
+  content: "star";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/star.svg");
+  background-size: cover;
+}
+.icon.icon_user::before {
+  display: inline-block;
+  content: "user";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/user.svg");
+  background-size: cover;
+}
+.icon.icon_birth::before {
+  display: inline-block;
+  content: "birth";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/birth.svg");
+  background-size: cover;
+}
+.icon.icon_file::before {
+  display: inline-block;
+  content: "file";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/file.svg");
+  background-size: cover;
+}
+.icon.icon_menu::before {
+  display: inline-block;
+  content: "menu";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/menu.svg");
+  background-size: cover;
+}
+.icon.icon_plus::before {
+  display: inline-block;
+  content: "plus";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/plus.svg");
+  background-size: cover;
+}
 
-/* style */
+i.icon {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+  font-size: 1rem;
+  font-size: 1px;
+  color: white;
+  color: transparent;
+  text-indent: -999999px;
+}
+i.icon.icon_arrow_top::before {
+  display: inline-block;
+  content: "arrow_top";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_top.svg");
+  background-size: cover;
+}
+i.icon.icon_arrow_bottom::before {
+  display: inline-block;
+  content: "arrow_bottom";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_bottom.svg");
+  background-size: cover;
+}
+i.icon.icon_arrow_left::before {
+  display: inline-block;
+  content: "arrow_left";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_left.svg");
+  background-size: cover;
+}
+i.icon.icon_arrow_right::before {
+  display: inline-block;
+  content: "arrow_right";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_right.svg");
+  background-size: cover;
+}
+i.icon.icon_circle::before {
+  display: inline-block;
+  content: "circle";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/circle.svg");
+  background-size: cover;
+}
+i.icon.icon_ellipse::before {
+  display: inline-block;
+  content: "ellipse";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/ellipse.svg");
+  background-size: cover;
+}
+i.icon.icon_top_fill::before {
+  display: inline-block;
+  content: "top_fill";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/top_fill.svg");
+  background-size: cover;
+}
+i.icon.icon_top_line::before {
+  display: inline-block;
+  content: "top_line";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/top_line.svg");
+  background-size: cover;
+}
+i.icon.icon_x::before {
+  display: inline-block;
+  content: "x";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/x.svg");
+  background-size: cover;
+}
+i.icon.icon_blog::before {
+  display: inline-block;
+  content: "blog";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/blog.svg");
+  background-size: cover;
+}
+i.icon.icon_email::before {
+  display: inline-block;
+  content: "email";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/email.svg");
+  background-size: cover;
+}
+i.icon.icon_instagram::before {
+  display: inline-block;
+  content: "instagram";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/instagram.svg");
+  background-size: cover;
+}
+i.icon.icon_talk::before {
+  display: inline-block;
+  content: "talk";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/talk.svg");
+  background-size: cover;
+}
+i.icon.icon_twitter::before {
+  display: inline-block;
+  content: "twitter";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/twitter.svg");
+  background-size: cover;
+}
+i.icon.icon_location::before {
+  display: inline-block;
+  content: "location";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/location.svg");
+  background-size: cover;
+}
+i.icon.icon_star::before {
+  display: inline-block;
+  content: "star";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/star.svg");
+  background-size: cover;
+}
+i.icon.icon_user::before {
+  display: inline-block;
+  content: "user";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/user.svg");
+  background-size: cover;
+}
+i.icon.icon_birth::before {
+  display: inline-block;
+  content: "birth";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/birth.svg");
+  background-size: cover;
+}
+i.icon.icon_file::before {
+  display: inline-block;
+  content: "file";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/file.svg");
+  background-size: cover;
+}
+i.icon.icon_menu::before {
+  display: inline-block;
+  content: "menu";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/menu.svg");
+  background-size: cover;
+}
+i.icon.icon_plus::before {
+  display: inline-block;
+  content: "plus";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/plus.svg");
+  background-size: cover;
+}
+i.icon::before {
+  display: block !important;
+}
+i.icon::before {
+  display: block !important;
+  float: left;
+}
+
+h6 {
+  font-family: "nixgon";
+  font-size: 1rem;
+  font-weight: normal;
+  text-align: center;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+  margin-left: 0;
+  margin-right: 0;
+}
+h6 .subHead {
+  font-size: 0.6rem;
+}
+h6 .subHead .icon {
+  font-size: 0.6rem;
+}
+h6 .subHead .icon.icon_arrow_top::before {
+  display: inline-block;
+  content: "arrow_top";
+  color: #fff;
+  color: transparent;
+  width: 0.6rem;
+  height: 0.6rem;
+  vertical-align: baseline;
+  margin-right: 0.18rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_top.svg");
+  background-size: cover;
+}
+h6 .subHead .icon.icon_arrow_bottom::before {
+  display: inline-block;
+  content: "arrow_bottom";
+  color: #fff;
+  color: transparent;
+  width: 0.6rem;
+  height: 0.6rem;
+  vertical-align: baseline;
+  margin-right: 0.18rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_bottom.svg");
+  background-size: cover;
+}
+h6 .subHead .icon.icon_arrow_left::before {
+  display: inline-block;
+  content: "arrow_left";
+  color: #fff;
+  color: transparent;
+  width: 0.6rem;
+  height: 0.6rem;
+  vertical-align: baseline;
+  margin-right: 0.18rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_left.svg");
+  background-size: cover;
+}
+h6 .subHead .icon.icon_arrow_right::before {
+  display: inline-block;
+  content: "arrow_right";
+  color: #fff;
+  color: transparent;
+  width: 0.6rem;
+  height: 0.6rem;
+  vertical-align: baseline;
+  margin-right: 0.18rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_right.svg");
+  background-size: cover;
+}
+h6 .subHead .icon.icon_circle::before {
+  display: inline-block;
+  content: "circle";
+  color: #fff;
+  color: transparent;
+  width: 0.6rem;
+  height: 0.6rem;
+  vertical-align: baseline;
+  margin-right: 0.18rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/circle.svg");
+  background-size: cover;
+}
+h6 .subHead .icon.icon_ellipse::before {
+  display: inline-block;
+  content: "ellipse";
+  color: #fff;
+  color: transparent;
+  width: 0.6rem;
+  height: 0.6rem;
+  vertical-align: baseline;
+  margin-right: 0.18rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/ellipse.svg");
+  background-size: cover;
+}
+h6 .subHead .icon.icon_top_fill::before {
+  display: inline-block;
+  content: "top_fill";
+  color: #fff;
+  color: transparent;
+  width: 0.6rem;
+  height: 0.6rem;
+  vertical-align: baseline;
+  margin-right: 0.18rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/top_fill.svg");
+  background-size: cover;
+}
+h6 .subHead .icon.icon_top_line::before {
+  display: inline-block;
+  content: "top_line";
+  color: #fff;
+  color: transparent;
+  width: 0.6rem;
+  height: 0.6rem;
+  vertical-align: baseline;
+  margin-right: 0.18rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/top_line.svg");
+  background-size: cover;
+}
+h6 .subHead .icon.icon_x::before {
+  display: inline-block;
+  content: "x";
+  color: #fff;
+  color: transparent;
+  width: 0.6rem;
+  height: 0.6rem;
+  vertical-align: baseline;
+  margin-right: 0.18rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/x.svg");
+  background-size: cover;
+}
+h6 .subHead .icon.icon_blog::before {
+  display: inline-block;
+  content: "blog";
+  color: #fff;
+  color: transparent;
+  width: 0.6rem;
+  height: 0.6rem;
+  vertical-align: baseline;
+  margin-right: 0.18rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/blog.svg");
+  background-size: cover;
+}
+h6 .subHead .icon.icon_email::before {
+  display: inline-block;
+  content: "email";
+  color: #fff;
+  color: transparent;
+  width: 0.6rem;
+  height: 0.6rem;
+  vertical-align: baseline;
+  margin-right: 0.18rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/email.svg");
+  background-size: cover;
+}
+h6 .subHead .icon.icon_instagram::before {
+  display: inline-block;
+  content: "instagram";
+  color: #fff;
+  color: transparent;
+  width: 0.6rem;
+  height: 0.6rem;
+  vertical-align: baseline;
+  margin-right: 0.18rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/instagram.svg");
+  background-size: cover;
+}
+h6 .subHead .icon.icon_talk::before {
+  display: inline-block;
+  content: "talk";
+  color: #fff;
+  color: transparent;
+  width: 0.6rem;
+  height: 0.6rem;
+  vertical-align: baseline;
+  margin-right: 0.18rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/talk.svg");
+  background-size: cover;
+}
+h6 .subHead .icon.icon_twitter::before {
+  display: inline-block;
+  content: "twitter";
+  color: #fff;
+  color: transparent;
+  width: 0.6rem;
+  height: 0.6rem;
+  vertical-align: baseline;
+  margin-right: 0.18rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/twitter.svg");
+  background-size: cover;
+}
+h6 .subHead .icon.icon_location::before {
+  display: inline-block;
+  content: "location";
+  color: #fff;
+  color: transparent;
+  width: 0.6rem;
+  height: 0.6rem;
+  vertical-align: baseline;
+  margin-right: 0.18rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/location.svg");
+  background-size: cover;
+}
+h6 .subHead .icon.icon_star::before {
+  display: inline-block;
+  content: "star";
+  color: #fff;
+  color: transparent;
+  width: 0.6rem;
+  height: 0.6rem;
+  vertical-align: baseline;
+  margin-right: 0.18rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/star.svg");
+  background-size: cover;
+}
+h6 .subHead .icon.icon_user::before {
+  display: inline-block;
+  content: "user";
+  color: #fff;
+  color: transparent;
+  width: 0.6rem;
+  height: 0.6rem;
+  vertical-align: baseline;
+  margin-right: 0.18rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/user.svg");
+  background-size: cover;
+}
+h6 .subHead .icon.icon_birth::before {
+  display: inline-block;
+  content: "birth";
+  color: #fff;
+  color: transparent;
+  width: 0.6rem;
+  height: 0.6rem;
+  vertical-align: baseline;
+  margin-right: 0.18rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/birth.svg");
+  background-size: cover;
+}
+h6 .subHead .icon.icon_file::before {
+  display: inline-block;
+  content: "file";
+  color: #fff;
+  color: transparent;
+  width: 0.6rem;
+  height: 0.6rem;
+  vertical-align: baseline;
+  margin-right: 0.18rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/file.svg");
+  background-size: cover;
+}
+h6 .subHead .icon.icon_menu::before {
+  display: inline-block;
+  content: "menu";
+  color: #fff;
+  color: transparent;
+  width: 0.6rem;
+  height: 0.6rem;
+  vertical-align: baseline;
+  margin-right: 0.18rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/menu.svg");
+  background-size: cover;
+}
+h6 .subHead .icon.icon_plus::before {
+  display: inline-block;
+  content: "plus";
+  color: #fff;
+  color: transparent;
+  width: 0.6rem;
+  height: 0.6rem;
+  vertical-align: baseline;
+  margin-right: 0.18rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/plus.svg");
+  background-size: cover;
+}
+h6 .icon {
+  font-size: 1rem;
+}
+h6 .icon.icon_arrow_top::before {
+  display: inline-block;
+  content: "arrow_top";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_top.svg");
+  background-size: cover;
+}
+h6 .icon.icon_arrow_bottom::before {
+  display: inline-block;
+  content: "arrow_bottom";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_bottom.svg");
+  background-size: cover;
+}
+h6 .icon.icon_arrow_left::before {
+  display: inline-block;
+  content: "arrow_left";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_left.svg");
+  background-size: cover;
+}
+h6 .icon.icon_arrow_right::before {
+  display: inline-block;
+  content: "arrow_right";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_right.svg");
+  background-size: cover;
+}
+h6 .icon.icon_circle::before {
+  display: inline-block;
+  content: "circle";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/circle.svg");
+  background-size: cover;
+}
+h6 .icon.icon_ellipse::before {
+  display: inline-block;
+  content: "ellipse";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/ellipse.svg");
+  background-size: cover;
+}
+h6 .icon.icon_top_fill::before {
+  display: inline-block;
+  content: "top_fill";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/top_fill.svg");
+  background-size: cover;
+}
+h6 .icon.icon_top_line::before {
+  display: inline-block;
+  content: "top_line";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/top_line.svg");
+  background-size: cover;
+}
+h6 .icon.icon_x::before {
+  display: inline-block;
+  content: "x";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/x.svg");
+  background-size: cover;
+}
+h6 .icon.icon_blog::before {
+  display: inline-block;
+  content: "blog";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/blog.svg");
+  background-size: cover;
+}
+h6 .icon.icon_email::before {
+  display: inline-block;
+  content: "email";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/email.svg");
+  background-size: cover;
+}
+h6 .icon.icon_instagram::before {
+  display: inline-block;
+  content: "instagram";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/instagram.svg");
+  background-size: cover;
+}
+h6 .icon.icon_talk::before {
+  display: inline-block;
+  content: "talk";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/talk.svg");
+  background-size: cover;
+}
+h6 .icon.icon_twitter::before {
+  display: inline-block;
+  content: "twitter";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/twitter.svg");
+  background-size: cover;
+}
+h6 .icon.icon_location::before {
+  display: inline-block;
+  content: "location";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/location.svg");
+  background-size: cover;
+}
+h6 .icon.icon_star::before {
+  display: inline-block;
+  content: "star";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/star.svg");
+  background-size: cover;
+}
+h6 .icon.icon_user::before {
+  display: inline-block;
+  content: "user";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/user.svg");
+  background-size: cover;
+}
+h6 .icon.icon_birth::before {
+  display: inline-block;
+  content: "birth";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/birth.svg");
+  background-size: cover;
+}
+h6 .icon.icon_file::before {
+  display: inline-block;
+  content: "file";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/file.svg");
+  background-size: cover;
+}
+h6 .icon.icon_menu::before {
+  display: inline-block;
+  content: "menu";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/menu.svg");
+  background-size: cover;
+}
+h6 .icon.icon_plus::before {
+  display: inline-block;
+  content: "plus";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/plus.svg");
+  background-size: cover;
+}
+
+h3 {
+  text-transform: uppercase;
+}
+
+h4 .subHead, h5 .subHead, h6 .subHead {
+  font-size: inherit;
+}
+
+h5 {
+  font-family: "nixgon";
+  font-size: 1.5rem;
+  font-weight: normal;
+  text-align: center;
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
+  margin-left: 0;
+  margin-right: 0;
+}
+h5 .subHead {
+  font-size: 0.9rem;
+}
+h5 .subHead .icon {
+  font-size: 0.9rem;
+}
+h5 .subHead .icon.icon_arrow_top::before {
+  display: inline-block;
+  content: "arrow_top";
+  color: #fff;
+  color: transparent;
+  width: 0.9rem;
+  height: 0.9rem;
+  vertical-align: baseline;
+  margin-right: 0.27rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_top.svg");
+  background-size: cover;
+}
+h5 .subHead .icon.icon_arrow_bottom::before {
+  display: inline-block;
+  content: "arrow_bottom";
+  color: #fff;
+  color: transparent;
+  width: 0.9rem;
+  height: 0.9rem;
+  vertical-align: baseline;
+  margin-right: 0.27rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_bottom.svg");
+  background-size: cover;
+}
+h5 .subHead .icon.icon_arrow_left::before {
+  display: inline-block;
+  content: "arrow_left";
+  color: #fff;
+  color: transparent;
+  width: 0.9rem;
+  height: 0.9rem;
+  vertical-align: baseline;
+  margin-right: 0.27rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_left.svg");
+  background-size: cover;
+}
+h5 .subHead .icon.icon_arrow_right::before {
+  display: inline-block;
+  content: "arrow_right";
+  color: #fff;
+  color: transparent;
+  width: 0.9rem;
+  height: 0.9rem;
+  vertical-align: baseline;
+  margin-right: 0.27rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_right.svg");
+  background-size: cover;
+}
+h5 .subHead .icon.icon_circle::before {
+  display: inline-block;
+  content: "circle";
+  color: #fff;
+  color: transparent;
+  width: 0.9rem;
+  height: 0.9rem;
+  vertical-align: baseline;
+  margin-right: 0.27rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/circle.svg");
+  background-size: cover;
+}
+h5 .subHead .icon.icon_ellipse::before {
+  display: inline-block;
+  content: "ellipse";
+  color: #fff;
+  color: transparent;
+  width: 0.9rem;
+  height: 0.9rem;
+  vertical-align: baseline;
+  margin-right: 0.27rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/ellipse.svg");
+  background-size: cover;
+}
+h5 .subHead .icon.icon_top_fill::before {
+  display: inline-block;
+  content: "top_fill";
+  color: #fff;
+  color: transparent;
+  width: 0.9rem;
+  height: 0.9rem;
+  vertical-align: baseline;
+  margin-right: 0.27rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/top_fill.svg");
+  background-size: cover;
+}
+h5 .subHead .icon.icon_top_line::before {
+  display: inline-block;
+  content: "top_line";
+  color: #fff;
+  color: transparent;
+  width: 0.9rem;
+  height: 0.9rem;
+  vertical-align: baseline;
+  margin-right: 0.27rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/top_line.svg");
+  background-size: cover;
+}
+h5 .subHead .icon.icon_x::before {
+  display: inline-block;
+  content: "x";
+  color: #fff;
+  color: transparent;
+  width: 0.9rem;
+  height: 0.9rem;
+  vertical-align: baseline;
+  margin-right: 0.27rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/x.svg");
+  background-size: cover;
+}
+h5 .subHead .icon.icon_blog::before {
+  display: inline-block;
+  content: "blog";
+  color: #fff;
+  color: transparent;
+  width: 0.9rem;
+  height: 0.9rem;
+  vertical-align: baseline;
+  margin-right: 0.27rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/blog.svg");
+  background-size: cover;
+}
+h5 .subHead .icon.icon_email::before {
+  display: inline-block;
+  content: "email";
+  color: #fff;
+  color: transparent;
+  width: 0.9rem;
+  height: 0.9rem;
+  vertical-align: baseline;
+  margin-right: 0.27rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/email.svg");
+  background-size: cover;
+}
+h5 .subHead .icon.icon_instagram::before {
+  display: inline-block;
+  content: "instagram";
+  color: #fff;
+  color: transparent;
+  width: 0.9rem;
+  height: 0.9rem;
+  vertical-align: baseline;
+  margin-right: 0.27rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/instagram.svg");
+  background-size: cover;
+}
+h5 .subHead .icon.icon_talk::before {
+  display: inline-block;
+  content: "talk";
+  color: #fff;
+  color: transparent;
+  width: 0.9rem;
+  height: 0.9rem;
+  vertical-align: baseline;
+  margin-right: 0.27rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/talk.svg");
+  background-size: cover;
+}
+h5 .subHead .icon.icon_twitter::before {
+  display: inline-block;
+  content: "twitter";
+  color: #fff;
+  color: transparent;
+  width: 0.9rem;
+  height: 0.9rem;
+  vertical-align: baseline;
+  margin-right: 0.27rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/twitter.svg");
+  background-size: cover;
+}
+h5 .subHead .icon.icon_location::before {
+  display: inline-block;
+  content: "location";
+  color: #fff;
+  color: transparent;
+  width: 0.9rem;
+  height: 0.9rem;
+  vertical-align: baseline;
+  margin-right: 0.27rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/location.svg");
+  background-size: cover;
+}
+h5 .subHead .icon.icon_star::before {
+  display: inline-block;
+  content: "star";
+  color: #fff;
+  color: transparent;
+  width: 0.9rem;
+  height: 0.9rem;
+  vertical-align: baseline;
+  margin-right: 0.27rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/star.svg");
+  background-size: cover;
+}
+h5 .subHead .icon.icon_user::before {
+  display: inline-block;
+  content: "user";
+  color: #fff;
+  color: transparent;
+  width: 0.9rem;
+  height: 0.9rem;
+  vertical-align: baseline;
+  margin-right: 0.27rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/user.svg");
+  background-size: cover;
+}
+h5 .subHead .icon.icon_birth::before {
+  display: inline-block;
+  content: "birth";
+  color: #fff;
+  color: transparent;
+  width: 0.9rem;
+  height: 0.9rem;
+  vertical-align: baseline;
+  margin-right: 0.27rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/birth.svg");
+  background-size: cover;
+}
+h5 .subHead .icon.icon_file::before {
+  display: inline-block;
+  content: "file";
+  color: #fff;
+  color: transparent;
+  width: 0.9rem;
+  height: 0.9rem;
+  vertical-align: baseline;
+  margin-right: 0.27rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/file.svg");
+  background-size: cover;
+}
+h5 .subHead .icon.icon_menu::before {
+  display: inline-block;
+  content: "menu";
+  color: #fff;
+  color: transparent;
+  width: 0.9rem;
+  height: 0.9rem;
+  vertical-align: baseline;
+  margin-right: 0.27rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/menu.svg");
+  background-size: cover;
+}
+h5 .subHead .icon.icon_plus::before {
+  display: inline-block;
+  content: "plus";
+  color: #fff;
+  color: transparent;
+  width: 0.9rem;
+  height: 0.9rem;
+  vertical-align: baseline;
+  margin-right: 0.27rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/plus.svg");
+  background-size: cover;
+}
+h5 .icon {
+  font-size: 1.5rem;
+}
+h5 .icon.icon_arrow_top::before {
+  display: inline-block;
+  content: "arrow_top";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_top.svg");
+  background-size: cover;
+}
+h5 .icon.icon_arrow_bottom::before {
+  display: inline-block;
+  content: "arrow_bottom";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_bottom.svg");
+  background-size: cover;
+}
+h5 .icon.icon_arrow_left::before {
+  display: inline-block;
+  content: "arrow_left";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_left.svg");
+  background-size: cover;
+}
+h5 .icon.icon_arrow_right::before {
+  display: inline-block;
+  content: "arrow_right";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_right.svg");
+  background-size: cover;
+}
+h5 .icon.icon_circle::before {
+  display: inline-block;
+  content: "circle";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/circle.svg");
+  background-size: cover;
+}
+h5 .icon.icon_ellipse::before {
+  display: inline-block;
+  content: "ellipse";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/ellipse.svg");
+  background-size: cover;
+}
+h5 .icon.icon_top_fill::before {
+  display: inline-block;
+  content: "top_fill";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/top_fill.svg");
+  background-size: cover;
+}
+h5 .icon.icon_top_line::before {
+  display: inline-block;
+  content: "top_line";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/top_line.svg");
+  background-size: cover;
+}
+h5 .icon.icon_x::before {
+  display: inline-block;
+  content: "x";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/x.svg");
+  background-size: cover;
+}
+h5 .icon.icon_blog::before {
+  display: inline-block;
+  content: "blog";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/blog.svg");
+  background-size: cover;
+}
+h5 .icon.icon_email::before {
+  display: inline-block;
+  content: "email";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/email.svg");
+  background-size: cover;
+}
+h5 .icon.icon_instagram::before {
+  display: inline-block;
+  content: "instagram";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/instagram.svg");
+  background-size: cover;
+}
+h5 .icon.icon_talk::before {
+  display: inline-block;
+  content: "talk";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/talk.svg");
+  background-size: cover;
+}
+h5 .icon.icon_twitter::before {
+  display: inline-block;
+  content: "twitter";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/twitter.svg");
+  background-size: cover;
+}
+h5 .icon.icon_location::before {
+  display: inline-block;
+  content: "location";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/location.svg");
+  background-size: cover;
+}
+h5 .icon.icon_star::before {
+  display: inline-block;
+  content: "star";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/star.svg");
+  background-size: cover;
+}
+h5 .icon.icon_user::before {
+  display: inline-block;
+  content: "user";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/user.svg");
+  background-size: cover;
+}
+h5 .icon.icon_birth::before {
+  display: inline-block;
+  content: "birth";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/birth.svg");
+  background-size: cover;
+}
+h5 .icon.icon_file::before {
+  display: inline-block;
+  content: "file";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/file.svg");
+  background-size: cover;
+}
+h5 .icon.icon_menu::before {
+  display: inline-block;
+  content: "menu";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/menu.svg");
+  background-size: cover;
+}
+h5 .icon.icon_plus::before {
+  display: inline-block;
+  content: "plus";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/plus.svg");
+  background-size: cover;
+}
+
+h2 {
+  text-transform: uppercase;
+}
+
+h4 .subHead, h5 .subHead, h6 .subHead {
+  font-size: inherit;
+}
+
+h4 {
+  font-family: "nixgon";
+  font-size: 2rem;
+  font-weight: normal;
+  text-align: center;
+  margin-top: 1.6rem;
+  margin-bottom: 1.6rem;
+  margin-left: 0;
+  margin-right: 0;
+}
+h4 .subHead {
+  font-size: 1.2rem;
+}
+h4 .subHead .icon {
+  font-size: 1.2rem;
+}
+h4 .subHead .icon.icon_arrow_top::before {
+  display: inline-block;
+  content: "arrow_top";
+  color: #fff;
+  color: transparent;
+  width: 1.2rem;
+  height: 1.2rem;
+  vertical-align: baseline;
+  margin-right: 0.36rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_top.svg");
+  background-size: cover;
+}
+h4 .subHead .icon.icon_arrow_bottom::before {
+  display: inline-block;
+  content: "arrow_bottom";
+  color: #fff;
+  color: transparent;
+  width: 1.2rem;
+  height: 1.2rem;
+  vertical-align: baseline;
+  margin-right: 0.36rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_bottom.svg");
+  background-size: cover;
+}
+h4 .subHead .icon.icon_arrow_left::before {
+  display: inline-block;
+  content: "arrow_left";
+  color: #fff;
+  color: transparent;
+  width: 1.2rem;
+  height: 1.2rem;
+  vertical-align: baseline;
+  margin-right: 0.36rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_left.svg");
+  background-size: cover;
+}
+h4 .subHead .icon.icon_arrow_right::before {
+  display: inline-block;
+  content: "arrow_right";
+  color: #fff;
+  color: transparent;
+  width: 1.2rem;
+  height: 1.2rem;
+  vertical-align: baseline;
+  margin-right: 0.36rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_right.svg");
+  background-size: cover;
+}
+h4 .subHead .icon.icon_circle::before {
+  display: inline-block;
+  content: "circle";
+  color: #fff;
+  color: transparent;
+  width: 1.2rem;
+  height: 1.2rem;
+  vertical-align: baseline;
+  margin-right: 0.36rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/circle.svg");
+  background-size: cover;
+}
+h4 .subHead .icon.icon_ellipse::before {
+  display: inline-block;
+  content: "ellipse";
+  color: #fff;
+  color: transparent;
+  width: 1.2rem;
+  height: 1.2rem;
+  vertical-align: baseline;
+  margin-right: 0.36rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/ellipse.svg");
+  background-size: cover;
+}
+h4 .subHead .icon.icon_top_fill::before {
+  display: inline-block;
+  content: "top_fill";
+  color: #fff;
+  color: transparent;
+  width: 1.2rem;
+  height: 1.2rem;
+  vertical-align: baseline;
+  margin-right: 0.36rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/top_fill.svg");
+  background-size: cover;
+}
+h4 .subHead .icon.icon_top_line::before {
+  display: inline-block;
+  content: "top_line";
+  color: #fff;
+  color: transparent;
+  width: 1.2rem;
+  height: 1.2rem;
+  vertical-align: baseline;
+  margin-right: 0.36rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/top_line.svg");
+  background-size: cover;
+}
+h4 .subHead .icon.icon_x::before {
+  display: inline-block;
+  content: "x";
+  color: #fff;
+  color: transparent;
+  width: 1.2rem;
+  height: 1.2rem;
+  vertical-align: baseline;
+  margin-right: 0.36rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/x.svg");
+  background-size: cover;
+}
+h4 .subHead .icon.icon_blog::before {
+  display: inline-block;
+  content: "blog";
+  color: #fff;
+  color: transparent;
+  width: 1.2rem;
+  height: 1.2rem;
+  vertical-align: baseline;
+  margin-right: 0.36rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/blog.svg");
+  background-size: cover;
+}
+h4 .subHead .icon.icon_email::before {
+  display: inline-block;
+  content: "email";
+  color: #fff;
+  color: transparent;
+  width: 1.2rem;
+  height: 1.2rem;
+  vertical-align: baseline;
+  margin-right: 0.36rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/email.svg");
+  background-size: cover;
+}
+h4 .subHead .icon.icon_instagram::before {
+  display: inline-block;
+  content: "instagram";
+  color: #fff;
+  color: transparent;
+  width: 1.2rem;
+  height: 1.2rem;
+  vertical-align: baseline;
+  margin-right: 0.36rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/instagram.svg");
+  background-size: cover;
+}
+h4 .subHead .icon.icon_talk::before {
+  display: inline-block;
+  content: "talk";
+  color: #fff;
+  color: transparent;
+  width: 1.2rem;
+  height: 1.2rem;
+  vertical-align: baseline;
+  margin-right: 0.36rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/talk.svg");
+  background-size: cover;
+}
+h4 .subHead .icon.icon_twitter::before {
+  display: inline-block;
+  content: "twitter";
+  color: #fff;
+  color: transparent;
+  width: 1.2rem;
+  height: 1.2rem;
+  vertical-align: baseline;
+  margin-right: 0.36rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/twitter.svg");
+  background-size: cover;
+}
+h4 .subHead .icon.icon_location::before {
+  display: inline-block;
+  content: "location";
+  color: #fff;
+  color: transparent;
+  width: 1.2rem;
+  height: 1.2rem;
+  vertical-align: baseline;
+  margin-right: 0.36rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/location.svg");
+  background-size: cover;
+}
+h4 .subHead .icon.icon_star::before {
+  display: inline-block;
+  content: "star";
+  color: #fff;
+  color: transparent;
+  width: 1.2rem;
+  height: 1.2rem;
+  vertical-align: baseline;
+  margin-right: 0.36rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/star.svg");
+  background-size: cover;
+}
+h4 .subHead .icon.icon_user::before {
+  display: inline-block;
+  content: "user";
+  color: #fff;
+  color: transparent;
+  width: 1.2rem;
+  height: 1.2rem;
+  vertical-align: baseline;
+  margin-right: 0.36rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/user.svg");
+  background-size: cover;
+}
+h4 .subHead .icon.icon_birth::before {
+  display: inline-block;
+  content: "birth";
+  color: #fff;
+  color: transparent;
+  width: 1.2rem;
+  height: 1.2rem;
+  vertical-align: baseline;
+  margin-right: 0.36rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/birth.svg");
+  background-size: cover;
+}
+h4 .subHead .icon.icon_file::before {
+  display: inline-block;
+  content: "file";
+  color: #fff;
+  color: transparent;
+  width: 1.2rem;
+  height: 1.2rem;
+  vertical-align: baseline;
+  margin-right: 0.36rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/file.svg");
+  background-size: cover;
+}
+h4 .subHead .icon.icon_menu::before {
+  display: inline-block;
+  content: "menu";
+  color: #fff;
+  color: transparent;
+  width: 1.2rem;
+  height: 1.2rem;
+  vertical-align: baseline;
+  margin-right: 0.36rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/menu.svg");
+  background-size: cover;
+}
+h4 .subHead .icon.icon_plus::before {
+  display: inline-block;
+  content: "plus";
+  color: #fff;
+  color: transparent;
+  width: 1.2rem;
+  height: 1.2rem;
+  vertical-align: baseline;
+  margin-right: 0.36rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/plus.svg");
+  background-size: cover;
+}
+h4 .icon {
+  font-size: 2rem;
+}
+h4 .icon.icon_arrow_top::before {
+  display: inline-block;
+  content: "arrow_top";
+  color: #fff;
+  color: transparent;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: baseline;
+  margin-right: 0.6rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_top.svg");
+  background-size: cover;
+}
+h4 .icon.icon_arrow_bottom::before {
+  display: inline-block;
+  content: "arrow_bottom";
+  color: #fff;
+  color: transparent;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: baseline;
+  margin-right: 0.6rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_bottom.svg");
+  background-size: cover;
+}
+h4 .icon.icon_arrow_left::before {
+  display: inline-block;
+  content: "arrow_left";
+  color: #fff;
+  color: transparent;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: baseline;
+  margin-right: 0.6rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_left.svg");
+  background-size: cover;
+}
+h4 .icon.icon_arrow_right::before {
+  display: inline-block;
+  content: "arrow_right";
+  color: #fff;
+  color: transparent;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: baseline;
+  margin-right: 0.6rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_right.svg");
+  background-size: cover;
+}
+h4 .icon.icon_circle::before {
+  display: inline-block;
+  content: "circle";
+  color: #fff;
+  color: transparent;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: baseline;
+  margin-right: 0.6rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/circle.svg");
+  background-size: cover;
+}
+h4 .icon.icon_ellipse::before {
+  display: inline-block;
+  content: "ellipse";
+  color: #fff;
+  color: transparent;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: baseline;
+  margin-right: 0.6rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/ellipse.svg");
+  background-size: cover;
+}
+h4 .icon.icon_top_fill::before {
+  display: inline-block;
+  content: "top_fill";
+  color: #fff;
+  color: transparent;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: baseline;
+  margin-right: 0.6rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/top_fill.svg");
+  background-size: cover;
+}
+h4 .icon.icon_top_line::before {
+  display: inline-block;
+  content: "top_line";
+  color: #fff;
+  color: transparent;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: baseline;
+  margin-right: 0.6rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/top_line.svg");
+  background-size: cover;
+}
+h4 .icon.icon_x::before {
+  display: inline-block;
+  content: "x";
+  color: #fff;
+  color: transparent;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: baseline;
+  margin-right: 0.6rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/x.svg");
+  background-size: cover;
+}
+h4 .icon.icon_blog::before {
+  display: inline-block;
+  content: "blog";
+  color: #fff;
+  color: transparent;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: baseline;
+  margin-right: 0.6rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/blog.svg");
+  background-size: cover;
+}
+h4 .icon.icon_email::before {
+  display: inline-block;
+  content: "email";
+  color: #fff;
+  color: transparent;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: baseline;
+  margin-right: 0.6rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/email.svg");
+  background-size: cover;
+}
+h4 .icon.icon_instagram::before {
+  display: inline-block;
+  content: "instagram";
+  color: #fff;
+  color: transparent;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: baseline;
+  margin-right: 0.6rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/instagram.svg");
+  background-size: cover;
+}
+h4 .icon.icon_talk::before {
+  display: inline-block;
+  content: "talk";
+  color: #fff;
+  color: transparent;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: baseline;
+  margin-right: 0.6rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/talk.svg");
+  background-size: cover;
+}
+h4 .icon.icon_twitter::before {
+  display: inline-block;
+  content: "twitter";
+  color: #fff;
+  color: transparent;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: baseline;
+  margin-right: 0.6rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/twitter.svg");
+  background-size: cover;
+}
+h4 .icon.icon_location::before {
+  display: inline-block;
+  content: "location";
+  color: #fff;
+  color: transparent;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: baseline;
+  margin-right: 0.6rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/location.svg");
+  background-size: cover;
+}
+h4 .icon.icon_star::before {
+  display: inline-block;
+  content: "star";
+  color: #fff;
+  color: transparent;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: baseline;
+  margin-right: 0.6rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/star.svg");
+  background-size: cover;
+}
+h4 .icon.icon_user::before {
+  display: inline-block;
+  content: "user";
+  color: #fff;
+  color: transparent;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: baseline;
+  margin-right: 0.6rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/user.svg");
+  background-size: cover;
+}
+h4 .icon.icon_birth::before {
+  display: inline-block;
+  content: "birth";
+  color: #fff;
+  color: transparent;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: baseline;
+  margin-right: 0.6rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/birth.svg");
+  background-size: cover;
+}
+h4 .icon.icon_file::before {
+  display: inline-block;
+  content: "file";
+  color: #fff;
+  color: transparent;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: baseline;
+  margin-right: 0.6rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/file.svg");
+  background-size: cover;
+}
+h4 .icon.icon_menu::before {
+  display: inline-block;
+  content: "menu";
+  color: #fff;
+  color: transparent;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: baseline;
+  margin-right: 0.6rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/menu.svg");
+  background-size: cover;
+}
+h4 .icon.icon_plus::before {
+  display: inline-block;
+  content: "plus";
+  color: #fff;
+  color: transparent;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: baseline;
+  margin-right: 0.6rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/plus.svg");
+  background-size: cover;
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+h4 .subHead, h5 .subHead, h6 .subHead {
+  font-size: inherit;
+}
+
+h3 {
+  font-family: "nixgon";
+  font-size: 2.5rem;
+  font-weight: normal;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-left: 0;
+  margin-right: 0;
+}
+h3 .subHead {
+  font-size: 1.5rem;
+}
+h3 .subHead .icon {
+  font-size: 1.5rem;
+}
+h3 .subHead .icon.icon_arrow_top::before {
+  display: inline-block;
+  content: "arrow_top";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_top.svg");
+  background-size: cover;
+}
+h3 .subHead .icon.icon_arrow_bottom::before {
+  display: inline-block;
+  content: "arrow_bottom";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_bottom.svg");
+  background-size: cover;
+}
+h3 .subHead .icon.icon_arrow_left::before {
+  display: inline-block;
+  content: "arrow_left";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_left.svg");
+  background-size: cover;
+}
+h3 .subHead .icon.icon_arrow_right::before {
+  display: inline-block;
+  content: "arrow_right";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_right.svg");
+  background-size: cover;
+}
+h3 .subHead .icon.icon_circle::before {
+  display: inline-block;
+  content: "circle";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/circle.svg");
+  background-size: cover;
+}
+h3 .subHead .icon.icon_ellipse::before {
+  display: inline-block;
+  content: "ellipse";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/ellipse.svg");
+  background-size: cover;
+}
+h3 .subHead .icon.icon_top_fill::before {
+  display: inline-block;
+  content: "top_fill";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/top_fill.svg");
+  background-size: cover;
+}
+h3 .subHead .icon.icon_top_line::before {
+  display: inline-block;
+  content: "top_line";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/top_line.svg");
+  background-size: cover;
+}
+h3 .subHead .icon.icon_x::before {
+  display: inline-block;
+  content: "x";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/x.svg");
+  background-size: cover;
+}
+h3 .subHead .icon.icon_blog::before {
+  display: inline-block;
+  content: "blog";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/blog.svg");
+  background-size: cover;
+}
+h3 .subHead .icon.icon_email::before {
+  display: inline-block;
+  content: "email";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/email.svg");
+  background-size: cover;
+}
+h3 .subHead .icon.icon_instagram::before {
+  display: inline-block;
+  content: "instagram";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/instagram.svg");
+  background-size: cover;
+}
+h3 .subHead .icon.icon_talk::before {
+  display: inline-block;
+  content: "talk";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/talk.svg");
+  background-size: cover;
+}
+h3 .subHead .icon.icon_twitter::before {
+  display: inline-block;
+  content: "twitter";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/twitter.svg");
+  background-size: cover;
+}
+h3 .subHead .icon.icon_location::before {
+  display: inline-block;
+  content: "location";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/location.svg");
+  background-size: cover;
+}
+h3 .subHead .icon.icon_star::before {
+  display: inline-block;
+  content: "star";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/star.svg");
+  background-size: cover;
+}
+h3 .subHead .icon.icon_user::before {
+  display: inline-block;
+  content: "user";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/user.svg");
+  background-size: cover;
+}
+h3 .subHead .icon.icon_birth::before {
+  display: inline-block;
+  content: "birth";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/birth.svg");
+  background-size: cover;
+}
+h3 .subHead .icon.icon_file::before {
+  display: inline-block;
+  content: "file";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/file.svg");
+  background-size: cover;
+}
+h3 .subHead .icon.icon_menu::before {
+  display: inline-block;
+  content: "menu";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/menu.svg");
+  background-size: cover;
+}
+h3 .subHead .icon.icon_plus::before {
+  display: inline-block;
+  content: "plus";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/plus.svg");
+  background-size: cover;
+}
+h3 .icon {
+  font-size: 2.5rem;
+}
+h3 .icon.icon_arrow_top::before {
+  display: inline-block;
+  content: "arrow_top";
+  color: #fff;
+  color: transparent;
+  width: 2.5rem;
+  height: 2.5rem;
+  vertical-align: baseline;
+  margin-right: 0.75rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_top.svg");
+  background-size: cover;
+}
+h3 .icon.icon_arrow_bottom::before {
+  display: inline-block;
+  content: "arrow_bottom";
+  color: #fff;
+  color: transparent;
+  width: 2.5rem;
+  height: 2.5rem;
+  vertical-align: baseline;
+  margin-right: 0.75rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_bottom.svg");
+  background-size: cover;
+}
+h3 .icon.icon_arrow_left::before {
+  display: inline-block;
+  content: "arrow_left";
+  color: #fff;
+  color: transparent;
+  width: 2.5rem;
+  height: 2.5rem;
+  vertical-align: baseline;
+  margin-right: 0.75rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_left.svg");
+  background-size: cover;
+}
+h3 .icon.icon_arrow_right::before {
+  display: inline-block;
+  content: "arrow_right";
+  color: #fff;
+  color: transparent;
+  width: 2.5rem;
+  height: 2.5rem;
+  vertical-align: baseline;
+  margin-right: 0.75rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_right.svg");
+  background-size: cover;
+}
+h3 .icon.icon_circle::before {
+  display: inline-block;
+  content: "circle";
+  color: #fff;
+  color: transparent;
+  width: 2.5rem;
+  height: 2.5rem;
+  vertical-align: baseline;
+  margin-right: 0.75rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/circle.svg");
+  background-size: cover;
+}
+h3 .icon.icon_ellipse::before {
+  display: inline-block;
+  content: "ellipse";
+  color: #fff;
+  color: transparent;
+  width: 2.5rem;
+  height: 2.5rem;
+  vertical-align: baseline;
+  margin-right: 0.75rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/ellipse.svg");
+  background-size: cover;
+}
+h3 .icon.icon_top_fill::before {
+  display: inline-block;
+  content: "top_fill";
+  color: #fff;
+  color: transparent;
+  width: 2.5rem;
+  height: 2.5rem;
+  vertical-align: baseline;
+  margin-right: 0.75rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/top_fill.svg");
+  background-size: cover;
+}
+h3 .icon.icon_top_line::before {
+  display: inline-block;
+  content: "top_line";
+  color: #fff;
+  color: transparent;
+  width: 2.5rem;
+  height: 2.5rem;
+  vertical-align: baseline;
+  margin-right: 0.75rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/top_line.svg");
+  background-size: cover;
+}
+h3 .icon.icon_x::before {
+  display: inline-block;
+  content: "x";
+  color: #fff;
+  color: transparent;
+  width: 2.5rem;
+  height: 2.5rem;
+  vertical-align: baseline;
+  margin-right: 0.75rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/x.svg");
+  background-size: cover;
+}
+h3 .icon.icon_blog::before {
+  display: inline-block;
+  content: "blog";
+  color: #fff;
+  color: transparent;
+  width: 2.5rem;
+  height: 2.5rem;
+  vertical-align: baseline;
+  margin-right: 0.75rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/blog.svg");
+  background-size: cover;
+}
+h3 .icon.icon_email::before {
+  display: inline-block;
+  content: "email";
+  color: #fff;
+  color: transparent;
+  width: 2.5rem;
+  height: 2.5rem;
+  vertical-align: baseline;
+  margin-right: 0.75rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/email.svg");
+  background-size: cover;
+}
+h3 .icon.icon_instagram::before {
+  display: inline-block;
+  content: "instagram";
+  color: #fff;
+  color: transparent;
+  width: 2.5rem;
+  height: 2.5rem;
+  vertical-align: baseline;
+  margin-right: 0.75rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/instagram.svg");
+  background-size: cover;
+}
+h3 .icon.icon_talk::before {
+  display: inline-block;
+  content: "talk";
+  color: #fff;
+  color: transparent;
+  width: 2.5rem;
+  height: 2.5rem;
+  vertical-align: baseline;
+  margin-right: 0.75rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/talk.svg");
+  background-size: cover;
+}
+h3 .icon.icon_twitter::before {
+  display: inline-block;
+  content: "twitter";
+  color: #fff;
+  color: transparent;
+  width: 2.5rem;
+  height: 2.5rem;
+  vertical-align: baseline;
+  margin-right: 0.75rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/twitter.svg");
+  background-size: cover;
+}
+h3 .icon.icon_location::before {
+  display: inline-block;
+  content: "location";
+  color: #fff;
+  color: transparent;
+  width: 2.5rem;
+  height: 2.5rem;
+  vertical-align: baseline;
+  margin-right: 0.75rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/location.svg");
+  background-size: cover;
+}
+h3 .icon.icon_star::before {
+  display: inline-block;
+  content: "star";
+  color: #fff;
+  color: transparent;
+  width: 2.5rem;
+  height: 2.5rem;
+  vertical-align: baseline;
+  margin-right: 0.75rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/star.svg");
+  background-size: cover;
+}
+h3 .icon.icon_user::before {
+  display: inline-block;
+  content: "user";
+  color: #fff;
+  color: transparent;
+  width: 2.5rem;
+  height: 2.5rem;
+  vertical-align: baseline;
+  margin-right: 0.75rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/user.svg");
+  background-size: cover;
+}
+h3 .icon.icon_birth::before {
+  display: inline-block;
+  content: "birth";
+  color: #fff;
+  color: transparent;
+  width: 2.5rem;
+  height: 2.5rem;
+  vertical-align: baseline;
+  margin-right: 0.75rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/birth.svg");
+  background-size: cover;
+}
+h3 .icon.icon_file::before {
+  display: inline-block;
+  content: "file";
+  color: #fff;
+  color: transparent;
+  width: 2.5rem;
+  height: 2.5rem;
+  vertical-align: baseline;
+  margin-right: 0.75rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/file.svg");
+  background-size: cover;
+}
+h3 .icon.icon_menu::before {
+  display: inline-block;
+  content: "menu";
+  color: #fff;
+  color: transparent;
+  width: 2.5rem;
+  height: 2.5rem;
+  vertical-align: baseline;
+  margin-right: 0.75rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/menu.svg");
+  background-size: cover;
+}
+h3 .icon.icon_plus::before {
+  display: inline-block;
+  content: "plus";
+  color: #fff;
+  color: transparent;
+  width: 2.5rem;
+  height: 2.5rem;
+  vertical-align: baseline;
+  margin-right: 0.75rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/plus.svg");
+  background-size: cover;
+}
+
+h0 {
+  text-transform: uppercase;
+}
+
+h4 .subHead, h5 .subHead, h6 .subHead {
+  font-size: inherit;
+}
+
+h2 {
+  font-family: "nixgon";
+  font-size: 3rem;
+  font-weight: normal;
+  text-align: center;
+  margin-top: 2.4rem;
+  margin-bottom: 2.4rem;
+  margin-left: 0;
+  margin-right: 0;
+}
+h2 .subHead {
+  font-size: 1.8rem;
+}
+h2 .subHead .icon {
+  font-size: 1.8rem;
+}
+h2 .subHead .icon.icon_arrow_top::before {
+  display: inline-block;
+  content: "arrow_top";
+  color: #fff;
+  color: transparent;
+  width: 1.8rem;
+  height: 1.8rem;
+  vertical-align: baseline;
+  margin-right: 0.54rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_top.svg");
+  background-size: cover;
+}
+h2 .subHead .icon.icon_arrow_bottom::before {
+  display: inline-block;
+  content: "arrow_bottom";
+  color: #fff;
+  color: transparent;
+  width: 1.8rem;
+  height: 1.8rem;
+  vertical-align: baseline;
+  margin-right: 0.54rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_bottom.svg");
+  background-size: cover;
+}
+h2 .subHead .icon.icon_arrow_left::before {
+  display: inline-block;
+  content: "arrow_left";
+  color: #fff;
+  color: transparent;
+  width: 1.8rem;
+  height: 1.8rem;
+  vertical-align: baseline;
+  margin-right: 0.54rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_left.svg");
+  background-size: cover;
+}
+h2 .subHead .icon.icon_arrow_right::before {
+  display: inline-block;
+  content: "arrow_right";
+  color: #fff;
+  color: transparent;
+  width: 1.8rem;
+  height: 1.8rem;
+  vertical-align: baseline;
+  margin-right: 0.54rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_right.svg");
+  background-size: cover;
+}
+h2 .subHead .icon.icon_circle::before {
+  display: inline-block;
+  content: "circle";
+  color: #fff;
+  color: transparent;
+  width: 1.8rem;
+  height: 1.8rem;
+  vertical-align: baseline;
+  margin-right: 0.54rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/circle.svg");
+  background-size: cover;
+}
+h2 .subHead .icon.icon_ellipse::before {
+  display: inline-block;
+  content: "ellipse";
+  color: #fff;
+  color: transparent;
+  width: 1.8rem;
+  height: 1.8rem;
+  vertical-align: baseline;
+  margin-right: 0.54rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/ellipse.svg");
+  background-size: cover;
+}
+h2 .subHead .icon.icon_top_fill::before {
+  display: inline-block;
+  content: "top_fill";
+  color: #fff;
+  color: transparent;
+  width: 1.8rem;
+  height: 1.8rem;
+  vertical-align: baseline;
+  margin-right: 0.54rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/top_fill.svg");
+  background-size: cover;
+}
+h2 .subHead .icon.icon_top_line::before {
+  display: inline-block;
+  content: "top_line";
+  color: #fff;
+  color: transparent;
+  width: 1.8rem;
+  height: 1.8rem;
+  vertical-align: baseline;
+  margin-right: 0.54rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/top_line.svg");
+  background-size: cover;
+}
+h2 .subHead .icon.icon_x::before {
+  display: inline-block;
+  content: "x";
+  color: #fff;
+  color: transparent;
+  width: 1.8rem;
+  height: 1.8rem;
+  vertical-align: baseline;
+  margin-right: 0.54rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/x.svg");
+  background-size: cover;
+}
+h2 .subHead .icon.icon_blog::before {
+  display: inline-block;
+  content: "blog";
+  color: #fff;
+  color: transparent;
+  width: 1.8rem;
+  height: 1.8rem;
+  vertical-align: baseline;
+  margin-right: 0.54rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/blog.svg");
+  background-size: cover;
+}
+h2 .subHead .icon.icon_email::before {
+  display: inline-block;
+  content: "email";
+  color: #fff;
+  color: transparent;
+  width: 1.8rem;
+  height: 1.8rem;
+  vertical-align: baseline;
+  margin-right: 0.54rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/email.svg");
+  background-size: cover;
+}
+h2 .subHead .icon.icon_instagram::before {
+  display: inline-block;
+  content: "instagram";
+  color: #fff;
+  color: transparent;
+  width: 1.8rem;
+  height: 1.8rem;
+  vertical-align: baseline;
+  margin-right: 0.54rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/instagram.svg");
+  background-size: cover;
+}
+h2 .subHead .icon.icon_talk::before {
+  display: inline-block;
+  content: "talk";
+  color: #fff;
+  color: transparent;
+  width: 1.8rem;
+  height: 1.8rem;
+  vertical-align: baseline;
+  margin-right: 0.54rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/talk.svg");
+  background-size: cover;
+}
+h2 .subHead .icon.icon_twitter::before {
+  display: inline-block;
+  content: "twitter";
+  color: #fff;
+  color: transparent;
+  width: 1.8rem;
+  height: 1.8rem;
+  vertical-align: baseline;
+  margin-right: 0.54rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/twitter.svg");
+  background-size: cover;
+}
+h2 .subHead .icon.icon_location::before {
+  display: inline-block;
+  content: "location";
+  color: #fff;
+  color: transparent;
+  width: 1.8rem;
+  height: 1.8rem;
+  vertical-align: baseline;
+  margin-right: 0.54rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/location.svg");
+  background-size: cover;
+}
+h2 .subHead .icon.icon_star::before {
+  display: inline-block;
+  content: "star";
+  color: #fff;
+  color: transparent;
+  width: 1.8rem;
+  height: 1.8rem;
+  vertical-align: baseline;
+  margin-right: 0.54rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/star.svg");
+  background-size: cover;
+}
+h2 .subHead .icon.icon_user::before {
+  display: inline-block;
+  content: "user";
+  color: #fff;
+  color: transparent;
+  width: 1.8rem;
+  height: 1.8rem;
+  vertical-align: baseline;
+  margin-right: 0.54rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/user.svg");
+  background-size: cover;
+}
+h2 .subHead .icon.icon_birth::before {
+  display: inline-block;
+  content: "birth";
+  color: #fff;
+  color: transparent;
+  width: 1.8rem;
+  height: 1.8rem;
+  vertical-align: baseline;
+  margin-right: 0.54rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/birth.svg");
+  background-size: cover;
+}
+h2 .subHead .icon.icon_file::before {
+  display: inline-block;
+  content: "file";
+  color: #fff;
+  color: transparent;
+  width: 1.8rem;
+  height: 1.8rem;
+  vertical-align: baseline;
+  margin-right: 0.54rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/file.svg");
+  background-size: cover;
+}
+h2 .subHead .icon.icon_menu::before {
+  display: inline-block;
+  content: "menu";
+  color: #fff;
+  color: transparent;
+  width: 1.8rem;
+  height: 1.8rem;
+  vertical-align: baseline;
+  margin-right: 0.54rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/menu.svg");
+  background-size: cover;
+}
+h2 .subHead .icon.icon_plus::before {
+  display: inline-block;
+  content: "plus";
+  color: #fff;
+  color: transparent;
+  width: 1.8rem;
+  height: 1.8rem;
+  vertical-align: baseline;
+  margin-right: 0.54rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/plus.svg");
+  background-size: cover;
+}
+h2 .icon {
+  font-size: 3rem;
+}
+h2 .icon.icon_arrow_top::before {
+  display: inline-block;
+  content: "arrow_top";
+  color: #fff;
+  color: transparent;
+  width: 3rem;
+  height: 3rem;
+  vertical-align: baseline;
+  margin-right: 0.9rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_top.svg");
+  background-size: cover;
+}
+h2 .icon.icon_arrow_bottom::before {
+  display: inline-block;
+  content: "arrow_bottom";
+  color: #fff;
+  color: transparent;
+  width: 3rem;
+  height: 3rem;
+  vertical-align: baseline;
+  margin-right: 0.9rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_bottom.svg");
+  background-size: cover;
+}
+h2 .icon.icon_arrow_left::before {
+  display: inline-block;
+  content: "arrow_left";
+  color: #fff;
+  color: transparent;
+  width: 3rem;
+  height: 3rem;
+  vertical-align: baseline;
+  margin-right: 0.9rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_left.svg");
+  background-size: cover;
+}
+h2 .icon.icon_arrow_right::before {
+  display: inline-block;
+  content: "arrow_right";
+  color: #fff;
+  color: transparent;
+  width: 3rem;
+  height: 3rem;
+  vertical-align: baseline;
+  margin-right: 0.9rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_right.svg");
+  background-size: cover;
+}
+h2 .icon.icon_circle::before {
+  display: inline-block;
+  content: "circle";
+  color: #fff;
+  color: transparent;
+  width: 3rem;
+  height: 3rem;
+  vertical-align: baseline;
+  margin-right: 0.9rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/circle.svg");
+  background-size: cover;
+}
+h2 .icon.icon_ellipse::before {
+  display: inline-block;
+  content: "ellipse";
+  color: #fff;
+  color: transparent;
+  width: 3rem;
+  height: 3rem;
+  vertical-align: baseline;
+  margin-right: 0.9rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/ellipse.svg");
+  background-size: cover;
+}
+h2 .icon.icon_top_fill::before {
+  display: inline-block;
+  content: "top_fill";
+  color: #fff;
+  color: transparent;
+  width: 3rem;
+  height: 3rem;
+  vertical-align: baseline;
+  margin-right: 0.9rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/top_fill.svg");
+  background-size: cover;
+}
+h2 .icon.icon_top_line::before {
+  display: inline-block;
+  content: "top_line";
+  color: #fff;
+  color: transparent;
+  width: 3rem;
+  height: 3rem;
+  vertical-align: baseline;
+  margin-right: 0.9rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/top_line.svg");
+  background-size: cover;
+}
+h2 .icon.icon_x::before {
+  display: inline-block;
+  content: "x";
+  color: #fff;
+  color: transparent;
+  width: 3rem;
+  height: 3rem;
+  vertical-align: baseline;
+  margin-right: 0.9rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/x.svg");
+  background-size: cover;
+}
+h2 .icon.icon_blog::before {
+  display: inline-block;
+  content: "blog";
+  color: #fff;
+  color: transparent;
+  width: 3rem;
+  height: 3rem;
+  vertical-align: baseline;
+  margin-right: 0.9rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/blog.svg");
+  background-size: cover;
+}
+h2 .icon.icon_email::before {
+  display: inline-block;
+  content: "email";
+  color: #fff;
+  color: transparent;
+  width: 3rem;
+  height: 3rem;
+  vertical-align: baseline;
+  margin-right: 0.9rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/email.svg");
+  background-size: cover;
+}
+h2 .icon.icon_instagram::before {
+  display: inline-block;
+  content: "instagram";
+  color: #fff;
+  color: transparent;
+  width: 3rem;
+  height: 3rem;
+  vertical-align: baseline;
+  margin-right: 0.9rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/instagram.svg");
+  background-size: cover;
+}
+h2 .icon.icon_talk::before {
+  display: inline-block;
+  content: "talk";
+  color: #fff;
+  color: transparent;
+  width: 3rem;
+  height: 3rem;
+  vertical-align: baseline;
+  margin-right: 0.9rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/talk.svg");
+  background-size: cover;
+}
+h2 .icon.icon_twitter::before {
+  display: inline-block;
+  content: "twitter";
+  color: #fff;
+  color: transparent;
+  width: 3rem;
+  height: 3rem;
+  vertical-align: baseline;
+  margin-right: 0.9rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/twitter.svg");
+  background-size: cover;
+}
+h2 .icon.icon_location::before {
+  display: inline-block;
+  content: "location";
+  color: #fff;
+  color: transparent;
+  width: 3rem;
+  height: 3rem;
+  vertical-align: baseline;
+  margin-right: 0.9rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/location.svg");
+  background-size: cover;
+}
+h2 .icon.icon_star::before {
+  display: inline-block;
+  content: "star";
+  color: #fff;
+  color: transparent;
+  width: 3rem;
+  height: 3rem;
+  vertical-align: baseline;
+  margin-right: 0.9rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/star.svg");
+  background-size: cover;
+}
+h2 .icon.icon_user::before {
+  display: inline-block;
+  content: "user";
+  color: #fff;
+  color: transparent;
+  width: 3rem;
+  height: 3rem;
+  vertical-align: baseline;
+  margin-right: 0.9rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/user.svg");
+  background-size: cover;
+}
+h2 .icon.icon_birth::before {
+  display: inline-block;
+  content: "birth";
+  color: #fff;
+  color: transparent;
+  width: 3rem;
+  height: 3rem;
+  vertical-align: baseline;
+  margin-right: 0.9rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/birth.svg");
+  background-size: cover;
+}
+h2 .icon.icon_file::before {
+  display: inline-block;
+  content: "file";
+  color: #fff;
+  color: transparent;
+  width: 3rem;
+  height: 3rem;
+  vertical-align: baseline;
+  margin-right: 0.9rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/file.svg");
+  background-size: cover;
+}
+h2 .icon.icon_menu::before {
+  display: inline-block;
+  content: "menu";
+  color: #fff;
+  color: transparent;
+  width: 3rem;
+  height: 3rem;
+  vertical-align: baseline;
+  margin-right: 0.9rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/menu.svg");
+  background-size: cover;
+}
+h2 .icon.icon_plus::before {
+  display: inline-block;
+  content: "plus";
+  color: #fff;
+  color: transparent;
+  width: 3rem;
+  height: 3rem;
+  vertical-align: baseline;
+  margin-right: 0.9rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/plus.svg");
+  background-size: cover;
+}
+
+h-1 {
+  text-transform: uppercase;
+}
+
+h4 .subHead, h5 .subHead, h6 .subHead {
+  font-size: inherit;
+}
+
+h1 {
+  font-family: "nixgon";
+  font-size: 3.5rem;
+  font-weight: normal;
+  text-align: center;
+  margin-top: 2.8rem;
+  margin-bottom: 2.8rem;
+  margin-left: 0;
+  margin-right: 0;
+}
+h1 .subHead {
+  font-size: 2.1rem;
+}
+h1 .subHead .icon {
+  font-size: 2.1rem;
+}
+h1 .subHead .icon.icon_arrow_top::before {
+  display: inline-block;
+  content: "arrow_top";
+  color: #fff;
+  color: transparent;
+  width: 2.1rem;
+  height: 2.1rem;
+  vertical-align: baseline;
+  margin-right: 0.63rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_top.svg");
+  background-size: cover;
+}
+h1 .subHead .icon.icon_arrow_bottom::before {
+  display: inline-block;
+  content: "arrow_bottom";
+  color: #fff;
+  color: transparent;
+  width: 2.1rem;
+  height: 2.1rem;
+  vertical-align: baseline;
+  margin-right: 0.63rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_bottom.svg");
+  background-size: cover;
+}
+h1 .subHead .icon.icon_arrow_left::before {
+  display: inline-block;
+  content: "arrow_left";
+  color: #fff;
+  color: transparent;
+  width: 2.1rem;
+  height: 2.1rem;
+  vertical-align: baseline;
+  margin-right: 0.63rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_left.svg");
+  background-size: cover;
+}
+h1 .subHead .icon.icon_arrow_right::before {
+  display: inline-block;
+  content: "arrow_right";
+  color: #fff;
+  color: transparent;
+  width: 2.1rem;
+  height: 2.1rem;
+  vertical-align: baseline;
+  margin-right: 0.63rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_right.svg");
+  background-size: cover;
+}
+h1 .subHead .icon.icon_circle::before {
+  display: inline-block;
+  content: "circle";
+  color: #fff;
+  color: transparent;
+  width: 2.1rem;
+  height: 2.1rem;
+  vertical-align: baseline;
+  margin-right: 0.63rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/circle.svg");
+  background-size: cover;
+}
+h1 .subHead .icon.icon_ellipse::before {
+  display: inline-block;
+  content: "ellipse";
+  color: #fff;
+  color: transparent;
+  width: 2.1rem;
+  height: 2.1rem;
+  vertical-align: baseline;
+  margin-right: 0.63rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/ellipse.svg");
+  background-size: cover;
+}
+h1 .subHead .icon.icon_top_fill::before {
+  display: inline-block;
+  content: "top_fill";
+  color: #fff;
+  color: transparent;
+  width: 2.1rem;
+  height: 2.1rem;
+  vertical-align: baseline;
+  margin-right: 0.63rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/top_fill.svg");
+  background-size: cover;
+}
+h1 .subHead .icon.icon_top_line::before {
+  display: inline-block;
+  content: "top_line";
+  color: #fff;
+  color: transparent;
+  width: 2.1rem;
+  height: 2.1rem;
+  vertical-align: baseline;
+  margin-right: 0.63rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/top_line.svg");
+  background-size: cover;
+}
+h1 .subHead .icon.icon_x::before {
+  display: inline-block;
+  content: "x";
+  color: #fff;
+  color: transparent;
+  width: 2.1rem;
+  height: 2.1rem;
+  vertical-align: baseline;
+  margin-right: 0.63rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/x.svg");
+  background-size: cover;
+}
+h1 .subHead .icon.icon_blog::before {
+  display: inline-block;
+  content: "blog";
+  color: #fff;
+  color: transparent;
+  width: 2.1rem;
+  height: 2.1rem;
+  vertical-align: baseline;
+  margin-right: 0.63rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/blog.svg");
+  background-size: cover;
+}
+h1 .subHead .icon.icon_email::before {
+  display: inline-block;
+  content: "email";
+  color: #fff;
+  color: transparent;
+  width: 2.1rem;
+  height: 2.1rem;
+  vertical-align: baseline;
+  margin-right: 0.63rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/email.svg");
+  background-size: cover;
+}
+h1 .subHead .icon.icon_instagram::before {
+  display: inline-block;
+  content: "instagram";
+  color: #fff;
+  color: transparent;
+  width: 2.1rem;
+  height: 2.1rem;
+  vertical-align: baseline;
+  margin-right: 0.63rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/instagram.svg");
+  background-size: cover;
+}
+h1 .subHead .icon.icon_talk::before {
+  display: inline-block;
+  content: "talk";
+  color: #fff;
+  color: transparent;
+  width: 2.1rem;
+  height: 2.1rem;
+  vertical-align: baseline;
+  margin-right: 0.63rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/talk.svg");
+  background-size: cover;
+}
+h1 .subHead .icon.icon_twitter::before {
+  display: inline-block;
+  content: "twitter";
+  color: #fff;
+  color: transparent;
+  width: 2.1rem;
+  height: 2.1rem;
+  vertical-align: baseline;
+  margin-right: 0.63rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/twitter.svg");
+  background-size: cover;
+}
+h1 .subHead .icon.icon_location::before {
+  display: inline-block;
+  content: "location";
+  color: #fff;
+  color: transparent;
+  width: 2.1rem;
+  height: 2.1rem;
+  vertical-align: baseline;
+  margin-right: 0.63rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/location.svg");
+  background-size: cover;
+}
+h1 .subHead .icon.icon_star::before {
+  display: inline-block;
+  content: "star";
+  color: #fff;
+  color: transparent;
+  width: 2.1rem;
+  height: 2.1rem;
+  vertical-align: baseline;
+  margin-right: 0.63rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/star.svg");
+  background-size: cover;
+}
+h1 .subHead .icon.icon_user::before {
+  display: inline-block;
+  content: "user";
+  color: #fff;
+  color: transparent;
+  width: 2.1rem;
+  height: 2.1rem;
+  vertical-align: baseline;
+  margin-right: 0.63rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/user.svg");
+  background-size: cover;
+}
+h1 .subHead .icon.icon_birth::before {
+  display: inline-block;
+  content: "birth";
+  color: #fff;
+  color: transparent;
+  width: 2.1rem;
+  height: 2.1rem;
+  vertical-align: baseline;
+  margin-right: 0.63rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/birth.svg");
+  background-size: cover;
+}
+h1 .subHead .icon.icon_file::before {
+  display: inline-block;
+  content: "file";
+  color: #fff;
+  color: transparent;
+  width: 2.1rem;
+  height: 2.1rem;
+  vertical-align: baseline;
+  margin-right: 0.63rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/file.svg");
+  background-size: cover;
+}
+h1 .subHead .icon.icon_menu::before {
+  display: inline-block;
+  content: "menu";
+  color: #fff;
+  color: transparent;
+  width: 2.1rem;
+  height: 2.1rem;
+  vertical-align: baseline;
+  margin-right: 0.63rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/menu.svg");
+  background-size: cover;
+}
+h1 .subHead .icon.icon_plus::before {
+  display: inline-block;
+  content: "plus";
+  color: #fff;
+  color: transparent;
+  width: 2.1rem;
+  height: 2.1rem;
+  vertical-align: baseline;
+  margin-right: 0.63rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/plus.svg");
+  background-size: cover;
+}
+h1 .icon {
+  font-size: 3.5rem;
+}
+h1 .icon.icon_arrow_top::before {
+  display: inline-block;
+  content: "arrow_top";
+  color: #fff;
+  color: transparent;
+  width: 3.5rem;
+  height: 3.5rem;
+  vertical-align: baseline;
+  margin-right: 1.05rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_top.svg");
+  background-size: cover;
+}
+h1 .icon.icon_arrow_bottom::before {
+  display: inline-block;
+  content: "arrow_bottom";
+  color: #fff;
+  color: transparent;
+  width: 3.5rem;
+  height: 3.5rem;
+  vertical-align: baseline;
+  margin-right: 1.05rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_bottom.svg");
+  background-size: cover;
+}
+h1 .icon.icon_arrow_left::before {
+  display: inline-block;
+  content: "arrow_left";
+  color: #fff;
+  color: transparent;
+  width: 3.5rem;
+  height: 3.5rem;
+  vertical-align: baseline;
+  margin-right: 1.05rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_left.svg");
+  background-size: cover;
+}
+h1 .icon.icon_arrow_right::before {
+  display: inline-block;
+  content: "arrow_right";
+  color: #fff;
+  color: transparent;
+  width: 3.5rem;
+  height: 3.5rem;
+  vertical-align: baseline;
+  margin-right: 1.05rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/arrow_right.svg");
+  background-size: cover;
+}
+h1 .icon.icon_circle::before {
+  display: inline-block;
+  content: "circle";
+  color: #fff;
+  color: transparent;
+  width: 3.5rem;
+  height: 3.5rem;
+  vertical-align: baseline;
+  margin-right: 1.05rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/circle.svg");
+  background-size: cover;
+}
+h1 .icon.icon_ellipse::before {
+  display: inline-block;
+  content: "ellipse";
+  color: #fff;
+  color: transparent;
+  width: 3.5rem;
+  height: 3.5rem;
+  vertical-align: baseline;
+  margin-right: 1.05rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/ellipse.svg");
+  background-size: cover;
+}
+h1 .icon.icon_top_fill::before {
+  display: inline-block;
+  content: "top_fill";
+  color: #fff;
+  color: transparent;
+  width: 3.5rem;
+  height: 3.5rem;
+  vertical-align: baseline;
+  margin-right: 1.05rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/top_fill.svg");
+  background-size: cover;
+}
+h1 .icon.icon_top_line::before {
+  display: inline-block;
+  content: "top_line";
+  color: #fff;
+  color: transparent;
+  width: 3.5rem;
+  height: 3.5rem;
+  vertical-align: baseline;
+  margin-right: 1.05rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/top_line.svg");
+  background-size: cover;
+}
+h1 .icon.icon_x::before {
+  display: inline-block;
+  content: "x";
+  color: #fff;
+  color: transparent;
+  width: 3.5rem;
+  height: 3.5rem;
+  vertical-align: baseline;
+  margin-right: 1.05rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/x.svg");
+  background-size: cover;
+}
+h1 .icon.icon_blog::before {
+  display: inline-block;
+  content: "blog";
+  color: #fff;
+  color: transparent;
+  width: 3.5rem;
+  height: 3.5rem;
+  vertical-align: baseline;
+  margin-right: 1.05rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/blog.svg");
+  background-size: cover;
+}
+h1 .icon.icon_email::before {
+  display: inline-block;
+  content: "email";
+  color: #fff;
+  color: transparent;
+  width: 3.5rem;
+  height: 3.5rem;
+  vertical-align: baseline;
+  margin-right: 1.05rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/email.svg");
+  background-size: cover;
+}
+h1 .icon.icon_instagram::before {
+  display: inline-block;
+  content: "instagram";
+  color: #fff;
+  color: transparent;
+  width: 3.5rem;
+  height: 3.5rem;
+  vertical-align: baseline;
+  margin-right: 1.05rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/instagram.svg");
+  background-size: cover;
+}
+h1 .icon.icon_talk::before {
+  display: inline-block;
+  content: "talk";
+  color: #fff;
+  color: transparent;
+  width: 3.5rem;
+  height: 3.5rem;
+  vertical-align: baseline;
+  margin-right: 1.05rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/talk.svg");
+  background-size: cover;
+}
+h1 .icon.icon_twitter::before {
+  display: inline-block;
+  content: "twitter";
+  color: #fff;
+  color: transparent;
+  width: 3.5rem;
+  height: 3.5rem;
+  vertical-align: baseline;
+  margin-right: 1.05rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/twitter.svg");
+  background-size: cover;
+}
+h1 .icon.icon_location::before {
+  display: inline-block;
+  content: "location";
+  color: #fff;
+  color: transparent;
+  width: 3.5rem;
+  height: 3.5rem;
+  vertical-align: baseline;
+  margin-right: 1.05rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/location.svg");
+  background-size: cover;
+}
+h1 .icon.icon_star::before {
+  display: inline-block;
+  content: "star";
+  color: #fff;
+  color: transparent;
+  width: 3.5rem;
+  height: 3.5rem;
+  vertical-align: baseline;
+  margin-right: 1.05rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/star.svg");
+  background-size: cover;
+}
+h1 .icon.icon_user::before {
+  display: inline-block;
+  content: "user";
+  color: #fff;
+  color: transparent;
+  width: 3.5rem;
+  height: 3.5rem;
+  vertical-align: baseline;
+  margin-right: 1.05rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/user.svg");
+  background-size: cover;
+}
+h1 .icon.icon_birth::before {
+  display: inline-block;
+  content: "birth";
+  color: #fff;
+  color: transparent;
+  width: 3.5rem;
+  height: 3.5rem;
+  vertical-align: baseline;
+  margin-right: 1.05rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/birth.svg");
+  background-size: cover;
+}
+h1 .icon.icon_file::before {
+  display: inline-block;
+  content: "file";
+  color: #fff;
+  color: transparent;
+  width: 3.5rem;
+  height: 3.5rem;
+  vertical-align: baseline;
+  margin-right: 1.05rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/file.svg");
+  background-size: cover;
+}
+h1 .icon.icon_menu::before {
+  display: inline-block;
+  content: "menu";
+  color: #fff;
+  color: transparent;
+  width: 3.5rem;
+  height: 3.5rem;
+  vertical-align: baseline;
+  margin-right: 1.05rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/menu.svg");
+  background-size: cover;
+}
+h1 .icon.icon_plus::before {
+  display: inline-block;
+  content: "plus";
+  color: #fff;
+  color: transparent;
+  width: 3.5rem;
+  height: 3.5rem;
+  vertical-align: baseline;
+  margin-right: 1.05rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/plus.svg");
+  background-size: cover;
+}
+
+h-2 {
+  text-transform: uppercase;
+}
+
+h4 .subHead, h5 .subHead, h6 .subHead {
+  font-size: inherit;
+}
+
+.list li::before {
+  content: "●";
+  margin-right: 10px;
+  font-size: 0.8rem;
+  color: #70d3c2;
+}
+
+a {
+  text-decoration: none !important;
+  color: inherit;
+}
+a:hover, a:active, a:visited, a:focus {
+  color: inherit;
+}
+
+@-webkit-keyframes underbar_ani {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes underbar_ani {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+button {
+  padding-top: 0.3rem;
+  padding-left: 0.6rem;
+  padding-right: 0.6rem;
+  padding-bottom: 0.3rem;
+  border-radius: 4px;
+  border-style: solid;
+  cursor: pointer;
+}
+button.btn_stroke {
+  background-color: transparent;
+  background-color: inherit;
+  border-width: 1px;
+  border-color: #98a2d6;
+  color: #98a2d6;
+}
+button.btn_fill {
+  border: none;
+  background-color: #98a2d6;
+  color: #ffffff;
+}
+
+.link {
+  position: relative;
+  display: inline-block;
+}
+.link:hover::after {
+  display: block;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #98a2d6;
+  -webkit-animation: underbar_ani 0.6s alternate;
+          animation: underbar_ani 0.6s alternate;
+}
+
+.ui-dialog-titlebar {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+}
+.ui-dialog-titlebar .ui-dialog-title {
+  display: none;
+}
+.ui-dialog-titlebar button.ui-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translate(-50%, 50%);
+  border: 0;
+  padding: 0;
+  text-shadow: none;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  background: none;
+}
+.ui-dialog-titlebar button.ui-button::before {
+  margin-right: 0;
+}
+
+.ui-dialog {
+  position: fixed;
+  top: 0;
+  left: 0%;
+  height: 100% !important;
+  width: 100%;
+  z-index: 9999;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.5019607843);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+
+.modal {
+  height: 100% !important;
+  padding: 5% 0;
+}
+.modal-dialog {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: #cccccc 0 1px 15px;
+  border-width: 1px;
+  border-style: solid;
+  border-top-color: rgba(255, 255, 255, 0.6);
+  border-right-color: rgba(204, 204, 204, 0.6);
+  border-bottom-color: rgba(204, 204, 204, 0.6);
+  border-left-color: rgba(255, 255, 255, 0.6);
+}
+.modal-content {
+  width: calc(100% + 15px);
+  height: 100%;
+  overflow-y: auto !important;
+  border: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  position: relative;
+}
+
+.wrap {
+  width: 100%;
+  overflow: hidden;
+  padding-left: 40px;
+  position: relative;
+}
+
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  width: 40px;
+  height: 100vh;
+  background-color: transparent;
+  z-index: 99;
+  overflow: hidden;
+  transition-duration: 0.6s;
+}
+nav .menu > li {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+nav .menu > li a {
+  display: flex;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 10px;
+  height: 4vh;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  color: transparent;
+  transition-duration: 0.6s;
+}
+nav:hover {
+  width: 120px;
+  background-color: rgba(255, 255, 255, 0.3);
+  -webkit-backdrop-filter: blur(5px) grayscale(1);
+          backdrop-filter: blur(5px) grayscale(1);
+  box-shadow: 0px 0px 15px #cccccc;
+}
+nav:hover .menu > li > a {
+  color: inherit;
+}
+
+section,
+.headingArea,
+.content {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.content {
+  display: flex;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+}
+
+.headingArea {
+  gap: 10px;
+  width: 100%;
+  height: 40vh;
+}
+.headingArea h3 {
+  text-align: center;
+}
+.headingArea h3 span {
+  display: block;
+  font-weight: bold;
+}
+
+.subTit {
+  margin-bottom: 20px;
+}
+
+#intro {
+  justify-content: center;
+}
+#intro .content {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+#intro h1 {
+  font-size: 1px;
+  color: white;
+  color: transparent;
+  text-indent: -999999px;
+}
+#intro h1::before {
+  display: block !important;
+}
+#intro p {
+  width: 50%;
+  word-break: keep-all;
+}
+#intro .obj {
+  width: 300px;
+  height: 300px;
+  margin: 5%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 150px;
+}
+#intro .obj::before {
+  content: "";
+  display: block;
+  width: 1000px;
+  height: 1000px;
+  background: url("../images/mable.png") no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#portfolio .content {
+  width: 100%;
+  height: 100%;
+}
+#portfolio .content .thumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  width: 100%;
+  height: 100%;
+}
+#portfolio .content .thumb .modalBtn {
+  display: block;
+  width: 25%;
+  height: 25%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+#portfolio .content .thumb .modalBtn:hover::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+#portfolio .content .thumb a.modalBtn .thumbContent {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 5%;
+  background-color: rgba(255, 255, 255, 0.6);
+  font-size: 1.4rem;
+  font-weight: bold;
+  opacity: 0;
+  transition-duration: 0.4s;
+  position: relative;
+}
+#portfolio .content .thumb a.modalBtn .thumbContent span {
+  position: absolute;
+  display: block;
+  top: 5%;
+  right: 5%;
+  border: none;
+  background-color: #222222;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 100;
+  padding: 3px 5px;
+  border-radius: 4px;
+}
+#portfolio .content .thumb a.modalBtn:hover .thumbContent {
+  opacity: 1;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+
+.modal-image {
+  overflow: hidden;
+}
+.modal-image img {
+  display: block;
+  width: 100%;
+}
+.modal-content dl {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 10px;
+  display: flex;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.modal-content dt {
+  width: 30%;
+  min-width: 140px;
+  font-weight: bold;
+}
+.modal-content dd {
+  width: 70%;
+  min-width: 200px;
+}
+.modal-body {
+  padding: 5%;
+}
+
+#skills .content {
+  width: 80%;
+}
+#skills .skill_list {
+  display: flex;
+  align-content: flex-start;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-direction: row;
+}
+
+.coding_list,
+.design_list,
+.experience_list {
+  display: flex;
+  align-content: flex-start;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+}
+.coding_list svg,
+.design_list svg,
+.experience_list svg {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.coding_list .skill_graph,
+.design_list .skill_graph,
+.experience_list .skill_graph {
+  display: flex;
+  align-content: flex-start;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  overflow: hidden;
+  width: 100%;
+}
+.coding_list .skill_graph dl,
+.design_list .skill_graph dl,
+.experience_list .skill_graph dl {
+  display: flex;
+  align-content: flex-start;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  gap: 20px;
+  margin-bottom: 0;
+  word-break: keep-all;
+}
+.coding_list .skill_graph dl dt,
+.design_list .skill_graph dl dt,
+.experience_list .skill_graph dl dt {
+  width: 30%;
+  min-width: 85px;
+}
+.coding_list .skill_graph dl dd,
+.design_list .skill_graph dl dd,
+.experience_list .skill_graph dl dd {
+  width: 70%;
+  margin-bottom: 0;
+}
+.coding_list .skill_graph dl dd img,
+.design_list .skill_graph dl dd img,
+.experience_list .skill_graph dl dd img {
+  width: 100%;
+}
+
+.experience_list {
+  flex-wrap: wrap;
+}
+.experience_list img {
+  width: 20%;
+}
+
+#profile .innerCon {
+  width: 80%;
+  display: flex;
+  align-content: flex-start;
+  justify-content: flex-start;
+  align-items: center;
+  align-items: flex-start;
+  flex-direction: row;
+}
+#profile .innerCon .profile_img, #profile .innerCon .profile_list {
+  display: flex;
+  align-content: flex-start;
+  justify-content: flex-start;
+  align-items: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 2vh;
+  width: 33.3%;
+  padding: 0 3%;
+}
+#profile .innerCon .profile_img {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+#profile .innerCon .profile_img img {
+  width: 100%;
+}
+#profile .innerCon .profile_list {
+  border-right: 1px solid #ffa082;
+}
+#profile .innerCon .profile_list:last-child {
+  border-right: none;
+}
+
+footer {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 10vh;
+  border-top: 1px solid #cccccc;
+}/*# sourceMappingURL=index.css.map */
