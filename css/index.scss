@@ -1,10 +1,8 @@
 @import 'style';
 
 .wrap {
-  // width: calc(100% - 40px);
   width: 100%;
   overflow: hidden;
-  // margin-left: 40px;
   padding-left: 40px;
   position: relative;
 }
@@ -87,8 +85,10 @@ section {
     @include hiddenText();
   }
   p {
-    width: 50%;
+    width: fit-content;
     word-break: keep-all;
+    text-align: center;
+    padding: 2vh;
   }
   .obj {
     width: 300px;
@@ -96,18 +96,25 @@ section {
     margin: 5%;
     position: relative;
     overflow: hidden;
-    border-radius: 150px;
-    &::before {
+    &::after {
       content: '';
       display: block;
-      width: 1000px;
-      height: 1000px;
+      width: 300px;
+      height: 300px;
+      border-radius: 150px;
       background: url('../images/mable.png') no-repeat;
-      background-size: cover;
+      background-size: 300%;
+      background-position: 17% 30%;
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      top: 0;
+      left: 0;
+      z-index: -1;
+      opacity: 1;
+      filter: contrast(1.2);
+    }
+    img {
+      width: 100%;
+      height: 100%;
     }
   }
 }
@@ -115,6 +122,25 @@ section {
 // section 1 - intro end
 
 #portfolio {
+  flex-direction: row;
+  align-items: flex-start;
+  .headingArea {
+    width: 40%;
+    height: 100%;
+    justify-content: flex-start;
+    gap: 4vh;
+    .pf_link {
+      padding: 5%;
+      border-top: 1px solid $gray-light;
+      ul {
+        width: fit-content;
+        margin: 0 auto;
+        li {
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
   .content {
     width: 100%;
     height: 100%;
@@ -157,7 +183,7 @@ section {
   }
 }
 .modal {
-  &-image {
+  &-visual {
     overflow: hidden;
     img {
       display: block;
@@ -206,6 +232,7 @@ section {
     flex-direction: row;
     svg {
       height: fit-content;
+      width: 100%;
     }
     // @include flexDiplay();
     .skill_graph {
@@ -245,44 +272,32 @@ section {
 }
 // section - 3 skills end
 
-#profile {
-  .innerCon {
-    width: 80%;
-    @include flexDiplay();
-    align-items: flex-start;
-    flex-direction: row;
+footer {
+  @include flexDiplay(center, center, center);
+  flex-direction: column;
+  width: 100%;
 
-    .profile {
-      &_img,
-      &_list {
-        @include flexDiplay();
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 2vh;
-        width: 33.3%;
-        padding: 0 3%;
-      }
-      &_img {
-        @include flexDiplay(center, center, center);
-        height: 100%;
-        img {
-          width: 100%;
-        }
-      }
-      &_list {
-        border-right: 1px solid $coral;
-        &:last-child {
-          border-right: none;
-        }
-      }
+  div {
+    padding: 2%;
+  }
+  .connect {
+    @extend footer;
+    @include flexDiplay(flex-start, flex-start, flex-start);
+    flex-direction: row;
+    width: fit-content;
+    h5 {
+      text-align: left;
+      white-space: nowrap;
+    }
+    li {
+      white-space: nowrap;
+      margin-bottom: 5px;
     }
   }
+  .copy {
+    @extend footer;
+    border-top: 1px solid $gray-light;
+    width: 100%;
+  }
 }
-// section - 4 profile end
-
-footer {
-  @include flexDiplay(center, center);
-  width: 100%;
-  height: 10vh;
-  border-top: 1px solid $gray-light;
-}
+// footer End

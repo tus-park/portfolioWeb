@@ -6,33 +6,10 @@ request.send()
 
 request.onload = function () {
   var data = request.response
-  console.log('success')
   jsonLoad(data)
-  handles(data)
 } // ajax 로드
 
-function handles(handleObj) {
-  var thumbs = $('.thumb').children('.modalBtn')
-  var contentsView = $('.modal-content')
-  var filterHdl = $('.filters').children('a')
-
-  $.each(thumbs, function (i) {
-    $(thumbs[i]).click(function () {
-      $(contentsView).attr('id', handleObj[i].id).append(modalContents(handleObj[i]))
-    })
-  })
-  $.each(handleObj, function (j) {
-    var hdl_data = $(this).data('filter')
-    var filters = handleObj[j].filter
-    $(filterHdl).on('click', function () {
-      console.log('fuck!')
-    })
-  })
-}
-
 function jsonLoad(linkObj) {
-  console.log('load success')
-
   $.each(linkObj, function (i) {
     const thumbHtml = (identity, title, filter) => {
       return (
@@ -49,21 +26,33 @@ function jsonLoad(linkObj) {
     }
     $('.thumb').append(thumbHtml(linkObj[i].id, linkObj[i].title, linkObj[i].filter))
     var thumbBtns = $('.thumb').find('.modalBtn')
-    $(thumbBtns[i]).css({ 'background-image': 'url(' + linkObj[i].image + ')' })
+    $(thumbBtns[i]).css({ 'background-image': 'url(' + linkObj[i].visual + ')' })
+    // thumbnail
+
+    var thumbs = $('.thumb').children('.modalBtn')
+    var contentsView = $('.modal-content')
+    $.each(thumbs, function (j) {
+      $(thumbs[j]).click(function () {
+        $(contentsView).attr('id', linkObj[j].id).append(modalContents(linkObj[j]))
+      })
+    })
+    // thumbnail target - contents 연결
   })
-} // thumbnail
+}
 
 function modalContents(modalObj) {
   var conItems = modalObj['content']
   var header = modalObj['title']
-  var imgs = modalObj['image']
+  var visual = modalObj['visual']
   var contents = $('.modal-content')
 
-  console.log('content success')
-
-  $(contents).html('<div class="modal-image"></div>' + '<div class="modal-head"></div>' + '<div class="modal-body"></div>' + '<div class="modal-foot"></div>')
-  $('.modal-image').append('<img class="ratioCon" src ="' + imgs + '" alt="' + header + '"/>')
+  $(contents).html('<div class="modal-visual"></div>' + '<div class="modal-head"></div>' + '<div class="modal-body"></div>' + '<div class="modal-foot"></div>')
   $('.modal-head').append('<h4>' + header + '</h4>')
+
+  var imageItem = '<img src="' + visual + '" alt="' + header + '"/>'
+
+  $('.modal-visual').append('<div class="visualItem ratioCon"></div>')
+  $('.visualItem').append(imageItem)
 
   $.each(conItems, function (key, value) {
     if (!value == '') {

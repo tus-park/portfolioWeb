@@ -7,15 +7,13 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" /> -->
     <link rel="stylesheet" href="css/index.css" />
     <!-- css -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script> -->
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script> -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <script type="text/javascript" src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script type="text/javascript" src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
     <!-- javascript cdn -->
@@ -36,29 +34,34 @@
           <li>
             <a href="#skills" class="icon icon_circle"><span>기술/경험</span></a>
           </li>
-          <li>
-            <a href="#profile" class="icon icon_circle"><span>프로필</span></a>
-          </li>
         </ul>
       </nav>
     </header>
     <div class="wrap">
       <section id="intro">
         <div class="content">
-          <div class="obj"></div>
-          <p>어서오세요. 비눗방울 처럼 부풀어 오르는 아이디어를 코딩으로 기록하는 박시연의 포트폴리오 사이트입니다.</p>
+          <div class="obj">
+            <img src="images/sy.svg" alt="character" />
+          </div>
+          <p>
+            어서오세요. <br />부풀어 오르는 아이디어를 코딩으로 기록하는<br />
+            <span class="point">박시연의 포트폴리오</span> 사이트 입니다.
+          </p>
         </div>
       </section>
       <section id="portfolio">
         <div class="headingArea">
-          <h3 class="subHeading">포트폴리오<span>portfolio</span></h3>
+          <h3 class="heading">포트폴리오<span>portfolio</span></h3>
+          <div class="pf_link">
+            <h5 class="heading">링크 <span>Links</span></h5>
+            <ul>
+              <li class="icon icon_link"><a href="https://github.com/tus-park" target="_blank" class="link">github</a></li>
+              <li class="icon icon_link"><a href="https://codepen.io/siy" target="_blank" class="link">codepen</a></li>
+              <li class="icon icon_blog"><a href="https://pomponsnow.tistory.com" target="_blank" class="link">blog</a></li>
+            </ul>
+          </div>
         </div>
         <div class="content">
-          <div class="filters">
-            <a href="javascript:void(0)"><span>All</span></a>
-            <a href="javascript:void(0)" data-filter="design"><span>Design</span></a>
-            <a href="javascript:void(0)" data-filter="coding"><span>Coding</span></a>
-          </div>
           <div class="thumb">
             <!-- modal buttons -->
           </div>
@@ -73,7 +76,7 @@
       </section>
       <section id="skills">
         <div class="headingArea">
-          <h3 class="subHeading">기술&경험<span>skill&experience</span></h3>
+          <h3 class="heading">기술&경험<span>skill&experience</span></h3>
         </div>
         <div class="content">
           <div class="skill_list">
@@ -81,34 +84,29 @@
               <h5 class="subTit">코딩 능력<span>Coding Skills</span></h5>
               <div class="coding_list">
                 <lottie-player id="codingSvg" src="images/coding.json"></lottie-player>
-
                 <div class="skill_graph">
                   <dl>
                     <dt>HTML</dt>
                     <dd>
-                      <img class="levelBar" data-level="95" src="images/level.svg" alt="level bar">
-
+                      <div class="levelBar" data-level="90"></div>
                     </dd>
                   </dl>
                   <dl>
                     <dt>CSS</dt>
                     <dd>
-                      <img class="" data-level="95" src="images/level.svg" alt="level bar" />
-                      95%
+                      <div class="levelBar" data-level="90"></div>
                     </dd>
                   </dl>
                   <dl>
                     <dt>SCSS</dt>
                     <dd>
-                      <img class="" data-level="80" src="images/level.svg" alt="level bar" />
-                      80%
+                      <div class="levelBar" data-level="80"></div>
                     </dd>
                   </dl>
                   <dl>
                     <dt>JavaScript / jQuery</dt>
                     <dd>
-                      <img class="" data-level="70" src="images/level.svg" alt="level bar" />
-                      70%
+                      <div class="levelBar" data-level="70"></div>
                     </dd>
                   </dl>
                 </div>
@@ -122,36 +120,31 @@
                   <dl>
                     <dt>Adobe Photoshop</dt>
                     <dd>
-                      <img class="" data-level="90" src="images/level.svg" alt="level bar" />
-                      95%
+                      <div class="levelBar" data-level="90"></div>
                     </dd>
                   </dl>
                   <dl>
                     <dt>Adobe Illustrator</dt>
                     <dd>
-                      <img class="" data-level="90" src="images/level.svg" alt="level bar" />
-                      80%
+                      <div class="levelBar" data-level="80"></div>
                     </dd>
                   </dl>
                   <dl>
                     <dt>Adobe After Effect</dt>
                     <dd>
-                      <img class="" data-level="90" src="images/level.svg" alt="level bar" />
-                      70%
+                      <div class="levelBar" data-level="70"></div>
                     </dd>
                   </dl>
                   <dl>
                     <dt>Adobe XD</dt>
                     <dd>
-                      <img class="" data-level="60" src="images/level.svg" alt="level bar" />
-                      60%
+                      <div class="levelBar" data-level="70"></div>
                     </dd>
                   </dl>
                   <dl>
                     <dt>Figma</dt>
                     <dd>
-                      <img class="" data-level="90" src="images/level.svg" alt="level bar" />
-                      80%
+                      <div class="levelBar" data-level="80"></div>
                     </dd>
                   </dl>
                 </div>
@@ -169,46 +162,26 @@
           </div>
         </div>
       </section>
-      <section id="profile">
-        <div class="headingArea">
-          <h3 class="subHeading">프로필<span>profile</span></h3>
-        </div>
-        <div class="content">
-          <div class="innerCon">
-            <div class="profile_img">
-              <img src="images/sy.svg" alt="프로필 이미지" />
-            </div>
-            <div class="profile_list">
-              <h5>프로필 <span>Profile</span></h5>
-              <p class="pointText">박시연</p>
-              <p>
-                그러나 경, 시와 내 듯합니다. 나의 노새, 하늘에는 헤일 어머니, 까닭입니다. 비둘기, 나는 별 어머니, 봅니다. 어머니, 새워 이런 쓸쓸함과 같이 위에도
-                봅니다.
-              </p>
-              <h5>연결 <span>Connect</span></h5>
-              <ul>
-                <li class="icon icon_instagram"><a href="https://www.instagram.com/siiy_12/" target="_blank">Instagram</a></li>
-                <li class="icon icon_talk">Talk : tus123(kakaoID)</li>
-                <li class="icon icon_email"><a href="mailto:tlduspark@gmail.com">E-Mail : tlduspark@gmail.com</a></li>
-              </ul>
-            </div>
-            <div class="profile_list">
-              <h5>경력 <span>Career</span></h5>
-              <ul class="list">
-                <li>jjjjjj - jjjjj</li>
-              </ul>
-              <h5>자격 <span>License</span></h5>
-              <ul class="list">
-                <li>웹디자인 기능사</li>
-                <li>디지털영상편집 1급</li>
-              </ul>
-            </div>
+
+      <footer>
+        <div class="connect">
+          <div class="connect-item">
+            <h5>연락 <span>Connect</span></h5>
+            <ul>
+              <li class="icon icon_instagram"><a href="https://www.instagram.com/siiy_12/" target="_blank" class="link">Instagram</a></li>
+              <li class="icon icon_talk">Talk : tus123(kakaoID)</li>
+              <li class="icon icon_email"><a href="mailto:tlduspark@gmail.com">E-Mail : tlduspark@gmail.com</a></li>
+            </ul>
+          </div>
+          <div class="connect-item">
+            <h5>이력 <span>Resume</span></h5>
+            <a href="https://drive.google.com/file/d/18BTkGXv9a5QZoQbjOOQkgtzYInfXnRBt/view?usp=sharing" target="_blank" class="link">이력서 다운로드</a>
           </div>
         </div>
-      </section>
-      <footer>copylight@2022 Si-YeonPark</footer>
+        <div class="copy">ⓒcopyright Si-YeonPark</div>
+      </footer>
     </div>
   </body>
   <script src="js/index.js"></script>
-  <!-- javascript -->
+  <script src="js/svg.js"></script>
 </html>
