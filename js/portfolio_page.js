@@ -21,6 +21,13 @@ function handles(handleObj) {
       $(contentsView).attr('id', handleObj[i].id).append(modalContents(handleObj[i]))
     })
   })
+  $.each(handleObj, function (j) {
+    var hdl_data = $(this).data('filter')
+    var filters = handleObj[j].filter
+    $(filterHdl).on('click', function () {
+      console.log('fuck!')
+    })
+  })
 }
 
 function jsonLoad(linkObj) {
