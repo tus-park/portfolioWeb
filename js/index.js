@@ -1,5 +1,4 @@
 $(document).ready(function () {
-  console.log('loading')
   $('#loading').show()
   $('body').css({ 'overflow': 'hidden' })
 
@@ -101,7 +100,6 @@ $(document).ready(function () {
   //lottie svg animation
 })
 $(window).on('load', function () {
-  console.log('loding success')
   $('body').css({ 'overflow': 'auto' })
   $('#loading').remove()
 })
