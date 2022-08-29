@@ -1,11 +1,4 @@
 @charset "UTF-8";
-html,
-body,
-* {
-  line-height: normal;
-  box-sizing: border-box;
-}
-
 @font-face {
   font-family: "spoqa-sans";
   src: url("../fonts/SpoqaHanSansNeo-Medium.otf") format("otf"), url("../fonts/SpoqaHanSansNeo-Medium.ttf") format("truetype");
@@ -18,28 +11,6 @@ body,
   font-weight: normal;
   font-style: normal;
 }
-.point {
-  font-weight: bold;
-  font-family: "nixgon";
-}
-
-.hidden {
-  display: none;
-  opacity: 0;
-  position: absolute;
-  left: -999999px;
-}
-
-.hiddenText {
-  font-size: 1px;
-  color: white;
-  color: transparent;
-  text-indent: -999999px;
-}
-.hiddenText::before {
-  display: block !important;
-}
-
 .icon {
   font-size: 1rem;
 }
@@ -327,6 +298,110 @@ body,
   margin-right: 0.3rem;
   text-indent: -999999px;
   background-image: url("../images/icons/link.svg");
+  background-size: cover;
+}
+.icon.icon_html::before {
+  display: inline-block;
+  content: "html";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/html.svg");
+  background-size: cover;
+}
+.icon.icon_css::before {
+  display: inline-block;
+  content: "css";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/css.svg");
+  background-size: cover;
+}
+.icon.icon_javascript::before {
+  display: inline-block;
+  content: "javascript";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/javascript.svg");
+  background-size: cover;
+}
+.icon.icon_photoshop::before {
+  display: inline-block;
+  content: "photoshop";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/photoshop.svg");
+  background-size: cover;
+}
+.icon.icon_illustrator::before {
+  display: inline-block;
+  content: "illustrator";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/illustrator.svg");
+  background-size: cover;
+}
+.icon.icon_aftereffect::before {
+  display: inline-block;
+  content: "aftereffect";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/aftereffect.svg");
+  background-size: cover;
+}
+.icon.icon_xd::before {
+  display: inline-block;
+  content: "xd";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/xd.svg");
+  background-size: cover;
+}
+.icon.icon_figma::before {
+  display: inline-block;
+  content: "figma";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/figma.svg");
   background-size: cover;
 }
 
@@ -624,6 +699,110 @@ i.icon.icon_link::before {
   margin-right: 0.3rem;
   text-indent: -999999px;
   background-image: url("../images/icons/link.svg");
+  background-size: cover;
+}
+i.icon.icon_html::before {
+  display: inline-block;
+  content: "html";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/html.svg");
+  background-size: cover;
+}
+i.icon.icon_css::before {
+  display: inline-block;
+  content: "css";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/css.svg");
+  background-size: cover;
+}
+i.icon.icon_javascript::before {
+  display: inline-block;
+  content: "javascript";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/javascript.svg");
+  background-size: cover;
+}
+i.icon.icon_photoshop::before {
+  display: inline-block;
+  content: "photoshop";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/photoshop.svg");
+  background-size: cover;
+}
+i.icon.icon_illustrator::before {
+  display: inline-block;
+  content: "illustrator";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/illustrator.svg");
+  background-size: cover;
+}
+i.icon.icon_aftereffect::before {
+  display: inline-block;
+  content: "aftereffect";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/aftereffect.svg");
+  background-size: cover;
+}
+i.icon.icon_xd::before {
+  display: inline-block;
+  content: "xd";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/xd.svg");
+  background-size: cover;
+}
+i.icon.icon_figma::before {
+  display: inline-block;
+  content: "figma";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/figma.svg");
   background-size: cover;
 }
 i.icon::before {
@@ -936,6 +1115,110 @@ h6 .subHead .icon.icon_link::before {
   background-image: url("../images/icons/link.svg");
   background-size: cover;
 }
+h6 .subHead .icon.icon_html::before {
+  display: inline-block;
+  content: "html";
+  color: #fff;
+  color: transparent;
+  width: 0.6rem;
+  height: 0.6rem;
+  vertical-align: baseline;
+  margin-right: 0.18rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/html.svg");
+  background-size: cover;
+}
+h6 .subHead .icon.icon_css::before {
+  display: inline-block;
+  content: "css";
+  color: #fff;
+  color: transparent;
+  width: 0.6rem;
+  height: 0.6rem;
+  vertical-align: baseline;
+  margin-right: 0.18rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/css.svg");
+  background-size: cover;
+}
+h6 .subHead .icon.icon_javascript::before {
+  display: inline-block;
+  content: "javascript";
+  color: #fff;
+  color: transparent;
+  width: 0.6rem;
+  height: 0.6rem;
+  vertical-align: baseline;
+  margin-right: 0.18rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/javascript.svg");
+  background-size: cover;
+}
+h6 .subHead .icon.icon_photoshop::before {
+  display: inline-block;
+  content: "photoshop";
+  color: #fff;
+  color: transparent;
+  width: 0.6rem;
+  height: 0.6rem;
+  vertical-align: baseline;
+  margin-right: 0.18rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/photoshop.svg");
+  background-size: cover;
+}
+h6 .subHead .icon.icon_illustrator::before {
+  display: inline-block;
+  content: "illustrator";
+  color: #fff;
+  color: transparent;
+  width: 0.6rem;
+  height: 0.6rem;
+  vertical-align: baseline;
+  margin-right: 0.18rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/illustrator.svg");
+  background-size: cover;
+}
+h6 .subHead .icon.icon_aftereffect::before {
+  display: inline-block;
+  content: "aftereffect";
+  color: #fff;
+  color: transparent;
+  width: 0.6rem;
+  height: 0.6rem;
+  vertical-align: baseline;
+  margin-right: 0.18rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/aftereffect.svg");
+  background-size: cover;
+}
+h6 .subHead .icon.icon_xd::before {
+  display: inline-block;
+  content: "xd";
+  color: #fff;
+  color: transparent;
+  width: 0.6rem;
+  height: 0.6rem;
+  vertical-align: baseline;
+  margin-right: 0.18rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/xd.svg");
+  background-size: cover;
+}
+h6 .subHead .icon.icon_figma::before {
+  display: inline-block;
+  content: "figma";
+  color: #fff;
+  color: transparent;
+  width: 0.6rem;
+  height: 0.6rem;
+  vertical-align: baseline;
+  margin-right: 0.18rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/figma.svg");
+  background-size: cover;
+}
 h6 .icon {
   font-size: 1rem;
 }
@@ -1223,6 +1506,110 @@ h6 .icon.icon_link::before {
   margin-right: 0.3rem;
   text-indent: -999999px;
   background-image: url("../images/icons/link.svg");
+  background-size: cover;
+}
+h6 .icon.icon_html::before {
+  display: inline-block;
+  content: "html";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/html.svg");
+  background-size: cover;
+}
+h6 .icon.icon_css::before {
+  display: inline-block;
+  content: "css";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/css.svg");
+  background-size: cover;
+}
+h6 .icon.icon_javascript::before {
+  display: inline-block;
+  content: "javascript";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/javascript.svg");
+  background-size: cover;
+}
+h6 .icon.icon_photoshop::before {
+  display: inline-block;
+  content: "photoshop";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/photoshop.svg");
+  background-size: cover;
+}
+h6 .icon.icon_illustrator::before {
+  display: inline-block;
+  content: "illustrator";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/illustrator.svg");
+  background-size: cover;
+}
+h6 .icon.icon_aftereffect::before {
+  display: inline-block;
+  content: "aftereffect";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/aftereffect.svg");
+  background-size: cover;
+}
+h6 .icon.icon_xd::before {
+  display: inline-block;
+  content: "xd";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/xd.svg");
+  background-size: cover;
+}
+h6 .icon.icon_figma::before {
+  display: inline-block;
+  content: "figma";
+  color: #fff;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: baseline;
+  margin-right: 0.3rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/figma.svg");
   background-size: cover;
 }
 
@@ -1536,6 +1923,110 @@ h5 .subHead .icon.icon_link::before {
   background-image: url("../images/icons/link.svg");
   background-size: cover;
 }
+h5 .subHead .icon.icon_html::before {
+  display: inline-block;
+  content: "html";
+  color: #fff;
+  color: transparent;
+  width: 0.9rem;
+  height: 0.9rem;
+  vertical-align: baseline;
+  margin-right: 0.27rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/html.svg");
+  background-size: cover;
+}
+h5 .subHead .icon.icon_css::before {
+  display: inline-block;
+  content: "css";
+  color: #fff;
+  color: transparent;
+  width: 0.9rem;
+  height: 0.9rem;
+  vertical-align: baseline;
+  margin-right: 0.27rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/css.svg");
+  background-size: cover;
+}
+h5 .subHead .icon.icon_javascript::before {
+  display: inline-block;
+  content: "javascript";
+  color: #fff;
+  color: transparent;
+  width: 0.9rem;
+  height: 0.9rem;
+  vertical-align: baseline;
+  margin-right: 0.27rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/javascript.svg");
+  background-size: cover;
+}
+h5 .subHead .icon.icon_photoshop::before {
+  display: inline-block;
+  content: "photoshop";
+  color: #fff;
+  color: transparent;
+  width: 0.9rem;
+  height: 0.9rem;
+  vertical-align: baseline;
+  margin-right: 0.27rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/photoshop.svg");
+  background-size: cover;
+}
+h5 .subHead .icon.icon_illustrator::before {
+  display: inline-block;
+  content: "illustrator";
+  color: #fff;
+  color: transparent;
+  width: 0.9rem;
+  height: 0.9rem;
+  vertical-align: baseline;
+  margin-right: 0.27rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/illustrator.svg");
+  background-size: cover;
+}
+h5 .subHead .icon.icon_aftereffect::before {
+  display: inline-block;
+  content: "aftereffect";
+  color: #fff;
+  color: transparent;
+  width: 0.9rem;
+  height: 0.9rem;
+  vertical-align: baseline;
+  margin-right: 0.27rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/aftereffect.svg");
+  background-size: cover;
+}
+h5 .subHead .icon.icon_xd::before {
+  display: inline-block;
+  content: "xd";
+  color: #fff;
+  color: transparent;
+  width: 0.9rem;
+  height: 0.9rem;
+  vertical-align: baseline;
+  margin-right: 0.27rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/xd.svg");
+  background-size: cover;
+}
+h5 .subHead .icon.icon_figma::before {
+  display: inline-block;
+  content: "figma";
+  color: #fff;
+  color: transparent;
+  width: 0.9rem;
+  height: 0.9rem;
+  vertical-align: baseline;
+  margin-right: 0.27rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/figma.svg");
+  background-size: cover;
+}
 h5 .icon {
   font-size: 1.5rem;
 }
@@ -1823,6 +2314,110 @@ h5 .icon.icon_link::before {
   margin-right: 0.45rem;
   text-indent: -999999px;
   background-image: url("../images/icons/link.svg");
+  background-size: cover;
+}
+h5 .icon.icon_html::before {
+  display: inline-block;
+  content: "html";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/html.svg");
+  background-size: cover;
+}
+h5 .icon.icon_css::before {
+  display: inline-block;
+  content: "css";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/css.svg");
+  background-size: cover;
+}
+h5 .icon.icon_javascript::before {
+  display: inline-block;
+  content: "javascript";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/javascript.svg");
+  background-size: cover;
+}
+h5 .icon.icon_photoshop::before {
+  display: inline-block;
+  content: "photoshop";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/photoshop.svg");
+  background-size: cover;
+}
+h5 .icon.icon_illustrator::before {
+  display: inline-block;
+  content: "illustrator";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/illustrator.svg");
+  background-size: cover;
+}
+h5 .icon.icon_aftereffect::before {
+  display: inline-block;
+  content: "aftereffect";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/aftereffect.svg");
+  background-size: cover;
+}
+h5 .icon.icon_xd::before {
+  display: inline-block;
+  content: "xd";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/xd.svg");
+  background-size: cover;
+}
+h5 .icon.icon_figma::before {
+  display: inline-block;
+  content: "figma";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/figma.svg");
   background-size: cover;
 }
 
@@ -2136,6 +2731,110 @@ h4 .subHead .icon.icon_link::before {
   background-image: url("../images/icons/link.svg");
   background-size: cover;
 }
+h4 .subHead .icon.icon_html::before {
+  display: inline-block;
+  content: "html";
+  color: #fff;
+  color: transparent;
+  width: 1.2rem;
+  height: 1.2rem;
+  vertical-align: baseline;
+  margin-right: 0.36rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/html.svg");
+  background-size: cover;
+}
+h4 .subHead .icon.icon_css::before {
+  display: inline-block;
+  content: "css";
+  color: #fff;
+  color: transparent;
+  width: 1.2rem;
+  height: 1.2rem;
+  vertical-align: baseline;
+  margin-right: 0.36rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/css.svg");
+  background-size: cover;
+}
+h4 .subHead .icon.icon_javascript::before {
+  display: inline-block;
+  content: "javascript";
+  color: #fff;
+  color: transparent;
+  width: 1.2rem;
+  height: 1.2rem;
+  vertical-align: baseline;
+  margin-right: 0.36rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/javascript.svg");
+  background-size: cover;
+}
+h4 .subHead .icon.icon_photoshop::before {
+  display: inline-block;
+  content: "photoshop";
+  color: #fff;
+  color: transparent;
+  width: 1.2rem;
+  height: 1.2rem;
+  vertical-align: baseline;
+  margin-right: 0.36rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/photoshop.svg");
+  background-size: cover;
+}
+h4 .subHead .icon.icon_illustrator::before {
+  display: inline-block;
+  content: "illustrator";
+  color: #fff;
+  color: transparent;
+  width: 1.2rem;
+  height: 1.2rem;
+  vertical-align: baseline;
+  margin-right: 0.36rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/illustrator.svg");
+  background-size: cover;
+}
+h4 .subHead .icon.icon_aftereffect::before {
+  display: inline-block;
+  content: "aftereffect";
+  color: #fff;
+  color: transparent;
+  width: 1.2rem;
+  height: 1.2rem;
+  vertical-align: baseline;
+  margin-right: 0.36rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/aftereffect.svg");
+  background-size: cover;
+}
+h4 .subHead .icon.icon_xd::before {
+  display: inline-block;
+  content: "xd";
+  color: #fff;
+  color: transparent;
+  width: 1.2rem;
+  height: 1.2rem;
+  vertical-align: baseline;
+  margin-right: 0.36rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/xd.svg");
+  background-size: cover;
+}
+h4 .subHead .icon.icon_figma::before {
+  display: inline-block;
+  content: "figma";
+  color: #fff;
+  color: transparent;
+  width: 1.2rem;
+  height: 1.2rem;
+  vertical-align: baseline;
+  margin-right: 0.36rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/figma.svg");
+  background-size: cover;
+}
 h4 .icon {
   font-size: 2rem;
 }
@@ -2423,6 +3122,110 @@ h4 .icon.icon_link::before {
   margin-right: 0.6rem;
   text-indent: -999999px;
   background-image: url("../images/icons/link.svg");
+  background-size: cover;
+}
+h4 .icon.icon_html::before {
+  display: inline-block;
+  content: "html";
+  color: #fff;
+  color: transparent;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: baseline;
+  margin-right: 0.6rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/html.svg");
+  background-size: cover;
+}
+h4 .icon.icon_css::before {
+  display: inline-block;
+  content: "css";
+  color: #fff;
+  color: transparent;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: baseline;
+  margin-right: 0.6rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/css.svg");
+  background-size: cover;
+}
+h4 .icon.icon_javascript::before {
+  display: inline-block;
+  content: "javascript";
+  color: #fff;
+  color: transparent;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: baseline;
+  margin-right: 0.6rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/javascript.svg");
+  background-size: cover;
+}
+h4 .icon.icon_photoshop::before {
+  display: inline-block;
+  content: "photoshop";
+  color: #fff;
+  color: transparent;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: baseline;
+  margin-right: 0.6rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/photoshop.svg");
+  background-size: cover;
+}
+h4 .icon.icon_illustrator::before {
+  display: inline-block;
+  content: "illustrator";
+  color: #fff;
+  color: transparent;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: baseline;
+  margin-right: 0.6rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/illustrator.svg");
+  background-size: cover;
+}
+h4 .icon.icon_aftereffect::before {
+  display: inline-block;
+  content: "aftereffect";
+  color: #fff;
+  color: transparent;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: baseline;
+  margin-right: 0.6rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/aftereffect.svg");
+  background-size: cover;
+}
+h4 .icon.icon_xd::before {
+  display: inline-block;
+  content: "xd";
+  color: #fff;
+  color: transparent;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: baseline;
+  margin-right: 0.6rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/xd.svg");
+  background-size: cover;
+}
+h4 .icon.icon_figma::before {
+  display: inline-block;
+  content: "figma";
+  color: #fff;
+  color: transparent;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: baseline;
+  margin-right: 0.6rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/figma.svg");
   background-size: cover;
 }
 
@@ -2736,6 +3539,110 @@ h3 .subHead .icon.icon_link::before {
   background-image: url("../images/icons/link.svg");
   background-size: cover;
 }
+h3 .subHead .icon.icon_html::before {
+  display: inline-block;
+  content: "html";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/html.svg");
+  background-size: cover;
+}
+h3 .subHead .icon.icon_css::before {
+  display: inline-block;
+  content: "css";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/css.svg");
+  background-size: cover;
+}
+h3 .subHead .icon.icon_javascript::before {
+  display: inline-block;
+  content: "javascript";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/javascript.svg");
+  background-size: cover;
+}
+h3 .subHead .icon.icon_photoshop::before {
+  display: inline-block;
+  content: "photoshop";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/photoshop.svg");
+  background-size: cover;
+}
+h3 .subHead .icon.icon_illustrator::before {
+  display: inline-block;
+  content: "illustrator";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/illustrator.svg");
+  background-size: cover;
+}
+h3 .subHead .icon.icon_aftereffect::before {
+  display: inline-block;
+  content: "aftereffect";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/aftereffect.svg");
+  background-size: cover;
+}
+h3 .subHead .icon.icon_xd::before {
+  display: inline-block;
+  content: "xd";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/xd.svg");
+  background-size: cover;
+}
+h3 .subHead .icon.icon_figma::before {
+  display: inline-block;
+  content: "figma";
+  color: #fff;
+  color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: baseline;
+  margin-right: 0.45rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/figma.svg");
+  background-size: cover;
+}
 h3 .icon {
   font-size: 2.5rem;
 }
@@ -3023,6 +3930,110 @@ h3 .icon.icon_link::before {
   margin-right: 0.75rem;
   text-indent: -999999px;
   background-image: url("../images/icons/link.svg");
+  background-size: cover;
+}
+h3 .icon.icon_html::before {
+  display: inline-block;
+  content: "html";
+  color: #fff;
+  color: transparent;
+  width: 2.5rem;
+  height: 2.5rem;
+  vertical-align: baseline;
+  margin-right: 0.75rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/html.svg");
+  background-size: cover;
+}
+h3 .icon.icon_css::before {
+  display: inline-block;
+  content: "css";
+  color: #fff;
+  color: transparent;
+  width: 2.5rem;
+  height: 2.5rem;
+  vertical-align: baseline;
+  margin-right: 0.75rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/css.svg");
+  background-size: cover;
+}
+h3 .icon.icon_javascript::before {
+  display: inline-block;
+  content: "javascript";
+  color: #fff;
+  color: transparent;
+  width: 2.5rem;
+  height: 2.5rem;
+  vertical-align: baseline;
+  margin-right: 0.75rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/javascript.svg");
+  background-size: cover;
+}
+h3 .icon.icon_photoshop::before {
+  display: inline-block;
+  content: "photoshop";
+  color: #fff;
+  color: transparent;
+  width: 2.5rem;
+  height: 2.5rem;
+  vertical-align: baseline;
+  margin-right: 0.75rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/photoshop.svg");
+  background-size: cover;
+}
+h3 .icon.icon_illustrator::before {
+  display: inline-block;
+  content: "illustrator";
+  color: #fff;
+  color: transparent;
+  width: 2.5rem;
+  height: 2.5rem;
+  vertical-align: baseline;
+  margin-right: 0.75rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/illustrator.svg");
+  background-size: cover;
+}
+h3 .icon.icon_aftereffect::before {
+  display: inline-block;
+  content: "aftereffect";
+  color: #fff;
+  color: transparent;
+  width: 2.5rem;
+  height: 2.5rem;
+  vertical-align: baseline;
+  margin-right: 0.75rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/aftereffect.svg");
+  background-size: cover;
+}
+h3 .icon.icon_xd::before {
+  display: inline-block;
+  content: "xd";
+  color: #fff;
+  color: transparent;
+  width: 2.5rem;
+  height: 2.5rem;
+  vertical-align: baseline;
+  margin-right: 0.75rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/xd.svg");
+  background-size: cover;
+}
+h3 .icon.icon_figma::before {
+  display: inline-block;
+  content: "figma";
+  color: #fff;
+  color: transparent;
+  width: 2.5rem;
+  height: 2.5rem;
+  vertical-align: baseline;
+  margin-right: 0.75rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/figma.svg");
   background-size: cover;
 }
 
@@ -3336,6 +4347,110 @@ h2 .subHead .icon.icon_link::before {
   background-image: url("../images/icons/link.svg");
   background-size: cover;
 }
+h2 .subHead .icon.icon_html::before {
+  display: inline-block;
+  content: "html";
+  color: #fff;
+  color: transparent;
+  width: 1.8rem;
+  height: 1.8rem;
+  vertical-align: baseline;
+  margin-right: 0.54rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/html.svg");
+  background-size: cover;
+}
+h2 .subHead .icon.icon_css::before {
+  display: inline-block;
+  content: "css";
+  color: #fff;
+  color: transparent;
+  width: 1.8rem;
+  height: 1.8rem;
+  vertical-align: baseline;
+  margin-right: 0.54rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/css.svg");
+  background-size: cover;
+}
+h2 .subHead .icon.icon_javascript::before {
+  display: inline-block;
+  content: "javascript";
+  color: #fff;
+  color: transparent;
+  width: 1.8rem;
+  height: 1.8rem;
+  vertical-align: baseline;
+  margin-right: 0.54rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/javascript.svg");
+  background-size: cover;
+}
+h2 .subHead .icon.icon_photoshop::before {
+  display: inline-block;
+  content: "photoshop";
+  color: #fff;
+  color: transparent;
+  width: 1.8rem;
+  height: 1.8rem;
+  vertical-align: baseline;
+  margin-right: 0.54rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/photoshop.svg");
+  background-size: cover;
+}
+h2 .subHead .icon.icon_illustrator::before {
+  display: inline-block;
+  content: "illustrator";
+  color: #fff;
+  color: transparent;
+  width: 1.8rem;
+  height: 1.8rem;
+  vertical-align: baseline;
+  margin-right: 0.54rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/illustrator.svg");
+  background-size: cover;
+}
+h2 .subHead .icon.icon_aftereffect::before {
+  display: inline-block;
+  content: "aftereffect";
+  color: #fff;
+  color: transparent;
+  width: 1.8rem;
+  height: 1.8rem;
+  vertical-align: baseline;
+  margin-right: 0.54rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/aftereffect.svg");
+  background-size: cover;
+}
+h2 .subHead .icon.icon_xd::before {
+  display: inline-block;
+  content: "xd";
+  color: #fff;
+  color: transparent;
+  width: 1.8rem;
+  height: 1.8rem;
+  vertical-align: baseline;
+  margin-right: 0.54rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/xd.svg");
+  background-size: cover;
+}
+h2 .subHead .icon.icon_figma::before {
+  display: inline-block;
+  content: "figma";
+  color: #fff;
+  color: transparent;
+  width: 1.8rem;
+  height: 1.8rem;
+  vertical-align: baseline;
+  margin-right: 0.54rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/figma.svg");
+  background-size: cover;
+}
 h2 .icon {
   font-size: 3rem;
 }
@@ -3623,6 +4738,110 @@ h2 .icon.icon_link::before {
   margin-right: 0.9rem;
   text-indent: -999999px;
   background-image: url("../images/icons/link.svg");
+  background-size: cover;
+}
+h2 .icon.icon_html::before {
+  display: inline-block;
+  content: "html";
+  color: #fff;
+  color: transparent;
+  width: 3rem;
+  height: 3rem;
+  vertical-align: baseline;
+  margin-right: 0.9rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/html.svg");
+  background-size: cover;
+}
+h2 .icon.icon_css::before {
+  display: inline-block;
+  content: "css";
+  color: #fff;
+  color: transparent;
+  width: 3rem;
+  height: 3rem;
+  vertical-align: baseline;
+  margin-right: 0.9rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/css.svg");
+  background-size: cover;
+}
+h2 .icon.icon_javascript::before {
+  display: inline-block;
+  content: "javascript";
+  color: #fff;
+  color: transparent;
+  width: 3rem;
+  height: 3rem;
+  vertical-align: baseline;
+  margin-right: 0.9rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/javascript.svg");
+  background-size: cover;
+}
+h2 .icon.icon_photoshop::before {
+  display: inline-block;
+  content: "photoshop";
+  color: #fff;
+  color: transparent;
+  width: 3rem;
+  height: 3rem;
+  vertical-align: baseline;
+  margin-right: 0.9rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/photoshop.svg");
+  background-size: cover;
+}
+h2 .icon.icon_illustrator::before {
+  display: inline-block;
+  content: "illustrator";
+  color: #fff;
+  color: transparent;
+  width: 3rem;
+  height: 3rem;
+  vertical-align: baseline;
+  margin-right: 0.9rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/illustrator.svg");
+  background-size: cover;
+}
+h2 .icon.icon_aftereffect::before {
+  display: inline-block;
+  content: "aftereffect";
+  color: #fff;
+  color: transparent;
+  width: 3rem;
+  height: 3rem;
+  vertical-align: baseline;
+  margin-right: 0.9rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/aftereffect.svg");
+  background-size: cover;
+}
+h2 .icon.icon_xd::before {
+  display: inline-block;
+  content: "xd";
+  color: #fff;
+  color: transparent;
+  width: 3rem;
+  height: 3rem;
+  vertical-align: baseline;
+  margin-right: 0.9rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/xd.svg");
+  background-size: cover;
+}
+h2 .icon.icon_figma::before {
+  display: inline-block;
+  content: "figma";
+  color: #fff;
+  color: transparent;
+  width: 3rem;
+  height: 3rem;
+  vertical-align: baseline;
+  margin-right: 0.9rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/figma.svg");
   background-size: cover;
 }
 
@@ -3936,6 +5155,110 @@ h1 .subHead .icon.icon_link::before {
   background-image: url("../images/icons/link.svg");
   background-size: cover;
 }
+h1 .subHead .icon.icon_html::before {
+  display: inline-block;
+  content: "html";
+  color: #fff;
+  color: transparent;
+  width: 2.1rem;
+  height: 2.1rem;
+  vertical-align: baseline;
+  margin-right: 0.63rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/html.svg");
+  background-size: cover;
+}
+h1 .subHead .icon.icon_css::before {
+  display: inline-block;
+  content: "css";
+  color: #fff;
+  color: transparent;
+  width: 2.1rem;
+  height: 2.1rem;
+  vertical-align: baseline;
+  margin-right: 0.63rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/css.svg");
+  background-size: cover;
+}
+h1 .subHead .icon.icon_javascript::before {
+  display: inline-block;
+  content: "javascript";
+  color: #fff;
+  color: transparent;
+  width: 2.1rem;
+  height: 2.1rem;
+  vertical-align: baseline;
+  margin-right: 0.63rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/javascript.svg");
+  background-size: cover;
+}
+h1 .subHead .icon.icon_photoshop::before {
+  display: inline-block;
+  content: "photoshop";
+  color: #fff;
+  color: transparent;
+  width: 2.1rem;
+  height: 2.1rem;
+  vertical-align: baseline;
+  margin-right: 0.63rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/photoshop.svg");
+  background-size: cover;
+}
+h1 .subHead .icon.icon_illustrator::before {
+  display: inline-block;
+  content: "illustrator";
+  color: #fff;
+  color: transparent;
+  width: 2.1rem;
+  height: 2.1rem;
+  vertical-align: baseline;
+  margin-right: 0.63rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/illustrator.svg");
+  background-size: cover;
+}
+h1 .subHead .icon.icon_aftereffect::before {
+  display: inline-block;
+  content: "aftereffect";
+  color: #fff;
+  color: transparent;
+  width: 2.1rem;
+  height: 2.1rem;
+  vertical-align: baseline;
+  margin-right: 0.63rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/aftereffect.svg");
+  background-size: cover;
+}
+h1 .subHead .icon.icon_xd::before {
+  display: inline-block;
+  content: "xd";
+  color: #fff;
+  color: transparent;
+  width: 2.1rem;
+  height: 2.1rem;
+  vertical-align: baseline;
+  margin-right: 0.63rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/xd.svg");
+  background-size: cover;
+}
+h1 .subHead .icon.icon_figma::before {
+  display: inline-block;
+  content: "figma";
+  color: #fff;
+  color: transparent;
+  width: 2.1rem;
+  height: 2.1rem;
+  vertical-align: baseline;
+  margin-right: 0.63rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/figma.svg");
+  background-size: cover;
+}
 h1 .icon {
   font-size: 3.5rem;
 }
@@ -4225,6 +5548,110 @@ h1 .icon.icon_link::before {
   background-image: url("../images/icons/link.svg");
   background-size: cover;
 }
+h1 .icon.icon_html::before {
+  display: inline-block;
+  content: "html";
+  color: #fff;
+  color: transparent;
+  width: 3.5rem;
+  height: 3.5rem;
+  vertical-align: baseline;
+  margin-right: 1.05rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/html.svg");
+  background-size: cover;
+}
+h1 .icon.icon_css::before {
+  display: inline-block;
+  content: "css";
+  color: #fff;
+  color: transparent;
+  width: 3.5rem;
+  height: 3.5rem;
+  vertical-align: baseline;
+  margin-right: 1.05rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/css.svg");
+  background-size: cover;
+}
+h1 .icon.icon_javascript::before {
+  display: inline-block;
+  content: "javascript";
+  color: #fff;
+  color: transparent;
+  width: 3.5rem;
+  height: 3.5rem;
+  vertical-align: baseline;
+  margin-right: 1.05rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/javascript.svg");
+  background-size: cover;
+}
+h1 .icon.icon_photoshop::before {
+  display: inline-block;
+  content: "photoshop";
+  color: #fff;
+  color: transparent;
+  width: 3.5rem;
+  height: 3.5rem;
+  vertical-align: baseline;
+  margin-right: 1.05rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/photoshop.svg");
+  background-size: cover;
+}
+h1 .icon.icon_illustrator::before {
+  display: inline-block;
+  content: "illustrator";
+  color: #fff;
+  color: transparent;
+  width: 3.5rem;
+  height: 3.5rem;
+  vertical-align: baseline;
+  margin-right: 1.05rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/illustrator.svg");
+  background-size: cover;
+}
+h1 .icon.icon_aftereffect::before {
+  display: inline-block;
+  content: "aftereffect";
+  color: #fff;
+  color: transparent;
+  width: 3.5rem;
+  height: 3.5rem;
+  vertical-align: baseline;
+  margin-right: 1.05rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/aftereffect.svg");
+  background-size: cover;
+}
+h1 .icon.icon_xd::before {
+  display: inline-block;
+  content: "xd";
+  color: #fff;
+  color: transparent;
+  width: 3.5rem;
+  height: 3.5rem;
+  vertical-align: baseline;
+  margin-right: 1.05rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/xd.svg");
+  background-size: cover;
+}
+h1 .icon.icon_figma::before {
+  display: inline-block;
+  content: "figma";
+  color: #fff;
+  color: transparent;
+  width: 3.5rem;
+  height: 3.5rem;
+  vertical-align: baseline;
+  margin-right: 1.05rem;
+  text-indent: -999999px;
+  background-image: url("../images/icons/figma.svg");
+  background-size: cover;
+}
 
 h-2 {
   text-transform: uppercase;
@@ -4232,21 +5659,6 @@ h-2 {
 
 h4 .subHead, h5 .subHead, h6 .subHead {
   font-size: inherit;
-}
-
-.list li::before {
-  content: "●";
-  margin-right: 10px;
-  font-size: 0.8rem;
-  color: #70d3c2;
-}
-
-a {
-  text-decoration: none !important;
-  color: inherit;
-}
-a:hover, a:active, a:visited, a:focus {
-  color: inherit;
 }
 
 @-webkit-keyframes underbar_ani {
@@ -4266,45 +5678,6 @@ a:hover, a:active, a:visited, a:focus {
     width: 100%;
   }
 }
-button {
-  padding-top: 0.3rem;
-  padding-left: 0.6rem;
-  padding-right: 0.6rem;
-  padding-bottom: 0.3rem;
-  border-radius: 4px;
-  border-style: solid;
-  cursor: pointer;
-}
-button.btn_stroke {
-  background-color: transparent;
-  background-color: inherit;
-  border-width: 1px;
-  border-color: #98a2d6;
-  color: #98a2d6;
-}
-button.btn_fill {
-  border: none;
-  background-color: #98a2d6;
-  color: #ffffff;
-}
-
-.link {
-  position: relative;
-  display: inline-block;
-}
-.link:hover::after {
-  display: block;
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 2px;
-  width: 100%;
-  background-color: #98a2d6;
-  -webkit-animation: underbar_ani 0.6s alternate;
-          animation: underbar_ani 0.6s alternate;
-}
-
 .ui-dialog-titlebar {
   width: 100%;
   height: 5vh;
@@ -4348,7 +5721,7 @@ button.btn_fill {
   top: 0;
   left: 0;
   height: 100% !important;
-  width: 50% !important;
+  width: 80% !important;
   z-index: 9999;
   overflow: hidden;
   padding: 2vh 0;
@@ -4380,4 +5753,94 @@ button.btn_fill {
   border: 0;
   background-color: rgba(255, 255, 255, 0.5);
   position: relative;
+}
+
+html,
+body,
+* {
+  line-height: normal;
+  box-sizing: border-box;
+}
+
+.point {
+  font-weight: bold;
+  font-family: "nixgon";
+}
+
+.hidden {
+  display: none;
+  opacity: 0;
+  position: absolute;
+  left: -999999px;
+}
+
+.hiddenText {
+  font-size: 1px;
+  color: white;
+  color: transparent;
+  text-indent: -999999px;
+}
+.hiddenText::before {
+  display: block !important;
+}
+
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list li::before {
+  content: "●";
+  margin-right: 10px;
+  font-size: 0.8rem;
+  color: #70d3c2;
+}
+
+a {
+  text-decoration: none !important;
+  color: inherit;
+}
+a:hover, a:active, a:visited, a:focus {
+  color: inherit;
+}
+
+button {
+  padding-top: 0.3rem;
+  padding-left: 0.6rem;
+  padding-right: 0.6rem;
+  padding-bottom: 0.3rem;
+  border-radius: 4px;
+  border-style: solid;
+  cursor: pointer;
+}
+button.btn_stroke {
+  background-color: transparent;
+  background-color: inherit;
+  border-width: 1px;
+  border-color: #98a2d6;
+  color: #98a2d6;
+}
+button.btn_fill {
+  border: none;
+  background-color: #98a2d6;
+  color: #ffffff;
+}
+
+.link {
+  position: relative;
+  display: inline-block;
+}
+.link:hover::after {
+  display: block;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #98a2d6;
+  -webkit-animation: underbar_ani 0.6s alternate;
+          animation: underbar_ani 0.6s alternate;
 }/*# sourceMappingURL=style.css.map */

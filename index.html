@@ -24,15 +24,25 @@
     <header>
       <h1 class="hidden">박시연 포트폴리오 사이트</h1>
       <nav>
+        <div class="icon icon_menu hiddenText">menu</div>
         <ul class="menu">
           <li>
-            <a href="#intro" class="icon icon_ellipse"><span>소개</span></a>
+            <a href="#intro">
+              <div class="icon icon_ellipse hiddenText">icon</div>
+              <span>소개</span>
+            </a>
           </li>
           <li>
-            <a href="#portfolio" class="icon icon_circle"><span>포트폴리오</span></a>
+            <a href="#portfolio">
+              <div class="icon icon_circle hiddenText">icon</div>
+              <span>포트폴리오</span>
+            </a>
           </li>
           <li>
-            <a href="#skills" class="icon icon_circle"><span>기술/경험</span></a>
+            <a href="#skills">
+              <div class="icon icon_circle hiddenText">icon</div>
+              <span>기술/경험</span>
+            </a>
           </li>
         </ul>
       </nav>
@@ -44,8 +54,8 @@
             <img src="images/sy.svg" alt="character" />
           </div>
           <p>
-            어서오세요. <br />부풀어 오르는 아이디어를 코딩으로 기록하는<br />
-            <span class="point">박시연의 포트폴리오</span> 사이트 입니다.
+            어서오세요. 부풀어 오르는 아이디어를 코딩으로 기록하는<br />
+            <span class="point">박시연의 포트폴리오 사이트 입니다.</span>
           </p>
         </div>
       </section>
@@ -86,28 +96,16 @@
                 <lottie-player id="codingSvg" src="images/coding.json"></lottie-player>
                 <div class="skill_graph">
                   <dl>
-                    <dt>HTML</dt>
-                    <dd>
-                      <div class="levelBar" data-level="90"></div>
-                    </dd>
+                    <dt class="icon icon_html">HTML</dt>
+                    <dd>웹표준 마크업, 웹접근성</dd>
                   </dl>
                   <dl>
-                    <dt>CSS</dt>
-                    <dd>
-                      <div class="levelBar" data-level="90"></div>
-                    </dd>
+                    <dt class="icon icon_css">CSS</dt>
+                    <dd>반응형 웹, Sass, Less</dd>
                   </dl>
                   <dl>
-                    <dt>SCSS</dt>
-                    <dd>
-                      <div class="levelBar" data-level="80"></div>
-                    </dd>
-                  </dl>
-                  <dl>
-                    <dt>JavaScript / jQuery</dt>
-                    <dd>
-                      <div class="levelBar" data-level="70"></div>
-                    </dd>
+                    <dt class="icon icon_javascript">JavaScript</dt>
+                    <dd>JQuery, 비동기 Ajax, TypeScript</dd>
                   </dl>
                 </div>
               </div>
@@ -118,34 +116,24 @@
                 <lottie-player id="designSvg" src="images/design.json" speed="1" loop autoplay></lottie-player>
                 <div class="skill_graph">
                   <dl>
-                    <dt>Adobe Photoshop</dt>
-                    <dd>
-                      <div class="levelBar" data-level="90"></div>
-                    </dd>
+                    <dt class="icon icon_photoshop">Adobe Photoshop</dt>
+                    <dd>보정, 합성, 누끼, 마스크, 필터 편집</dd>
                   </dl>
                   <dl>
-                    <dt>Adobe Illustrator</dt>
-                    <dd>
-                      <div class="levelBar" data-level="80"></div>
-                    </dd>
+                    <dt class="icon icon_illustrator">Adobe Illustrator</dt>
+                    <dd>벡터 일러스트, 아이콘 디자인, 레이아웃 디자인</dd>
                   </dl>
                   <dl>
-                    <dt>Adobe After Effect</dt>
-                    <dd>
-                      <div class="levelBar" data-level="70"></div>
-                    </dd>
+                    <dt class="icon icon_aftereffect">Adobe After Effect</dt>
+                    <dd>벡터 애니메이션, 2D 캐릭터 리깅</dd>
                   </dl>
                   <dl>
-                    <dt>Adobe XD</dt>
-                    <dd>
-                      <div class="levelBar" data-level="70"></div>
-                    </dd>
+                    <dt class="icon icon_xd">Adobe XD</dt>
+                    <dd>레이아웃 디자인, 프로토타입</dd>
                   </dl>
                   <dl>
-                    <dt>Figma</dt>
-                    <dd>
-                      <div class="levelBar" data-level="80"></div>
-                    </dd>
+                    <dt class="icon icon_figma">Figma</dt>
+                    <dd>레이아웃 디자인, 프로토타입</dd>
                   </dl>
                 </div>
               </div>
@@ -174,14 +162,16 @@
             </ul>
           </div>
           <div class="connect-item">
-            <h5>이력 <span>Resume</span></h5>
+            <h5>문서 <span>Document</span></h5>
             <a href="https://drive.google.com/file/d/18BTkGXv9a5QZoQbjOOQkgtzYInfXnRBt/view?usp=sharing" target="_blank" class="link">이력서 다운로드</a>
           </div>
         </div>
         <div class="copy">ⓒcopyright Si-YeonPark</div>
       </footer>
     </div>
+    <div id="loading">
+      <img class="loader" src="images/loader.gif" alt="loader animation" />
+    </div>
   </body>
   <script src="js/index.js"></script>
-  <script src="js/svg.js"></script>
 </html>

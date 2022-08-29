@@ -13,18 +13,10 @@ function jsonLoad(linkObj) {
   $.each(linkObj, function (i) {
     const thumbHtml = (identity, title, filter) => {
       return (
-        '<a href="javascript:void(0)" class="modalBtn" data-target="#' +
-        identity +
-        '">' +
-        '<div class="thumbContent"><h5>' +
-        title +
-        '</h5><span>' +
-        filter +
-        '</span></div>' +
-        '</a>'
+        '<a href="javascript:void(0)" class="modalBtn" data-target="#' + identity + '">' + '<div class="thumbContent"><h5>' + title + '</h5></div>' + '</a>'
       )
     }
-    $('.thumb').append(thumbHtml(linkObj[i].id, linkObj[i].title, linkObj[i].filter))
+    $('.thumb').append(thumbHtml(linkObj[i].id, linkObj[i].title))
     var thumbBtns = $('.thumb').find('.modalBtn')
     $(thumbBtns[i]).css({ 'background-image': 'url(' + linkObj[i].visual + ')' })
     // thumbnail
