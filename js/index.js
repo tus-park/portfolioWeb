@@ -39,42 +39,6 @@ $(document).ready(function () {
   })
   // navigtion - end
 
-  $(function () {
-    $('#dialog').dialog({
-      autoOpen: false,
-      show: {
-        effect: 'fade',
-        duration: 400,
-      },
-      hide: {
-        effect: 'fade',
-        duration: 400,
-      },
-      modal: true,
-
-      open: function (event, ui) {
-        $('html').attr('data-scrollTop', $(document).scrollTop()).css('overflow', 'hidden')
-        $(this).dialog('option', 'position', { my: 'center', at: 'center', of: window })
-        // 모달 열렸을 때 스크롤 방지
-        $('.ui-widget-overlay').bind('click', function () {
-          $('#dialog').dialog('close')
-        })
-        // 모달 배경 클릭시 닫힘
-      },
-      close: function (event, ui) {
-        var scrollTop = $('html').css('overflow', 'auto').attr('data-scrollTop') || 0
-        if (scrollTop) $('html').scrollTop(scrollTop).attr('data-scrollTop', '')
-        // 모달 닫혔을 때 스크롤 작동
-      },
-    })
-
-    $('.ui-button').addClass('icon icon_x hiddenText')
-    $('.modalBtn').on('click', function () {
-      $('#dialog').dialog('open')
-    })
-  })
-  // modal dialog End
-
   LottieInteractivity.create({
     mode: 'scroll',
     player: '#codingSvg',

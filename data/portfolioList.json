@@ -44,17 +44,6 @@
         }
     },
     {
-        "id": "thumbCss",
-        "title": "CSS Grid Thumbnail",
-        "visual": "images/pictures/gridThumbnail.png",
-        "content": {
-            "period": "2019.07~2020.07",
-            "part": "전체",
-            "skills": "HTML, CSS",
-            "explanation": "이미지 썸네일의 다이나믹 애니메이션을 CSS만을 이용하여 구현한 스타일 소스입니다."
-        }
-    },
-    {
         "id": "sunhang_ci",
         "title": "선행건설 로고 디자인",
         "visual": "images/pictures/sunhang_ci.png",
@@ -74,39 +63,6 @@
             "part": "전체",
             "skills": "Adobe Photoshop",
             "explanation": "식기 판매 사이트의 제품 섬네일과 상세화면에 사용할 컨셉 촬영본과 제품컷의 보정 및 누끼 작업을 위주로 작업하였으며, 제품 상세 설명 레이아웃 디자인 지원 하였습니다."
-        }
-    },
-    {
-        "id": "colorAcc",
-        "title": "Random Color Accordion",
-        "visual": "images/pictures/thumb_colAcc.png",
-        "content": {
-            "period": "2019.07~2020.07",
-            "part": "전체",
-            "skills": "HTML, CSS, Javascript/JQuery",
-            "explanation": "클릭할 때마다 랜덤으로 컬러가 변경되어 역동적이며 재미있는 아코디언을 구현 하였습니다."
-        }
-    },
-    {
-        "id": "cirNav",
-        "title": "Circle Animation Navigtion",
-        "visual": "images/pictures/thumb_aniNavi.png",
-        "content": {
-            "period": "2019.07~2020.07",
-            "part": "전체",
-            "skills": "HTML, CSS, Javascript/JQuery",
-            "explanation": "독특한 디자인의 메뉴를 다이나믹한 모션을 CSS와 Javascript로 구현 하였습니다."
-        }
-    },
-    {
-        "id": "colPalette",
-        "title": "Color palette",
-        "visual": "images/pictures/thumb_colPalt.png",
-        "content": {
-            "period": "2019.07~2020.07",
-            "part": "전체",
-            "skills": "HTML, CSS, Javascript/JQuery",
-            "explanation": ""
         }
     },
     {

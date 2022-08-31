@@ -111,77 +111,105 @@ section {
   .content {
     width: 100%;
     height: 100%;
-    @include modalThumbnail(25%, 25%);
-    .thumb {
-      a.modalBtn {
-        .thumbContent {
-          @include flexDiplay(center, center);
-          width: 100%;
-          height: 100%;
-          padding: 5%;
-          background-color: rgba(255, 255, 255, 0.6);
-          font-size: 1.4rem;
-          font-weight: bold;
-          opacity: 0;
-          transition-duration: 0.4s;
-          position: relative;
-          span {
-            position: absolute;
-            display: block;
-            top: 5%;
-            right: 5%;
-            border: none;
-            background-color: $black;
-            color: $white;
-            font-size: 0.8rem;
-            font-weight: 100;
-            padding: 3px 5px;
-            border-radius: 4px;
-          }
+    .work {
+      &-list {
+        width: 100%;
+        height: 100%;
+      }
+      &-item {
+        height: 100%;
+        position: relative;
+        @include flexDiplay(center, flex-start, stratch);
+        flex-direction: column;
+        padding: 0 40px;
+      }
+      &-visual {
+        height: 60%;
+        min-height: 300px;
+        background : {
+          size: 100%;
+          position: center;
+          repeat: no-repeat;
         }
-        &:hover {
-          .thumbContent {
-            opacity: 1;
-            backdrop-filter: blur(5px);
+      }
+      &-content {
+        width: 100%;
+        height: auto;
+        padding: 3%;
+        background-color: rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(5px) grayscale(1);
+
+        dl {
+          width: 100%;
+          overflow: hidden;
+          margin-bottom: 10px;
+          @include flexDiplay(center, flex-start, flex-start);
+          flex-direction: row;
+          flex-wrap: wrap;
+        }
+        dt {
+          width: 30%;
+          min-width: 140px;
+          font-weight: bold;
+        }
+        dd {
+          width: 70%;
+          min-width: 200px;
+        }
+      }
+    }
+    .slick {
+      &-slider {
+        button {
+          @include hiddenText();
+          background: transparent;
+          border: none;
+        }
+      }
+      &-track {
+        height: 100%;
+      }
+      &-list {
+        width: 100%;
+        height: calc(100% - 60px);
+      }
+      &-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 3;
+        width: 40px;
+        height: 100%;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.3) !important;
+        &::before {
+          margin: 0 !important;
+        }
+      }
+      &-prev {
+        left: 0;
+      }
+      &-next {
+        right: 0;
+      }
+      &-dots {
+        @include flexDiplay(center, center);
+        gap: 1vw;
+        height: 60px;
+        li {
+          background: url('../images/icons/circle.svg') no-repeat center;
+          &.slick-active {
+            background: url('../images/icons/ellipse.svg') no-repeat center;
           }
         }
       }
-    } // thumbnail End
+    }
   } // portfolio - content End
 }
 
-.modal {
-  &-visual {
-    overflow: hidden;
-    img {
-      display: block;
-      width: 100%;
-    }
-  }
-  &-content {
-    dl {
-      width: 100%;
-      overflow: hidden;
-      margin-bottom: 10px;
-      @include flexDiplay(center, flex-start, flex-start);
-      flex-direction: row;
-      flex-wrap: wrap;
-    }
-    dt {
-      width: 30%;
-      min-width: 140px;
-      font-weight: bold;
-    }
-    dd {
-      width: 70%;
-      min-width: 200px;
-    }
-  }
-  &-body {
-    padding: 5%;
-  }
-}
-// modal End
 // section2 - portfolio End
 
 #skills {
@@ -200,7 +228,6 @@ section {
       height: fit-content;
       width: 100%;
     }
-    // @include flexDiplay();
     .skill_graph {
       @include flexDiplay();
       flex-direction: column;
@@ -352,11 +379,7 @@ footer {
       }
     }
     .content {
-      height: 60vh;
-      .thumb .modalBtn {
-        width: 33.3%;
-        height: calc(100% / 5);
-      }
+      height: auto;
     }
   }
   // tablet section2 - portfolio End
@@ -485,5 +508,6 @@ footer {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 10%;
+    max-width: 80px;
   }
 }

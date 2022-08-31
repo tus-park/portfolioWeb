@@ -7,17 +7,16 @@
     <title>PublBubble:웹포트폴리오</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" href="css/index.css" />
     <!-- css -->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script type="text/javascript" src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script type="text/javascript" src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
     <!-- javascript cdn -->
-    <script src="js/portfolio_page.js"></script>
-    <!-- javascript -->
   </head>
   <body>
     <header>
@@ -71,16 +70,7 @@
           </div>
         </div>
         <div class="content">
-          <div class="thumb">
-            <!-- modal buttons -->
-          </div>
-          <div id="dialog" class="modal modal-dialog-scrollable">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <!-- modal contents -->
-              </div>
-            </div>
-          </div>
+          <div class="work-list"></div>
         </div>
       </section>
       <section id="skills">
@@ -172,5 +162,7 @@
       <img class="loader" src="images/loader.gif" alt="loader animation" />
     </div>
   </body>
+  <script src="js/portfolio_page.js"></script>
   <script src="js/index.js"></script>
+  <!-- javascript -->
 </html>

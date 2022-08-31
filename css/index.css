@@ -5678,83 +5678,6 @@ h4 .subHead, h5 .subHead, h6 .subHead {
     width: 100%;
   }
 }
-.ui-dialog-titlebar {
-  width: 100%;
-  height: 5vh;
-  display: flex;
-  align-content: center;
-  justify-content: flex-end;
-  align-items: center;
-}
-.ui-dialog-titlebar .ui-dialog-title {
-  display: none;
-}
-.ui-dialog-titlebar button.ui-button {
-  border: 0;
-  padding: 0;
-  text-shadow: none;
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
-  width: 2rem;
-  height: 2rem;
-  background: none;
-}
-.ui-dialog-titlebar button.ui-button::before {
-  margin-right: 0;
-}
-
-.ui-widget-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.5019607843);
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
-}
-
-.ui-dialog {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100% !important;
-  width: 80% !important;
-  z-index: 9999;
-  overflow: hidden;
-  padding: 2vh 0;
-}
-.ui-dialog .modal {
-  width: 100%;
-  height: calc(100% - 5vh) !important;
-  margin: 0 auto;
-  overflow-y: auto !important;
-  padding: 0 1vw;
-}
-.ui-dialog .modal-dialog {
-  width: 100%;
-  margin: 0 auto;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: #cccccc 0 1px 15px;
-  background-color: #ffffff;
-  border-width: 1px;
-  border-style: solid;
-  border-top-color: rgba(255, 255, 255, 0.6);
-  border-right-color: rgba(204, 204, 204, 0.6);
-  border-bottom-color: rgba(204, 204, 204, 0.6);
-  border-left-color: rgba(255, 255, 255, 0.6);
-}
-.ui-dialog .modal-content {
-  width: calc(100% + 15px);
-  height: 100%;
-  border: 0;
-  background-color: rgba(255, 255, 255, 0.5);
-  position: relative;
-}
-
 html,
 body,
 * {
@@ -5986,74 +5909,36 @@ section {
   width: 100%;
   height: 100%;
 }
-#portfolio .content .thumb {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
+#portfolio .content .work-list {
   width: 100%;
   height: 100%;
 }
-#portfolio .content .thumb .modalBtn {
-  display: block;
-  width: 25%;
-  height: 25%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+#portfolio .content .work-item {
+  height: 100%;
   position: relative;
-}
-#portfolio .content .thumb .modalBtn:hover::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
-}
-#portfolio .content .thumb a.modalBtn .thumbContent {
   display: flex;
   align-content: center;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: stratch;
+  flex-direction: column;
+  padding: 0 40px;
+}
+#portfolio .content .work-visual {
+  height: 60%;
+  min-height: 300px;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#portfolio .content .work-content {
   width: 100%;
-  height: 100%;
-  padding: 5%;
-  background-color: rgba(255, 255, 255, 0.6);
-  font-size: 1.4rem;
-  font-weight: bold;
-  opacity: 0;
-  transition-duration: 0.4s;
-  position: relative;
+  height: auto;
+  padding: 3%;
+  background-color: rgba(255, 255, 255, 0.3);
+  -webkit-backdrop-filter: blur(5px) grayscale(1);
+          backdrop-filter: blur(5px) grayscale(1);
 }
-#portfolio .content .thumb a.modalBtn .thumbContent span {
-  position: absolute;
-  display: block;
-  top: 5%;
-  right: 5%;
-  border: none;
-  background-color: #222222;
-  color: #ffffff;
-  font-size: 0.8rem;
-  font-weight: 100;
-  padding: 3px 5px;
-  border-radius: 4px;
-}
-#portfolio .content .thumb a.modalBtn:hover .thumbContent {
-  opacity: 1;
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
-}
-
-.modal-visual {
-  overflow: hidden;
-}
-.modal-visual img {
-  display: block;
-  width: 100%;
-}
-.modal-content dl {
+#portfolio .content .work-content dl {
   width: 100%;
   overflow: hidden;
   margin-bottom: 10px;
@@ -6064,17 +5949,68 @@ section {
   flex-direction: row;
   flex-wrap: wrap;
 }
-.modal-content dt {
+#portfolio .content .work-content dt {
   width: 30%;
   min-width: 140px;
   font-weight: bold;
 }
-.modal-content dd {
+#portfolio .content .work-content dd {
   width: 70%;
   min-width: 200px;
 }
-.modal-body {
-  padding: 5%;
+#portfolio .content .slick-slider button {
+  font-size: 1px;
+  color: white;
+  color: transparent;
+  text-indent: -999999px;
+  background: transparent;
+  border: none;
+}
+#portfolio .content .slick-slider button::before {
+  display: block !important;
+}
+#portfolio .content .slick-track {
+  height: 100%;
+}
+#portfolio .content .slick-list {
+  width: 100%;
+  height: calc(100% - 60px);
+}
+#portfolio .content .slick-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 40px;
+  height: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.3) !important;
+}
+#portfolio .content .slick-arrow::before {
+  margin: 0 !important;
+}
+#portfolio .content .slick-prev {
+  left: 0;
+}
+#portfolio .content .slick-next {
+  right: 0;
+}
+#portfolio .content .slick-dots {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  gap: 1vw;
+  height: 60px;
+}
+#portfolio .content .slick-dots li {
+  background: url("../images/icons/circle.svg") no-repeat center;
+}
+#portfolio .content .slick-dots li.slick-active {
+  background: url("../images/icons/ellipse.svg") no-repeat center;
 }
 
 #skills .skill_list {
@@ -6256,11 +6192,7 @@ header .menu li > a .icon {
     width: 100%;
   }
   #portfolio .content {
-    height: 60vh;
-  }
-  #portfolio .content .thumb .modalBtn {
-    width: 33.3%;
-    height: 20%;
+    height: auto;
   }
   #skills .skill_list {
     flex-direction: column;
@@ -6363,4 +6295,5 @@ header .menu li > a .icon {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 10%;
+  max-width: 80px;
 }/*# sourceMappingURL=index.css.map */
