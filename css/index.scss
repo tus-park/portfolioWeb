@@ -79,6 +79,7 @@ section {
   }
   .obj {
     width: 300px;
+    max-width: 80%;
     height: 300px;
     margin: 5%;
     position: relative;
@@ -86,8 +87,8 @@ section {
     &::after {
       content: '';
       display: block;
-      width: 300px;
-      height: 300px;
+      width: 100%;
+      height: 100%;
       border-radius: 150px;
       background: url('../images/mable.png') no-repeat;
       background-size: 300%;
@@ -295,6 +296,10 @@ footer {
 // footer End
 
 @include mobile() {
+  html,
+  body {
+    font-size: 80%;
+  }
   #skills {
     .coding,
     .design {
@@ -357,7 +362,8 @@ footer {
   }
 
   .headingArea {
-    height: 25vh;
+    height: auto;
+    min-height: 25vh;
   }
   // *** tablet index 기본 스타일 *** //
 

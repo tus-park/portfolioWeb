@@ -5879,6 +5879,7 @@ section {
 }
 #intro .obj {
   width: 300px;
+  max-width: 80%;
   height: 300px;
   margin: 5%;
   position: relative;
@@ -5887,8 +5888,8 @@ section {
 #intro .obj::after {
   content: "";
   display: block;
-  width: 300px;
-  height: 300px;
+  width: 100%;
+  height: 100%;
   border-radius: 150px;
   background: url("../images/mable.png") no-repeat;
   background-size: 300%;
@@ -6118,6 +6119,10 @@ footer .copy {
 }
 
 @media (max-width: 334px) {
+  html,
+body {
+    font-size: 80%;
+  }
   #skills .coding_list,
 #skills .design_list {
     flex-direction: column;
@@ -6174,7 +6179,8 @@ header .menu li > a .icon {
     height: auto;
   }
   .headingArea {
-    height: 25vh;
+    height: auto;
+    min-height: 25vh;
   }
   #intro {
     height: 94vh;
