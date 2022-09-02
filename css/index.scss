@@ -1,4 +1,10 @@
 @import 'style';
+html,
+body,
+* {
+  $baseSize: 16px;
+  font-size: $baseSize;
+}
 .wrap {
   width: 100%;
   overflow: hidden;
@@ -78,26 +84,18 @@ section {
     }
   }
   .obj {
-    width: 300px;
-    max-width: 80%;
-    height: 300px;
+    @include ratio(1, 1);
+    width: 60%;
+    min-width: 100px;
+    max-width: 300px;
     margin: 5%;
     position: relative;
     overflow: hidden;
-    &::after {
-      content: '';
-      display: block;
-      width: 100%;
-      height: 100%;
-      border-radius: 150px;
+    &::before {
+      border-radius: 50%;
       background: url('../images/mable.png') no-repeat;
       background-size: 300%;
       background-position: 17% 30%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      opacity: 1;
       filter: contrast(1.2);
     }
     img {
@@ -146,15 +144,12 @@ section {
           margin-bottom: 10px;
           @include flexDiplay(center, flex-start, flex-start);
           flex-direction: row;
-          flex-wrap: wrap;
         }
         dt {
-          width: 30%;
           min-width: 140px;
           font-weight: bold;
         }
         dd {
-          width: 70%;
           min-width: 200px;
         }
       }
@@ -202,8 +197,10 @@ section {
         height: 60px;
         li {
           background: url('../images/icons/circle.svg') no-repeat center;
+          background-size: contain;
           &.slick-active {
             background: url('../images/icons/ellipse.svg') no-repeat center;
+            background-size: contain;
           }
         }
       }
@@ -214,7 +211,7 @@ section {
 // section2 - portfolio End
 
 #skills {
-  .skill_list {
+  .skills_list {
     @include flexDiplay(flex-start, space-around, flex-start);
   }
 }
@@ -229,7 +226,7 @@ section {
       height: fit-content;
       width: 100%;
     }
-    .skill_graph {
+    .skills_info {
       @include flexDiplay();
       flex-direction: column;
       align-items: flex-start;
@@ -295,124 +292,6 @@ footer {
 }
 // footer End
 
-@include mobile() {
-  html,
-  body {
-    font-size: 80%;
-  }
-  #skills {
-    .coding,
-    .design {
-      &_list {
-        flex-direction: column;
-        dt,
-        dd {
-          width: 100%;
-        }
-      }
-    }
-  }
-  // mobile section1 - skills End
-}
-@include tablet() {
-  html,
-  body {
-    font-size: 14px;
-  }
-  .wrap {
-    padding-left: 0;
-    padding-bottom: 6vh;
-  }
-  header {
-    width: 100%;
-    height: 6vh;
-    top: auto;
-    bottom: 0;
-    left: 0;
-    justify-content: center;
-    background-color: $white;
-    * {
-      height: 100%;
-    }
-    nav {
-      width: 100%;
-      .icon_menu {
-        display: none;
-      }
-    }
-    .menu {
-      width: 100%;
-      flex-direction: row;
-      justify-content: space-evenly;
-      li > a {
-        color: inherit;
-        flex-direction: column-reverse;
-        justify-content: space-evenly;
-        span,
-        .icon {
-          height: auto;
-        }
-      }
-    }
-  }
-
-  section {
-    height: auto;
-    // min-height: 94vh;
-  }
-
-  .headingArea {
-    height: auto;
-    min-height: 25vh;
-  }
-  // *** tablet index 기본 스타일 *** //
-
-  #intro {
-    height: 94vh;
-  }
-  // tablet section1 - intro End
-
-  #portfolio {
-    .headingArea {
-      .pf_link {
-        width: 100%;
-        ul {
-          @include flexDiplay();
-          flex-direction: row;
-          justify-content: space-evenly;
-          width: 100%;
-        }
-      }
-    }
-    .content {
-      height: auto;
-    }
-  }
-  // tablet section2 - portfolio End
-
-  #skills {
-    .skill_list {
-      flex-direction: column;
-      .coding,
-      .design,
-      .experience {
-        padding: 0 10%;
-      }
-    }
-  }
-  // tablet section1 - skills End
-
-  footer {
-    .connect {
-      align-items: center;
-      &-item {
-        text-align: center;
-      }
-    }
-  }
-}
-// *** tablet End *** //
-
 @include desktop() {
   header {
     height: 100vh;
@@ -477,7 +356,7 @@ footer {
   // desktop section2 - portfolio End
 
   #skills {
-    .skill_list {
+    .skills_list {
       flex-direction: row;
       padding: 0 5%;
     }
@@ -498,6 +377,126 @@ footer {
   }
 }
 // *** desktop wide *** //
+
+@include tablet() {
+  html,
+  body,
+  * {
+    font-size: 14px;
+  }
+  .wrap {
+    padding-left: 0;
+    padding-bottom: 6vh;
+  }
+  header {
+    width: 100%;
+    height: 6vh;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    justify-content: center;
+    background-color: $white;
+    * {
+      height: 100%;
+    }
+    nav {
+      width: 100%;
+      .icon_menu {
+        display: none;
+      }
+    }
+    .menu {
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-evenly;
+      li > a {
+        color: inherit;
+        flex-direction: column-reverse;
+        justify-content: space-evenly;
+        span,
+        .icon {
+          height: auto;
+        }
+      }
+    }
+  }
+
+  section {
+    height: auto;
+  }
+
+  .headingArea {
+    height: auto;
+    min-height: 25vh;
+  }
+  // *** tablet index 기본 스타일 *** //
+
+  #intro {
+    height: 94vh;
+  }
+  // tablet section1 - intro End
+
+  #portfolio {
+    .headingArea {
+      .pf_link {
+        width: 100%;
+        ul {
+          @include flexDiplay();
+          flex-direction: row;
+          justify-content: space-evenly;
+          width: 100%;
+        }
+      }
+    }
+    .content {
+      height: auto;
+      dl {
+        flex-wrap: wrap;
+      }
+    }
+  }
+  // tablet section2 - portfolio End
+
+  #skills {
+    .skills_list {
+      flex-direction: column;
+      .coding,
+      .design,
+      .experience {
+        padding: 0 10%;
+      }
+    }
+  }
+  // tablet section1 - skills End
+
+  footer {
+    .connect {
+      align-items: center;
+      &-item {
+        text-align: center;
+      }
+    }
+  }
+}
+// *** tablet End *** //
+
+@include mobile() {
+  html,
+  body,
+  * {
+    font-size: 10px;
+  }
+  #skills {
+    .coding,
+    .design {
+      &_list {
+        flex-direction: column;
+        flex-wrap: wrap;
+      }
+    }
+  }
+  // mobile section1 - skills End
+}
 
 #loading {
   width: 100%;

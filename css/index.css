@@ -5768,6 +5768,12 @@ button.btn_fill {
           animation: underbar_ani 0.6s alternate;
 }
 
+html,
+body,
+* {
+  font-size: 16px;
+}
+
 .wrap {
   width: 100%;
   overflow: hidden;
@@ -5878,27 +5884,32 @@ section {
   font-weight: normal;
 }
 #intro .obj {
-  width: 300px;
-  max-width: 80%;
-  height: 300px;
+  position: relative;
+  width: 60%;
+  min-width: 100px;
+  max-width: 300px;
   margin: 5%;
   position: relative;
   overflow: hidden;
 }
-#intro .obj::after {
-  content: "";
+#intro .obj:before {
   display: block;
+  content: "";
   width: 100%;
-  height: 100%;
-  border-radius: 150px;
-  background: url("../images/mable.png") no-repeat;
-  background-size: 300%;
-  background-position: 17% 30%;
+  padding-top: 100%;
+}
+#intro .obj > .ratioCon {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
-  opacity: 1;
+  right: 0;
+  bottom: 0;
+}
+#intro .obj::before {
+  border-radius: 50%;
+  background: url("../images/mable.png") no-repeat;
+  background-size: 300%;
+  background-position: 17% 30%;
   filter: contrast(1.2);
 }
 #intro .obj img {
@@ -5948,15 +5959,12 @@ section {
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: row;
-  flex-wrap: wrap;
 }
 #portfolio .content .work-content dt {
-  width: 30%;
   min-width: 140px;
   font-weight: bold;
 }
 #portfolio .content .work-content dd {
-  width: 70%;
   min-width: 200px;
 }
 #portfolio .content .slick-slider button {
@@ -6009,12 +6017,14 @@ section {
 }
 #portfolio .content .slick-dots li {
   background: url("../images/icons/circle.svg") no-repeat center;
+  background-size: contain;
 }
 #portfolio .content .slick-dots li.slick-active {
   background: url("../images/icons/ellipse.svg") no-repeat center;
+  background-size: contain;
 }
 
-#skills .skill_list {
+#skills .skills_list {
   display: flex;
   align-content: flex-start;
   justify-content: space-around;
@@ -6038,9 +6048,9 @@ section {
   height: fit-content;
   width: 100%;
 }
-.coding_list .skill_graph,
-.design_list .skill_graph,
-.experience_list .skill_graph {
+.coding_list .skills_info,
+.design_list .skills_info,
+.experience_list .skills_info {
   display: flex;
   align-content: flex-start;
   justify-content: flex-start;
@@ -6051,29 +6061,29 @@ section {
   overflow: hidden;
   width: 100%;
 }
-.coding_list .skill_graph dl,
-.design_list .skill_graph dl,
-.experience_list .skill_graph dl {
+.coding_list .skills_info dl,
+.design_list .skills_info dl,
+.experience_list .skills_info dl {
   overflow: hidden;
   width: 100%;
   margin-bottom: 0;
   word-break: keep-all;
 }
-.coding_list .skill_graph dl dt,
-.design_list .skill_graph dl dt,
-.experience_list .skill_graph dl dt {
+.coding_list .skills_info dl dt,
+.design_list .skills_info dl dt,
+.experience_list .skills_info dl dt {
   min-width: 80px;
   font-weight: bold;
 }
-.coding_list .skill_graph dl dd,
-.design_list .skill_graph dl dd,
-.experience_list .skill_graph dl dd {
+.coding_list .skills_info dl dd,
+.design_list .skills_info dl dd,
+.experience_list .skills_info dl dd {
   min-width: 100px;
   margin-bottom: 0;
 }
-.coding_list .skill_graph dl dd img,
-.design_list .skill_graph dl dd img,
-.experience_list .skill_graph dl dd img {
+.coding_list .skills_info dl dd img,
+.design_list .skills_info dl dd img,
+.experience_list .skills_info dl dd img {
   width: 100%;
 }
 
@@ -6118,25 +6128,80 @@ footer .copy {
   height: 5vh;
 }
 
-@media (max-width: 334px) {
-  html,
-body {
-    font-size: 80%;
+@media (min-width: 758px) {
+  header {
+    height: 100vh;
+    background-color: transparent;
+    width: 40px;
+    transition-duration: 0.6s;
   }
-  #skills .coding_list,
-#skills .design_list {
+  header .menu {
+    display: flex;
+    align-content: flex-start;
+    justify-content: flex-start;
+    align-items: flex-start;
     flex-direction: column;
   }
-  #skills .coding_list dt,
-#skills .coding_list dd,
-#skills .design_list dt,
-#skills .design_list dd {
-    width: 100%;
+  header .menu li a {
+    height: 4vh;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    color: transparent;
+    transition-duration: 0.6s;
+  }
+  header:hover {
+    width: 120px;
+    background-color: rgba(255, 255, 255, 0.3);
+    -webkit-backdrop-filter: blur(5px) grayscale(1);
+            backdrop-filter: blur(5px) grayscale(1);
+    box-shadow: 0px 0px 15px #cccccc;
+  }
+  header:hover .menu > li > a {
+    color: inherit;
+  }
+  section {
+    height: 100vh;
+  }
+  #portfolio {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  #portfolio .headingArea {
+    width: 40%;
+    height: 100%;
+    justify-content: space-evenly;
+  }
+  #portfolio .headingArea .pf_link {
+    padding: 5%;
+    border-top: 1px solid #cccccc;
+  }
+  #portfolio .headingArea .pf_link ul {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0 auto;
+  }
+  #portfolio .headingArea .pf_link ul li {
+    margin-bottom: 5px;
+  }
+  #skills .skills_list {
+    flex-direction: row;
+    padding: 0 5%;
+  }
+  footer .connect {
+    flex-direction: row;
+  }
+}
+@media (min-width: 1680px) {
+  .ui-dialog {
+    width: 60% !important;
   }
 }
 @media (max-width: 757px) {
   html,
-body {
+body,
+* {
     font-size: 14px;
   }
   .wrap {
@@ -6200,12 +6265,15 @@ header .menu li > a .icon {
   #portfolio .content {
     height: auto;
   }
-  #skills .skill_list {
+  #portfolio .content dl {
+    flex-wrap: wrap;
+  }
+  #skills .skills_list {
     flex-direction: column;
   }
-  #skills .skill_list .coding,
-#skills .skill_list .design,
-#skills .skill_list .experience {
+  #skills .skills_list .coding,
+#skills .skills_list .design,
+#skills .skills_list .experience {
     padding: 0 10%;
   }
   footer .connect {
@@ -6215,74 +6283,16 @@ header .menu li > a .icon {
     text-align: center;
   }
 }
-@media (min-width: 758px) {
-  header {
-    height: 100vh;
-    background-color: transparent;
-    width: 40px;
-    transition-duration: 0.6s;
+@media (max-width: 334px) {
+  html,
+body,
+* {
+    font-size: 10px;
   }
-  header .menu {
-    display: flex;
-    align-content: flex-start;
-    justify-content: flex-start;
-    align-items: flex-start;
+  #skills .coding_list,
+#skills .design_list {
     flex-direction: column;
-  }
-  header .menu li a {
-    height: 4vh;
-    width: -webkit-max-content;
-    width: -moz-max-content;
-    width: max-content;
-    color: transparent;
-    transition-duration: 0.6s;
-  }
-  header:hover {
-    width: 120px;
-    background-color: rgba(255, 255, 255, 0.3);
-    -webkit-backdrop-filter: blur(5px) grayscale(1);
-            backdrop-filter: blur(5px) grayscale(1);
-    box-shadow: 0px 0px 15px #cccccc;
-  }
-  header:hover .menu > li > a {
-    color: inherit;
-  }
-  section {
-    height: 100vh;
-  }
-  #portfolio {
-    flex-direction: row;
-    align-items: flex-start;
-  }
-  #portfolio .headingArea {
-    width: 40%;
-    height: 100%;
-    justify-content: space-evenly;
-  }
-  #portfolio .headingArea .pf_link {
-    padding: 5%;
-    border-top: 1px solid #cccccc;
-  }
-  #portfolio .headingArea .pf_link ul {
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-    margin: 0 auto;
-  }
-  #portfolio .headingArea .pf_link ul li {
-    margin-bottom: 5px;
-  }
-  #skills .skill_list {
-    flex-direction: row;
-    padding: 0 5%;
-  }
-  footer .connect {
-    flex-direction: row;
-  }
-}
-@media (min-width: 1680px) {
-  .ui-dialog {
-    width: 60% !important;
+    flex-wrap: wrap;
   }
 }
 #loading {
