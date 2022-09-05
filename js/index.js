@@ -44,9 +44,9 @@ $(document).ready(function () {
     player: '#codingSvg',
     actions: [
       {
-        visibility: [0.3, 1],
+        visibility: [0, 1.0],
         type: 'loop',
-        frames: [1, 80],
+        frames: [1, 180],
       },
     ],
   }),
@@ -55,9 +55,9 @@ $(document).ready(function () {
       player: '#designSvg',
       actions: [
         {
-          visibility: [0.3, 1],
+          visibility: [0, 1.0],
           type: 'loop',
-          frames: [1, 80],
+          frames: [1, 180],
         },
       ],
     })
